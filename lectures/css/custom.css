@@ -1,0 +1,96 @@
+.reveal .slide-number {
+    font-size: 22pt;
+    color: black;
+}
+
+.reveal pre {
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+
+.reveal pre code {
+    color: black;
+    background: none;
+    box-shadow: none;
+    max-height: none;
+}
+
+.reveal section img {
+    border: none;
+    box-shadow: none;
+}
+
+.reveal pre code {
+    overflow: hidden;
+}
+
+.reveal.lecture3 pre code {
+    font-size: 115%; 
+}
+
+.reveal.lecture3 p.left{
+    text-align: left;
+    margin-left: 30px;
+}
+
+.reveal .footer {
+    font-size: 22pt;
+    color: black;
+
+    position: absolute;
+    left: 35%;
+    bottom: 0.5em;
+}
+.corp-name {
+    color: orangered;
+    font-family: "Circe", sans-serif;;
+}
+
+div.code-block {
+    background: #ffffff;
+    overflow: auto;
+    width: auto;
+    border: solid gray;
+    border-width: .1em .1em .1em .8em;
+    padding: .2em .6em;
+    margin: .5em .5em 1em;
+}
+
+div.code-block pre {
+    margin: 0;
+    line-height: 125%;
+}
+
+span.keyword {
+    color: #008800;
+    font-weight: bold;
+}
+
+span.comment {
+    color: #888888;
+}
+
+span.number {
+    color: #0000DD;
+    font-weight: bold;
+}
+
+span.string {
+    background-color: #ffe4e1;
+}
+
+span.type {
+    color: #5e00a3;
+    font-weight: bold;
+}
+
+span.class {
+    color: #BB0066;
+    font-weight: bold;
+}
+
+span.import {
+    color: #0e84b5;
+    font-weight: bold;
+}
