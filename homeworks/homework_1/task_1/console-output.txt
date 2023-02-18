@@ -1,0 +1,21 @@
+C:\Users\ncrmncr>scala
+Welcome to Scala 2.13.10 (OpenJDK 64-Bit Server VM, Java 17.0.2).
+Type in expressions for evaluation. Or try :help.
+
+scala> println("Hello Scala! This is Andrew Stremousov")
+Hello Scala! This is Andrew Stremousov
+
+scala> val words = List("Hello", "Hola", "Guten tag")
+val words: List[String] = List(Hello, Hola, Guten tag)
+
+scala> words.foreach(it => println(f"$it Scala! This is Andrew Stremousov"))
+Hello Scala! This is Andrew Stremousov
+Hola Scala! This is Andrew Stremousov
+Guten tag Scala! This is Andrew Stremousov
+
+scala> words.foreach(it => println(f"$it Scala! This is ${"Andrew Stremousov".reverse}"))
+Hello Scala! This is vosuomertS werdnA
+Hola Scala! This is vosuomertS werdnA
+Guten tag Scala! This is vosuomertS werdnA
+
+scala>
