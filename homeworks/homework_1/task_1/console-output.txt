@@ -1,0 +1,23 @@
+PS C:\Users\serez\DevProjects\naumen.scala.course.2023.spring> scala
+
+Welcome to Scala 3.2.2 (19.0.1, Java OpenJDK 64-Bit Server VM).
+Type in expressions for evaluation. Or try :help.
+
+scala> val greet = (word: String, name: String) => println(s"$word Scala! This is $name!")
+val greet: (String, String) => Unit = Lambda$1393/0x00000008014c0000@48ee3c2d
+
+scala> val name = "Sergei"
+val name: String = Sergei
+
+scala> val words = Array("Hello", "Hola", "Guten tag")
+val words: Array[String] = Array(Hello, Hola, Guten tag)
+
+scala> for (word <- words) greet(word, name)
+Hello Scala! This is Sergei!
+Hola Scala! This is Sergei!
+Guten tag Scala! This is Sergei!
+
+scala> for (word <- words) greet(word, name.reverse)
+Hello Scala! This is iegreS!
+Hola Scala! This is iegreS!
+Guten tag Scala! This is iegreS!
