@@ -1,0 +1,28 @@
+Welcome to Scala 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_51).
+Type in expressions for evaluation. Or try :help.
+
+scala> var name = "Matthew"
+name: String = Matthew
+
+scala> def hello(greeting: String, name: String) = {
+     | println(s"$greeting Scala! This is $name")
+     | }
+hello: (greeting: String, name: String)Unit
+
+scala> hello("Hello", "Matthew")
+Hello Scala! This is Matthew
+
+scala> var greetings = Array("Guten tag", "Privet", "Ni hao")
+greetings: Array[String] = Array(Guten tag, Privet, Ni hao)
+
+scala> greetings.foreach(greeting => hello(greeting, name))
+Guten tag Scala! This is Matthew
+Privet Scala! This is Matthew
+Ni hao Scala! This is Matthew
+
+scala> greetings.foreach(greeting => hello(greeting, name.reverse))
+Guten tag Scala! This is wehttaM
+Privet Scala! This is wehttaM
+Ni hao Scala! This is wehttaM
+
+scala>
