@@ -1,0 +1,51 @@
+C:\Users\Die\.jdks\openjdk-19.0.1\bin\java.exe -Djline.terminal=NONE "-javaagent:E:\PrOGrammes\IntelliJ IDEA 2022.1.2\lib\idea_rt.jar=51414:E:\PrOGrammes\IntelliJ IDEA 2022.1.2\bin" -Dfile.encoding=windows-1251 -classpath C:\Users\Die\IdeaProjects\ScalaStyle2\target\scala-2.13\classes;C:\Users\Die\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-lang\scala-library\2.13.10\scala-library-2.13.10.jar;C:\Users\Die\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\io\github\java-diff-utils\java-diff-utils\4.12\java-diff-utils-4.12.jar;C:\Users\Die\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\net\java\dev\jna\jna\5.9.0\jna-5.9.0.jar;C:\Users\Die\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\jline\jline\3.21.0\jline-3.21.0.jar;C:\Users\Die\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-lang\scala-compiler\2.13.10\scala-compiler-2.13.10.jar;C:\Users\Die\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-lang\scala-reflect\2.13.10\scala-reflect-2.13.10.jar;C:\Users\Die\AppData\Roaming\JetBrains\IntelliJIdea2022.1\plugins\Scala\lib\runners.jar scala.tools.nsc.MainGenericRunner -usejavacp -Xnojline
+Welcome to Scala 2.13.10 (OpenJDK 64-Bit Server VM, Java 19.0.1).
+Type in expressions for evaluation. Or try :help.
+
+scala> println("Hello Scala! This is VoVa")
+warning: -Xnojline is deprecated: Replaced by -Xjline:off
+Hello Scala! This is VoVa
+
+scala> var name= "Vova"
+warning: -Xnojline is deprecated: Replaced by -Xjline:off
+var name: String = Vova
+
+scala> println(s"Hello Scala! This is ${name}")
+warning: -Xnojline is deprecated: Replaced by -Xjline:off
+Hello Scala! This is Vova
+
+scala> var greetings="Hola"
+warning: -Xnojline is deprecated: Replaced by -Xjline:off
+var greetings: String = Hola
+
+scala> println(s"${greetings} Scala! This is ${name}")
+warning: -Xnojline is deprecated: Replaced by -Xjline:off
+Hola Scala! This is Vova
+
+scala> greetings="Guten tag"
+warning: -Xnojline is deprecated: Replaced by -Xjline:off
+// mutated greetings
+
+scala> println(s"${greetings} Scala! This is ${name}")
+warning: -Xnojline is deprecated: Replaced by -Xjline:off
+Guten tag Scala! This is Vova
+
+scala> var listGreetings=Array("Hello","Hi","Guten tag")
+warning: -Xnojline is deprecated: Replaced by -Xjline:off
+var listGreetings: Array[String] = Array(Hello, Hi, Guten tag)
+
+scala> for (x<- listGreetings) println(s"${x}! This is ${name}")
+warning: -Xnojline is deprecated: Replaced by -Xjline:off
+Hello! This is Vova
+Hi! This is Vova
+Guten tag! This is Vova
+
+scala> for (x<- listGreetings) println(s"${x}! This is ${name.reverse}")
+warning: -Xnojline is deprecated: Replaced by -Xjline:off
+Hello! This is avoV
+Hi! This is avoV
+Guten tag! This is avoV
+
+scala> :save console-output.txt
+
+scala>
