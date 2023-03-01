@@ -1,0 +1,12 @@
+[debug] Acquiring lock on file C:\Users\Никита\IdeaProjects\SbtExampleProject2\project\target\.sbt-compilation-infos\root-compile\.sbt-idea-lock ...
+[error] C:\Users\Никита\IdeaProjects\SbtExampleProject2\src\main\scala\example\Main.scala:3:3: not found: value printGreeting
+[error]   printGreeting(name, "Hello")
+[error]   ^
+[error] C:\Users\Никита\IdeaProjects\SbtExampleProject2\src\main\scala\example\Main.scala:5:30: not found: value printGreeting
+[error]   greetings.foreach(greet => printGreeting(name, greet))
+[error]                              ^
+[error] C:\Users\Никита\IdeaProjects\SbtExampleProject2\src\main\scala\example\Main.scala:6:30: not found: value printGreeting
+[error]   greetings.foreach(greet => printGreeting(name.reverse, greet))
+[error]                              ^
+[error] three errors found
+[debug] Releasing lock on file C:\Users\Никита\IdeaProjects\SbtExampleProject2\project\target\.sbt-compilation-infos\root-compile\.sbt-idea-lock.
