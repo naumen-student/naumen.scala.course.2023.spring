@@ -1,0 +1,33 @@
+Welcome to Scala 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_51).
+Type in expressions for evaluation. Or try :help.
+
+scala> val a = "Hello Scala! This is Barkan Stepan"
+a: String = Hello Scala! This is Barkan Stepan
+
+scala> println (a)
+Hello Scala! This is Barkan Stepan
+
+scala> var helloArray = Array("Hello", "Hola", "Guten tag")
+helloArray: Array[String] = Array(Hello, Hola, Guten tag)
+
+scala> val name = "Stepan Barkan"
+name: String = Stepan Barkan
+
+scala> def hello(hello: String, name: String): Unit = {println(hello + " Scala! This is "+ name)}
+hello: (hello: String, name: String)Unit
+
+scala> hello("Hello", name)
+Hello Scala! This is Stepan Barkan
+
+scala> hello("Hello", name.reverse)
+Hello Scala! This is nakraB napetS
+
+scala> for (helloItem <- helloArray) hello(helloItem, name)
+Hello Scala! This is Stepan Barkan
+Hola Scala! This is Stepan Barkan
+Guten tag Scala! This is Stepan Barkan
+
+scala> for (helloItem <- helloArray) hello(helloItem, name.reverse)
+Hello Scala! This is nakraB napetS
+Hola Scala! This is nakraB napetS
+Guten tag Scala! This is nakraB napetS
