@@ -1,0 +1,25 @@
+PS C:\Users\simeo> scala
+Welcome to Scala 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_351).
+Type in expressions for evaluation. Or try :help.
+
+scala> val helloArray = Array("Hello", "Hola", "Guten tag")
+helloArray: Array[String] = Array(Hello, Hola, Guten tag)
+
+scala> val name = "Grishin Simeon"
+name: String = Grishin Simeon
+
+scala> def hello(hello: String, name: String): Unit = {println(hello + " Scala! This is "+ name)}
+hello: (hello: String, name: String)Unit
+
+scala> hello("Hello", name)
+Hello Scala! This is Grishin Simeon
+
+scala> for (helloItem <- helloArray) hello(helloItem, name)
+Hello Scala! This is Grishin Simeon
+Hola Scala! This is Grishin Simeon
+Guten tag Scala! This is Grishin Simeon
+
+scala> for (helloItem <- helloArray) hello(helloItem, name.reverse)
+Hello Scala! This is noemiS nihsirG
+Hola Scala! This is noemiS nihsirG
+Guten tag Scala! This is noemiS nihsirG
