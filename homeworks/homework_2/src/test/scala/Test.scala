@@ -53,6 +53,20 @@ object Test extends TestSuite {
         1 + math.sqrt(2) / 2
       )
     }
+    'test_sortByHeavyweight - {
+      assert(sortByHeavyweight(Map()) == Seq())
+      assert(sortByHeavyweight(Map("a" -> (1, 1), "b" -> (1, 2))) == Seq("a", "b"))
+      assert(sortByHeavyweight(Map("b" -> (1, 2), "a" -> (1, 1))) == Seq("a", "b"))
+      assert(sortByHeavyweight(Map("a" -> (1, 1), "b" -> (2, 1))) == Seq("a", "b"))
+      assert(sortByHeavyweight(Map("a" -> (3, 1), "b" -> (1, 2), "c" -> (1, 1))) == Seq("c", "b", "a"))
+      assert(sortByHeavyweight() == Seq(
+        "Sodium", "Lithium", "Tin", "Aluminum",
+        "Potassium", "Calcium", "Cesium", "Magnesium",
+        "Nickel", "Silver", "Zirconium", "Titanium",
+        "Platinum", "Chrome", "Lead", "Iron",
+        "Graphite", "Copper", "Cobalt", "Uranium",
+        "Gold", "Tungsten", "Plutonium"))
+    }
   }
 
   private def assertDoubles(n1: Double, n2: Double): Unit = {
