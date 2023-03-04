@@ -25,6 +25,8 @@ object Test extends TestSuite {
       assert(sumOfDivBy3Or5(0, 100) == 2418)
     }
     'test_primeFactor - {
+      assert(primeFactor(-98) == Seq())
+      assert(primeFactor(-1) == Seq())
       assert(primeFactor(0) == Seq())
       assert(primeFactor(1) == Seq())
       assert(primeFactor(2) == Seq(2))

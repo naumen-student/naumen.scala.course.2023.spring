@@ -26,7 +26,7 @@ object Exercises {
   Число 98 можно разложить на множители 1 * 2 * 7 * 7, результат выполнения функции => Seq(2, 7).*/
   /*Реализовать юнит-тесты в src/test/scala для данной функции.*/
   def primeFactor(number: Int): Seq[Int] = {
-    if (number == 0 || number == 1) return Seq()
+    if (number <= 1) return Seq()
 
     (2 to math.sqrt(number).toInt).find(i => number % i == 0)
     match {
