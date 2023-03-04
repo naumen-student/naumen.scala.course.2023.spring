@@ -1,0 +1,85 @@
+PS C:\Users\Ivant\IdeaProjects\naumen_scala_urfu_2023\naumen.scala.course.2023.spring> scala
+Welcome to Scala 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 19.0.1).
+Type in expressions for evaluation. Or try :help.
+
+scala> println("Ni hao")
+Ni hao
+
+scala> println("Hello Scala! This is Ivan")
+Hello Scala! This is Ivan
+
+scala> val name = Ivan Tyagunov
+<console>:11: error: not found: value Ivan
+       val name = Ivan Tyagunov
+                  ^
+<console>:11: warning: postfix operator Tyagunov should be enabled
+by making the implicit value scala.language.postfixOps visible.
+This can be achieved by adding the import clause 'import scala.language.postfixOps'
+or by setting the compiler option -language:postfixOps.
+See the Scaladoc for value scala.language.postfixOps for a discussion
+why the feature should be explicitly enabled.
+       val name = Ivan Tyagunov
+                       ^
+
+scala> val name = "Ivan Tyagunov"
+name: String = Ivan Tyagunov
+
+scala> val small_turple = ("Hello","Hola","Guten tag")
+small_turple: (String, String, String) = (Hello,Hola,Guten tag)
+
+scala> val phrase = " Scala! This is "
+phrase: String = " Scala! This is "
+
+scala> println(small_turple(1) + phrase + name)
+<console>:15: error: (String, String, String) does not take parameters
+       println(small_turple(1) + phrase + name)
+                           ^
+
+scala> println(small_turple)
+(Hello,Hola,Guten tag)
+
+scala> small_turple.getClass
+res4: Class[_ <: (String, String, String)] = class scala.Tuple3
+
+scala> small_turple(0)
+<console>:13: error: (String, String, String) does not take parameters
+       small_turple(0)
+                   ^
+
+scala> small_turple.0
+<console>:1: error: ';' expected but double literal found.
+       small_turple.0
+                   ^
+
+scala> small_turple[0]
+<console>:1: error: identifier expected but integer literal found.
+       small_turple[0]
+                    ^
+
+scala> small_turple._1
+res6: String = Hello
+
+scala> for (elem <- small_turple) println(elem + phrase + name)
+<console>:15: error: value foreach is not a member of (String, String, String)
+       for (elem <- small_turple) println(elem + phrase + name)
+                    ^
+
+scala> val new_seq = Seq["Hello","Hola","Guten tag"]
+<console>:1: error: identifier expected but string literal found.
+       val new_seq = Seq["Hello","Hola","Guten tag"]
+                         ^
+
+scala> val new_seq = Seq("Hello","Hola","Guten tag")
+new_seq: Seq[String] = List(Hello, Hola, Guten tag)
+
+scala> for (elem <- new_seq) println(elem + phrase + name)
+Hello Scala! This is Ivan Tyagunov
+Hola Scala! This is Ivan Tyagunov
+Guten tag Scala! This is Ivan Tyagunov
+
+scala> for (elem <- new_seq) println(elem + phrase + name.reverse)
+Hello Scala! This is vonugayT navI
+Hola Scala! This is vonugayT navI
+Guten tag Scala! This is vonugayT navI
+
+scala>
