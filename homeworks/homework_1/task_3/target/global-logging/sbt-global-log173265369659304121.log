@@ -1,0 +1,19 @@
+[debug] > Exec(~run, None, None)
+[info] sbt server started at local:sbt-server-7b13719e364688c9f7ee
+[debug] Writing bsp connection file
+[info] started sbt server
+[debug] > Exec(__runWatch console0, None, None)
+[debug] > Exec(sbtStashOnFailure, None, None)
+[debug] > Exec(__preWatch console0, None, None)
+[debug] > Exec(run, None, None)
+[debug] Evaluating tasks: Compile / run
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[info] compiling 1 Scala source to D:\Clases en línea\Scala\ДЗ\DZ1_Project\target\scala-2.13\classes ...
+[info] Non-compiled module 'compiler-bridge_2.13' for Scala 2.13.10. Compiling...
+[info]   Compilation completed in 5.603s.
+[info] done compiling
+[success] Total time: 7 s, completed 04.03.2023 21:45:47
+[debug] > Exec(resumeFromFailure, None, None)
+[debug] > Exec(sbtPopOnFailure, None, None)
+[debug] > Exec(__postWatch console0, None, None)
+[debug] > Exec(__waitWatch console0, None, None)

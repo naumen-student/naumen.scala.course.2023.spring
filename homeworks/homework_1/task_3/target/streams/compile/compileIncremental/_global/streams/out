@@ -1,0 +1,57 @@
+[debug] [zinc] IncrementalCompile -----------
+[debug] IncrementalCompile.incrementalCompile
+[debug] previous = Stamps for: 0 products, 0 sources, 0 libraries
+[debug] current source = Set(${BASE}/src/main/scala/Main.scala)
+[debug] > initialChanges = InitialChanges(Changes(added = Set(${BASE}/src/main/scala/Main.scala), removed = Set(), changed = Set(), unmodified = ...),Set(),Set(),API Changes: Set())
+[debug] Full compilation, no sources in previous analysis.
+[debug] all 1 sources are invalidated
+[debug] Initial set of included nodes: 
+[debug] Recompiling all sources: number of invalidated sources > 50.0 percent of all sources
+[debug] compilation cycle 1
+[info] compiling 1 Scala source to D:\Clases en línea\Scala\ДЗ\DZ1_Project\target\scala-2.13\classes ...
+[debug] Getting org.scala-sbt:compiler-bridge_2.13:1.8.0:compile for Scala 2.13.10
+[info] Non-compiled module 'compiler-bridge_2.13' for Scala 2.13.10. Compiling...
+[debug] Creating plain compiler interface for 2.13.10.
+[debug]   > Arguments: 
+[debug] 	-d
+[debug] 	C:\Users\djver\AppData\Local\Temp\sbt_a69b0ad1
+[debug] 	-nowarn
+[debug] 	-bootclasspath
+[debug] 	C:\Program Files\Eclipse Foundation\jdk-8.0.302.8-hotspot\jre\lib\resources.jar;C:\Program Files\Eclipse Foundation\jdk-8.0.302.8-hotspot\jre\lib\rt.jar;C:\Program Files\Eclipse Foundation\jdk-8.0.302.8-hotspot\jre\lib\sunrsasign.jar;C:\Program Files\Eclipse Foundation\jdk-8.0.302.8-hotspot\jre\lib\jsse.jar;C:\Program Files\Eclipse Foundation\jdk-8.0.302.8-hotspot\jre\lib\jce.jar;C:\Program Files\Eclipse Foundation\jdk-8.0.302.8-hotspot\jre\lib\charsets.jar;C:\Program Files\Eclipse Foundation\jdk-8.0.302.8-hotspot\jre\lib\jfr.jar;C:\Program Files\Eclipse Foundation\jdk-8.0.302.8-hotspot\jre\classes;C:\Users\djver\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\org\scala-lang\scala-library\2.13.10\scala-library-2.13.10.jar
+[debug] 	-classpath
+[debug] 	C:\Users\djver\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\org\scala-sbt\compiler-interface\1.8.0\compiler-interface-1.8.0.jar;C:\Users\djver\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\org\scala-sbt\util-interface\1.8.0\util-interface-1.8.0.jar;C:\Users\djver\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\org\scala-sbt\compiler-bridge_2.13\1.8.0\compiler-bridge_2.13-1.8.0-sources.jar;C:\Users\djver\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\org\scala-lang\scala-compiler\2.13.10\scala-compiler-2.13.10.jar;C:\Users\djver\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\org\scala-lang\scala-reflect\2.13.10\scala-reflect-2.13.10.jar;C:\Users\djver\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\io\github\java-diff-utils\java-diff-utils\4.12\java-diff-utils-4.12.jar;C:\Users\djver\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\org\jline\jline\3.21.0\jline-3.21.0.jar;C:\Users\djver\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\net\java\dev\jna\jna\5.9.0\jna-5.9.0.jar
+[debug] 	C:\Users\djver\AppData\Local\Temp\sbt_9c2ebb4b\scala\ZincCompat.scala
+[debug] 	C:\Users\djver\AppData\Local\Temp\sbt_9c2ebb4b\xsbt\API.scala
+[debug] 	C:\Users\djver\AppData\Local\Temp\sbt_9c2ebb4b\xsbt\AbstractZincFile.scala
+[debug] 	C:\Users\djver\AppData\Local\Temp\sbt_9c2ebb4b\xsbt\Analyzer.scala
+[debug] 	C:\Users\djver\AppData\Local\Temp\sbt_9c2ebb4b\xsbt\CallbackGlobal.scala
+[debug] 	C:\Users\djver\AppData\Local\Temp\sbt_9c2ebb4b\xsbt\ClassName.scala
+[debug] 	C:\Users\djver\AppData\Local\Temp\sbt_9c2ebb4b\xsbt\Compat.scala
+[debug] 	C:\Users\djver\AppData\Local\Temp\sbt_9c2ebb4b\xsbt\CompilerBridge.scala
+[debug] 	C:\Users\djver\AppData\Local\Temp\sbt_9c2ebb4b\xsbt\ConsoleBridge.scala
+[debug] 	C:\Users\djver\AppData\Local\Temp\sbt_9c2ebb4b\xsbt\DelegatingReporter.scala
+[debug] 	C:\Users\djver\AppData\Local\Temp\sbt_9c2ebb4b\xsbt\Dependency.scala
+[debug] 	C:\Users\djver\AppData\Local\Temp\sbt_9c2ebb4b\xsbt\ExtractAPI.scala
+[debug] 	C:\Users\djver\AppData\Local\Temp\sbt_9c2ebb4b\xsbt\ExtractUsedNames.scala
+[debug] 	C:\Users\djver\AppData\Local\Temp\sbt_9c2ebb4b\xsbt\GlobalHelpers.scala
+[debug] 	C:\Users\djver\AppData\Local\Temp\sbt_9c2ebb4b\xsbt\InteractiveConsoleBridge.scala
+[debug] 	C:\Users\djver\AppData\Local\Temp\sbt_9c2ebb4b\xsbt\InteractiveConsoleFactoryBridge.scala
+[debug] 	C:\Users\djver\AppData\Local\Temp\sbt_9c2ebb4b\xsbt\InteractiveConsoleHelper.scala
+[debug] 	C:\Users\djver\AppData\Local\Temp\sbt_9c2ebb4b\xsbt\InteractiveConsoleResponse.scala
+[debug] 	C:\Users\djver\AppData\Local\Temp\sbt_9c2ebb4b\xsbt\JarUtils.scala
+[debug] 	C:\Users\djver\AppData\Local\Temp\sbt_9c2ebb4b\xsbt\JavaUtils.scala
+[debug] 	C:\Users\djver\AppData\Local\Temp\sbt_9c2ebb4b\xsbt\LocalToNonLocalClass.scala
+[debug] 	C:\Users\djver\AppData\Local\Temp\sbt_9c2ebb4b\xsbt\LocateClassFile.scala
+[debug] 	C:\Users\djver\AppData\Local\Temp\sbt_9c2ebb4b\xsbt\Log.scala
+[debug] 	C:\Users\djver\AppData\Local\Temp\sbt_9c2ebb4b\xsbt\Message.scala
+[debug] 	C:\Users\djver\AppData\Local\Temp\sbt_9c2ebb4b\xsbt\ScaladocBridge.scala
+[debug]       
+[info]   Compilation completed in 5.603s.
+[debug] [zinc] Running cached compiler 2dd2dc0e for Scala compiler version 2.13.10
+[debug] [zinc] The Scala compiler is invoked with:
+[debug] 	-bootclasspath
+[debug] 	C:\Program Files\Eclipse Foundation\jdk-8.0.302.8-hotspot\jre\lib\resources.jar;C:\Program Files\Eclipse Foundation\jdk-8.0.302.8-hotspot\jre\lib\rt.jar;C:\Program Files\Eclipse Foundation\jdk-8.0.302.8-hotspot\jre\lib\sunrsasign.jar;C:\Program Files\Eclipse Foundation\jdk-8.0.302.8-hotspot\jre\lib\jsse.jar;C:\Program Files\Eclipse Foundation\jdk-8.0.302.8-hotspot\jre\lib\jce.jar;C:\Program Files\Eclipse Foundation\jdk-8.0.302.8-hotspot\jre\lib\charsets.jar;C:\Program Files\Eclipse Foundation\jdk-8.0.302.8-hotspot\jre\lib\jfr.jar;C:\Program Files\Eclipse Foundation\jdk-8.0.302.8-hotspot\jre\classes;C:\Users\djver\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\org\scala-lang\scala-library\2.13.10\scala-library-2.13.10.jar
+[debug] 	-classpath
+[debug] 	D:\Clases en línea\Scala\ДЗ\DZ1_Project\target\scala-2.13\classes
+[debug] Scala compilation took 6.873042 s
+[info] done compiling

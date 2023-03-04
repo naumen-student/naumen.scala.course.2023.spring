@@ -1,0 +1,26 @@
+C:\Users\djver>scala
+Welcome to Scala 2.12.10 (Java HotSpot(TM) Client VM, Java 1.8.0_361).
+Type in expressions for evaluation. Or try :help.
+
+scala> val name = "James Dylan"
+name: String = James Dylan
+
+scala> println("Hello Scala! This is " + name)
+Hello Scala! This is James Dylan
+
+scala> println("Hola Scala! This is " + name)
+Hola Scala! This is James Dylan
+
+scala> println("Salut Scala! This is " + name)
+Salut Scala! This is James Dylan
+
+scala> println("Hello Scala! This is " + name.reverse)
+Hello Scala! This is nalyD semaJ
+
+scala> println("Hola Scala! This is " + name.reverse)
+Hola Scala! This is nalyD semaJ
+
+scala> println("Salut Scala! This is " + name.reverse)
+Salut Scala! This is nalyD semaJ
+
+scala>
