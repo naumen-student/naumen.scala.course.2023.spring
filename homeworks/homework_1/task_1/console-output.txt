@@ -1,0 +1,24 @@
+C:\Users\Никита>scala
+Welcome to Scala 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_361).
+Type in expressions for evaluation. Or try :help.
+
+scala> val name:String = "Nikita"
+name: String = Nikita
+                                    
+scala> println(f"Hello Scala! This is $name")
+Hello Scala! This is Nikita
+
+scala> val greetings = Array("Guten tag","Hola","Hi")
+greetings: Array[String] = Array(Guten tag, Hola, Hi)
+
+scala> greetings.foreach(word => println(f"$word Scala! This is $name"))
+Guten tag Scala! This is Nikita
+Hola Scala! This is Nikita
+Hi Scala! This is Nikita
+
+scala> greetings.foreach(word => println(f"$word Scala! This is ${name.reverse}"))
+Guten tag Scala! This is atikiN
+Hola Scala! This is atikiN
+Hi Scala! This is atikiN
+
+scala>
