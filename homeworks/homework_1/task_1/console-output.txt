@@ -1,0 +1,41 @@
+Welcome to Scala 3.2.2 (11.0.12, Java OpenJDK 64-Bit Server VM).
+Type in expressions for evaluation. Or try :help.
+
+scala> val greeting: String = "Hello Scala! This is Ilya Zenkov"
+val greeting: String = Hello Scala! This is Ilya Zenkov
+
+scala> println(greeting)
+Hello Scala! This is Ilya Zenkov
+
+scala> def multipleHello(name: String, repeatCount: Int) = {
+     | for (i <- 0 to repeatCount)
+     | println(s"Hello Scala! This is $name")
+     | }
+def multipleHello(name: String, repeatCount: Int): Unit
+
+scala> multipleHello("Ilya", 5)
+Hello Scala! This is Ilya
+Hello Scala! This is Ilya
+Hello Scala! This is Ilya
+Hello Scala! This is Ilya
+Hello Scala! This is Ilya
+Hello Scala! This is Ilya
+
+scala> def multipleHello(greeting: String, name: String, repeatCount: Int) = {
+     | for (i <- 0 to repeatCount)
+     | println(s"$greeting Scala! This is $name")
+     | }
+def multipleHello(greeting: String, name: String, repeatCount: Int): Unit
+
+scala> multipleHello("Hola","Ilya", 1)
+Hola Scala! This is Ilya
+Hola Scala! This is Ilya
+
+scala> multipleHello("Guten tag","Ilya", 0)
+Guten tag Scala! This is Ilya
+
+scala> multipleHello("Guten tag","Ilya", 0)
+Guten tag Scala! This is Ilya
+
+scala> multipleHello("Guten tag","Ilya".reverse, 0)
+Guten tag Scala! This is aylI
