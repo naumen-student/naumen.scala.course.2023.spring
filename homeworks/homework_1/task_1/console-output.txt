@@ -1,0 +1,47 @@
+C:\Users\Lansk>scala
+Welcome to Scala 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_351).
+Type in expressions for evaluation. Or try :help.
+
+scala> val name = "Mikhail Lanskikh"
+name: String = Mikhail Lanskikh
+
+scala> val e = "Hello Scala! This is " + name
+e: String = Hello Scala! This is Mikhail Lanskikh
+
+scala> println(e)
+Hello Scala! This is Mikhail Lanskikh
+
+scala> val s = e.replace("Hello", "Hola")
+s: String = Hola Scala! This is Mikhail Lanskikh
+
+scala> println(s)
+Hola Scala! This is Mikhail Lanskikh
+
+scala> val g = e.replace("Hello", "Guten tag")
+g: String = Guten tag Scala! This is Mikhail Lanskikh
+
+scala> println(g)
+Guten tag Scala! This is Mikhail Lanskikh
+
+scala> def reverseName(str: String, name: String): String = str.replace(name, name.reverse)
+reverseName: (str: String, name: String)String
+
+scala> val eReversed = reverseName(e, name)
+eReversed: String = Hello Scala! This is hkiksnaL liahkiM
+
+scala> println(eReversed)
+Hello Scala! This is hkiksnaL liahkiM
+
+scala> val sReversed = reverseName(s, name)
+sReversed: String = Hola Scala! This is hkiksnaL liahkiM
+
+scala> println(sReversed)
+Hola Scala! This is hkiksnaL liahkiM
+
+scala> val gReversed = reverseName(g, name)
+gReversed: String = Guten tag Scala! This is hkiksnaL liahkiM
+
+scala> println(gReversed)
+Guten tag Scala! This is hkiksnaL liahkiM
+
+scala>
