@@ -1,0 +1,39 @@
+C:\Users\arsen>scala
+Welcome to Scala 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_301).
+Type in expressions for evaluation. Or try :help.
+
+scala> var name = "Arsen Huranov"
+name: String = Arsen Huranov
+
+scala> var hello1 = "Hello"
+hello1: String = Hello
+
+scala> var hello2 = "Guten tag"
+hello2: String = Guten tag
+
+scala> var hello3 = "Hola"
+hello3: String = Hola
+
+scala> var message = " Scala! This is "
+message: String = " Scala! This is "
+
+scala> println(hello1+message+name)
+Hello Scala! This is Arsen Huranov
+
+scala> println(hello2+message+name)
+Guten tag Scala! This is Arsen Huranov
+
+scala> println(hello3+message+name)
+Hola Scala! This is Arsen Huranov
+
+scala> var reversename = name.reverse
+reversename: String = vonaruH nesrA
+
+scala> println(hello1+message+reversename)
+Hello Scala! This is vonaruH nesrA
+
+scala> println(hello2+message+reversename)
+Guten tag Scala! This is vonaruH nesrA
+
+scala> println(hello3+message+reversename)
+Hola Scala! This is vonaruH nesrA
