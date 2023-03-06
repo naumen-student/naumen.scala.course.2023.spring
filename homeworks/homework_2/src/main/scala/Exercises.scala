@@ -90,7 +90,7 @@ object Exercises {
         )
 
     def sortByHeavyweight(ballsArray: Map[String, (Int, Double)] = balls): Seq[String] = {
-        ballsArray.map(e => (e._1, e._2._1, e._2._2)).toArray.sortBy(e => java.lang.Math.PI * e._2 * e._2 * e._3).map(e => e._1)
+        ballsArray.map(e => (e._1, e._2._1, e._2._2)).toArray.sortBy(e => 4 * java.lang.Math.PI / 3 * e._2 * e._2 * e._2 * e._3).map(e => e._1)
     }
 
 }

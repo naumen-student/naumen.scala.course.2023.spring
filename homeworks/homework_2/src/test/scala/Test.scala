@@ -40,7 +40,7 @@ object Test extends TestSuite{
             assert(Exercises.sumCosines(Exercises.Vector2D(100500, 100500), Exercises.Vector2D(-1, -1), Exercises.Vector2D(123456789, 123456789), Exercises.Vector2D(2, 3)) == -0.019419324309079555)
         }
         'test_sortByHeavyweight - {
-            assert(Exercises.sortByHeavyweight(Exercises.balls) == Seq("Tin", "Platinum", "Aluminum", "Sodium", "Nickel", "Titanium", "Lead", "Zirconium", "Chrome", "Iron", "Silver", "Uranium", "Lithium", "Gold", "Tungsten", "Copper", "Cesium", "Calcium", "Cobalt", "Potassium", "Plutonium", "Magnesium", "Graphite"))
+            assert(Exercises.sortByHeavyweight(Exercises.balls) == Seq("Tin", "Platinum", "Nickel", "Aluminum", "Titanium", "Lead", "Sodium", "Uranium", "Gold", "Tungsten", "Zirconium", "Chrome", "Iron", "Copper", "Silver", "Plutonium", "Cobalt", "Cesium", "Calcium", "Lithium", "Magnesium", "Potassium", "Graphite"))
         }
     }
 }
