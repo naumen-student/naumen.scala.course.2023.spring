@@ -1,0 +1,24 @@
+(base) pavelpetrovskij@MacBook-Air-Pavel ~ % amm
+Loading...
+Welcome to the Ammonite Repl 3.0.0-M0-3-c2d1e706 (Scala 3.2.2 Java 1.8.0_292)
+@ val name = "Pavel" 
+name: String = "Pavel"
+
+@ val surname = "Petrovskiy" 
+surname: String = "Petrovskiy"
+
+@ println("Hello Scala! This is " + name + " " + surname) 
+Hello Scala! This is Pavel Petrovskiy
+
+
+@ val greetings = Array("Hello", "Hola", "Guten tag") 
+greetings: Array[String] = Array("Hello", "Hola", "Guten tag")
+
+@ 
+for (greet <- greetings) println(greet + " Scala! This is " + name + " " + surname) 
+Hello Scala! This is Pavel Petrovskiy
+Hola Scala! This is Pavel Petrovskiy
+Guten tag Scala! This is Pavel Petrovskiy
+
+
+@  

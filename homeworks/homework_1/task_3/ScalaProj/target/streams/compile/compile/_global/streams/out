@@ -1,0 +1,6 @@
+[0m[[0m[0mdebug[0m] [0m[0mAcquiring lock on file /Users/pavelpetrovskij/IdeaProjects/ScalaProj/project/target/.sbt-compilation-infos/root-compile/.sbt-idea-lock ...[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/pavelpetrovskij/IdeaProjects/ScalaProj/src/main/scala/example/Main.scala:16:1: not found: value tas[0m
+[0m[[0m[31merror[0m] [0m[0mtas[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[0mdebug[0m] [0m[0mReleasing lock on file /Users/pavelpetrovskij/IdeaProjects/ScalaProj/project/target/.sbt-compilation-infos/root-compile/.sbt-idea-lock.[0m
