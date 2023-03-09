@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Базовые концепции Scala</title>
+
+    <meta name="description" content="Базовые концепции Scala">
+    <meta name="author" content="Дмитрий Быков">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/white.css" id="theme">
+    <link rel="stylesheet" href="css/hljs/vs.css" id="highlight-theme">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+    <div class="reveal lecture3">
+        <div class="footer">
+            <span class="corp-name" style="text-align: center"><b>NAUMEN </b></span>Дмитрий Быков
+        </div>
+
+        <div class="slides">
+            <section alig>
+                <h2>Базовые концепции Scala</h2>
+            </section>
+        </div>
+
+        <div class="slides">
+            <section>
+                <h1>0. ФП и ООП</h1>
+            </section>
+            <section>
+                Каждое значение - это объект.
+                <div class="code-block">
+                    <pre>
+                        <span class="keyword">trait</span> RestClient {
+                            <span class="keyword">val</span> serviceHost: <span class="type">String</span>
+                        }
+
+                        <span class="keyword">class</span> RestClientImpl <span class="keyword">extends</span> RestClient {
+                            override <span class="keyword">val</span> serviceHost: <span class="type">String</span> = <span class="string">"192.168.1.1"</span>
+                        }
+                    </pre>                    
+                </div>
+                Каждая функция - это значение.
+                <div class="code-block">
+                    <pre>
+                        responseResult.map(result => <span class="keyword">println</span>(result))
+                        
+
+                        <span class="keyword">def</span> getResponse(sortFromString: String => ColumnSorting[sortType])
+                    </pre>
+                </div>
+            </section>
+
+            <section>
+                <h1>I. Выражения (expressions)</h1>
+            </section>
+            <section>
+                Выражение - это вычислимое утверждение:
+                <div class="code-block">
+                    <pre>
+                        <span class="number">25</span> + <span class="number">15</span>
+                    </pre>
+                </div>
+                Результат вычислений можно вывести при помощи println:
+                <div class="code-block">
+                    <pre>
+                        println(<span class="number">25</span>) <span class="comment">                  // 25</span>
+                        println(<span class="number">25</span> + <span class="number">15</span>) <span class="comment">             // 40</span>
+                        println(<span class="string">"Hello!"</span>) <span class="comment">            // Hello!</span>
+                        println(<span class="string">"Hello,"</span> + <span class="string">" world!"</span>) <span class="comment">// Hello, world!</span>
+                    </pre>
+                </div>
+            </section>
+            <section>
+                Объявление значений (values):
+                <div class="code-block">
+                    <pre>
+                        <span class="keyword">val</span> x = <span class="number">1</span> + <span class="number">1</span>
+                        println(x) <span class="comment">// 2</span>
+
+                        x = <span class="number">3</span> <span class="comment">// не компилируется</span>
+
+                        <span class="keyword">val</span> y: <span class="type">Int</span> = <span class="number">41</span> - <span class="number">1</span>
+                    </pre>
+                </div>
+                Объявление переменных (variables):
+                <div class="code-block">
+                    <pre>
+                        <span class="keyword">var</span> x = <span class="number">1</span> + <span class="number">1</span>
+                        x = <span class="number">3</span> <span class="comment">// компилируется</span>
+                    </pre>
+                </div>
+            </section>
+            <section>
+                <h1>II. Функции (functions) и методы (methods)</h1>
+            </section>
+            <section>
+                Объявление функции:
+                <div class="code-block">
+                    <pre>
+                        (x: <span class="type">Int</span>) => x + <span class="number">1</span> <span class="comment">// анонимная функция</span>
+
+                        <span class="keyword">val</span> add = (x: <span class="type">Int</span>, y: <span class="type">Int</span>) => x + y
+                        println(add(<span class="number">1</span>, <span class="number">2</span>)) <span class="comment">// 3</span>
+
+                        <span class="keyword">val</span> getTheAnswer = () => <span class="number">42</span>
+                        println(getTheAnswer()) <span class="comment">// 42</span>
+                    </pre>
+                </div>
+            </section>
+            <section>
+                Объявление метода:
+                <div class="code-block">
+                    <pre>
+                        <span class="keyword">def</span> doubleSum(x: <span class="type">Int</span>, y: <span class="type">Int</span>): <span class="type">Int</span> = {
+                            <span class="keyword">val</span> z = x + y
+                            z * <span class="number">2</span>
+                        }
+                        println(doubleSum(<span class="number">1</span>, <span class="number">2</span>)) <span class="comment">// 6</span>
+                    </pre>
+                </div>
+                Значения по умолчанию:
+                <div class="code-block">
+                    <pre>
+                        <span class="keyword">def</span> sum(x: <span class="type">Int</span>, y: <span class="type">Int</span> = <span class="number">11</span>): <span class="type">Int</span> = x + y
+                        println(sum(<span class="number">4</span>)) <span class="comment">   // out: 15</span>
+                        println(sum(<span class="number">2</span>, <span class="number">3</span>)) <span class="comment">// out: 5</span>
+                    </pre>
+                </div>
+                Именованные аргументы:
+                <div class="code-block">
+                    <pre>
+                        <span class="keyword">def</span> fourWords(w0: <span class="type">String</span> = <span class="string">"zero"</span>,
+                                      w1: <span class="type">String</span> = <span class="string">"one"</span>,
+                                      w2: <span class="type">String</span> = <span class="string">"two"</span>,
+                                      w3: <span class="type">String</span> = <span class="string">"three"</span>): <span class="type">Unit</span> =
+                            println(s<span class="string">"$w0 $w1 $w2 $w3"</span>)
+
+                        fourWords(w3 = <span class="string">"3"</span>, w1 = <span class="string">"1"</span>) <span class="comment">// out: zero 1 two 3</span>
+                    </pre>
+                </div>
+            </section>
+            <section>
+                <h1>III. Условное выражение (if expression)</h1>
+            </section>
+            <section>
+                Синтакисис аналогичен Java/C#/C++:
+                <div class="code-block">
+                    <pre>
+                        <span class="keyword">if</span> (a == b) doSomething()
+
+                        <span class="keyword">if</span> (trueOrFalse) {
+                            doSomething()
+                        } <span class="keyword">else if</span> (a != b) {
+                            doSomethingElse()
+                        } <span class="keyword">else</span> {
+                            doAnotherThing()
+                        }
+                    </pre>
+                </div>
+                Результат можно сохранить:
+                <div class="code-block">
+                    <pre>
+                        <span class="keyword">val</span> minValue = <span class="keyword">if</span> (a < b) a <span class="keyword">else</span> b
+                    </pre>
+                </div>
+            </section>
+            <section>
+                <h1>IV. Циклы (for loops)</h1>
+            </section>
+            <section>
+                Перебор элементов в коллекции:
+                <div class="code-block">
+                    <pre>
+                        <span class="keyword">val</span> strings = <span class="class">Seq</span>(<span class="string">"A"</span>, <span class="string">"B"</span>)
+                        <span class="keyword">val</span> numbers = <span class="class">Seq</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)
+
+                        <span class="keyword">for</span> (str <- strings) print(s<span class="string">"$str; "</span>) <span class="comment">// out: A; B;</span>
+
+                        <span class="keyword">for</span> (num <- numbers) print(s<span class="string">"$num; "</span>) <span class="comment">// out: 1; 2; 3;</span>
+                    </pre>
+                </div>
+                Для классов коллекций также доступен foreach:
+                <div class="code-block">
+                    <pre>
+                        <span class="keyword">val</span> cars = <span class="class">Seq</span>(<span class="string">"Mercedes"</span>, <span class="string">"BMW"</span>, <span class="string">"Cadillac"</span>)
+                        cars.foreach(println) <span class="comment">// out: Mercedes BMW Cadillac</span>
+
+                        <span class="comment">// car => println(car)</span>
+                    </pre>
+                </div>
+            </section>
+            <section>
+                Использование генераторов в циклах for:
+                <div class="code-block">
+                    <pre>
+                        <span class="keyword">for</span> (i <- <span class="number">1</span> to <span class="number">5</span>) print(s<span class="string">"$i; "</span>) <span class="comment">// out: 1; 2; 3; 4; 5;</span>
+
+                        <span class="keyword">for</span> (i <- <span class="number">1</span> until <span class="number">5</span>) print(s<span class="string">"$i; "</span>) <span class="comment">// out: 1; 2; 3; 4;</span>
+                    </pre>
+                </div>
+                Использование for для Map:
+                <div class="code-block">
+                    <pre>
+                        <span class="keyword">val</span> ingredients = <span class="class">Map</span>(
+                            <span class="string">"sugar"</span>  -> <span class="number">30</span>,
+                            <span class="string">"salt"</span>   -> <span class="number">5</span>,
+                            <span class="string">"pepper"</span> -> <span class="number">10</span>
+                        )
+
+                        <span class="keyword">for</span> ((title, amount) <- ingredients)
+                            println(s<span class="string">"ing $title: ${amount}g"</span>) <span class="comment">// out: ing sugar: 30g ing salt: 5g ing pepper: 10g</span>
+                    </pre>
+                </div>
+            </section>
+            <section>
+                Использование "гардов" (guards) в for-выражениях (for comprehensions):
+                <div class="code-block">
+                    <pre>
+                        <span class="keyword">for</span> { i <- <span class="number">1</span> to <span class="number">5</span>
+                              <span class="keyword">if</span> (i % <span class="number">2</span> == <span class="number">0</span>)
+                        } print(s<span class="string">"i; "</span>) <span class="comment">// out: 2; 4;</span>
+
+                        <span class="keyword">for</span> { i <- <span class="number">1</span> to <span class="number">5</span>
+                              <span class="keyword">if</span> (i % <span class="number">2</span> == <span class="number">0</span>)
+                              <span class="keyword">if</span> (i > <span class="number">2</span>)
+                        } print(s<span class="string">"$i; "</span>) <span class="comment">// out: 4;</span>
+                    </pre>
+                </div>
+                Конструкция for-yield в for-выражениях:
+                <div class="code-block">
+                    <pre>
+                        <span class="comment">// for (enumerators) yield e</span>
+                        <span class="keyword">val</span> strings = <span class="class">List</span>(<span class="string">"A"</span>, <span class="string">"B"</span>)
+
+                        <span class="keyword">val</span> res =
+                        <span class="keyword">for</span> { i <- <span class="number">1</span> to <span class="number">5</span>
+                              <span class="keyword">if</span> (i % <span class="number">2</span>) == 0
+                              str <- strings
+                        } <span class="keyword">yield</span> s<span class="string">"$str$i; "</span>
+
+                        res.foreach(print) <span class="comment">// out: A2; B2; A4; B4;</span>
+                    </pre>
+                </div>
+            </section>
+            <section>
+                <h1>V. Циклы (while/do-while)</h1>
+            </section>
+            <section>
+                Синтаксис циклов while и do-while:
+                <div class="code-block">
+                    <pre>
+                        <span class="keyword">var</span> i = <span class="number">0</span>
+                        <span class="keyword">while</span> (i < <span class="number">5</span>) {
+                            print(s<span class="string">"$i; "</span>)
+                            i += <span class="number">1</span>
+                        } <span class="comment">// out: 0; 1; 2; 3; 4;</span>
+
+                        <span class="keyword">var</span> j = <span class="number">2</span>
+                        <span class="keyword">do</span> {
+                            print(s<span class="string">"$j; "</span>)
+                            j -= <span class="number">1</span>
+                        } <span class="keyword">while</span> (j > <span class="number">0</span>) <span class="comment">// out: 2; 1;</span>
+                    </pre>
+                </div>
+                Возвращает тип Unit:
+                <div class="code-block">
+                    <pre>
+                        <span class="keyword">val</span> res =
+                            <span class="keyword">while</span> (i < <span class="number">5</span>) {
+                                someFunction(i)
+                                i += <span class="number">1</span>
+                            }
+                        print(res) <span class="comment">// out: ()</span>
+                    </pre>
+                </div>
+            </section>
+            <section>
+                <h1>VI. Функции и методы - продолжение</h1>
+            </section>
+            <section>
+                Функции высшего порядка:
+                <div class="code-block">
+                    <pre>
+                        <span class="keyword">def</span> getNumbers(): <span class="class">Seq</span>[<span class="type">Int</span>] = <span class="class">Seq</span>(<span class="number">11</span>, <span class="number">22</span>)
+
+                        <span class="keyword">def</span> oddOrEven(generator: () => <span class="class">Seq</span>[<span class="type">Int</span>], index: <span class="type">Int</span>): <span class="type">String</span> => <span class="type">String</span> = {
+                            <span class="keyword">def</span> sayOdd(str: <span class="type">String</span>) = s<span class="string">"$str is odd"</span>
+                            <span class="keyword">def</span> sayEven(str: <span class="type">String</span>) = s<span class="type">"$str is even"</span>
+
+                            <span class="keyword">val</span> numbers = generator()
+                            <span class="keyword">val</span> num = numbers(index)
+
+                            <span class="keyword">if</span> (num % <span class="number">2</span> == <span class="number">0</span>) sayEven <span class="keyword">else</span> sayOdd
+                        }
+
+                        println(oddOrEven(getNumbers, <span class="number">0</span>)(<span class="string">"That number"</span>)) <span class="comment">// out: That number is odd</span>
+                        println(oddOrEven(getNumbers, <span class="number">1</span>)(<span class="string">"And that"</span>)) <span class="comment">// out: And that is even</span>
+                    </pre>
+                </div>
+            </section>
+            <section>
+                Метод может принимать множественные списки параметров - каррирование (currying):
+                <div class="code-block">
+                    <pre>
+                        <span class="keyword">def</span> addThenMultiply(x: <span class="type">Int</span>, y: <span class="type">Int</span>)(multiplier: <span class="type">Int</span>): <span class="type">Int</span> = {
+                            <span class="keyword">val</span> sum = x + y
+                            sum * multiplier
+                        }
+                        println(addThenMultiply(<span class="number">1</span>, <span class="number">2</span>)(<span class="number">3</span>)) <span class="comment">// 9</span>
+
+                        <span class="keyword">def</span> updateOrder(newOrder: <span class="type">Order</span>)(<span class="keyword">implicit</span> ctx: <span class="type">Context</span>): <span class="type">Unit</span>
+                    </pre>
+                </div>
+            </section>
+            <section>
+                Call-by-value:
+                <div class="code-block">
+                <pre>
+                    <span class="keyword">def</span> callByValue(i: <span class="type">Int</span>): <span class="type">Unit</span> = {
+                        println(s<span class="string">"i => $i"</span>)
+                        println(s<span class="string">"ii => $i"</span>)
+                    }
+                    <span class="keyword">var</span> someInt = <span class="number">2</span>
+
+                    callByValue ({
+                        someInt += <span class="number">1</span>
+                        <span class="keyword">val</span> x = someInt * someInt
+                        x
+                    }) <span class="comment">// out: i => 9 ii => 9</span>
+                </pre>
+                </div>
+                Call-by-name:
+                <div class="code-block">
+                <pre>
+                    <span class="keyword">def</span> callByName(i: => <span class="type">Int</span>) = {
+                        println(s<span class="string">"i => $i"</span>)
+                        println(s<span class="string">"ii => $i"</span>)
+                    }
+                    <span class="keyword">var</span> someInt = 2
+
+                    callByName ({
+                        someInt += <span class="number">1</span>
+                        <span class="keyword">val</span> x = someInt * someInt
+                        x
+                    }) <span class="comment">// out: i => 9 ii => 16</span>
+                </pre>
+                </div>
+            </section>
+            <section>
+                <h1>VII. Операторы</h1>
+            </section>
+            <section>
+                Типы операторов:
+                <div class="code-block">
+                    <pre>
+                        +    -     *     /    %                                         // арифметические операторы
+                        ==   !=    >     <    >=                                        // операторы сравнения
+                        &&   ||    !                                                    // логические операторы
+                        &    |     ^     ~    <<    >>    >>>                           // битовые операторы
+                        =    +=    -=    *=    /=    %=    <<=    >>=    &=    ^=    |= // операторы присвоения
+                        ()   []    ,     ;                                              // прочие
+                    </pre>
+                </div>
+                Приоритет операторов (от высшего к низшему):
+                <img src="img/lecture_2/operators.png"/>
+            </section>
+            <section>
+                Инфиксное (infix) определение операторов:
+                <div class="code-block">
+                    <pre>
+                        <span class="keyword">val</span> sum = <span class="number">1</span> + <span class="number">2</span>.+(<span class="number">3</span>)
+                        print(sum) <span class="comment">// out: 6</span>
+
+                        <span class="keyword">val</span> mult = <span class="number">3</span>.*(<span class="number">2</span>) * <span class="number">2</span>
+                        print(mult) <span class="comment">// out: 12</span>
+                    </pre>
+                </div>
+                Создание операторов:
+                <div class="code-block">
+                    <pre>
+                        <span class="keyword">case class</span> <span class="class">Vector2D</span>(x: <span class="type">Double</span>, y: <span class="type">Double</span>) {
+                            <span class="keyword">def</span> * (vec2D: <span class="type">Vector2D</span>) = x * vec2D.x + y * vec2D.y <span class="comment">// скалярное произведение</span>
+                        }
+                        <span class="keyword">val</span> v = <span class="class">Vector2D</span>(<span class="number">1.0</span>, <span class="number">1.0</span>)
+                        <span class="keyword">val</span> mult = <span class="class">Vector2D</span>(<span class="number">-2.0</span>, <span class="number">3.0</span>) * v
+                        println(mult) <span class="comment">// out: 1.0</span>
+                    </pre>
+                </div>
+            </section>
+            <section>
+                <h1>VIII. Базовые типы</h1>
+            </section>
+            <section>
+                Базовые типы в Scala и тип String:
+                <img src="img/lecture_2/numeric-types.png"/>
+            </section>
+            <section>
+                Явное преобразование типов (toByte, toShort, toInt, toLong, toChar, toFloat, toDouble, toBoolean (у String)):
+                <div class="code-block">
+                    <pre>
+                        <span class="keyword">val</span> s1: <span class="type">Short</span> = <span class="number">127</span>
+                        <span class="keyword">val</span> s2: <span class="type">Short</span> = <span class="number">255</span>
+                        println(s1.toByte) <span class="comment">// out: 127</span>
+                        println(s2.toByte) <span class="comment">// out: -1</span>
+                    </pre>
+                </div>
+                Литералы:
+                <div class="code-block">
+                    <pre>
+                        <span class="keyword">val</span> hex = 0x<span class="number">7f</span>   <span class="comment">// hex integer</span>
+                        <span class="keyword">val</span> l = <span class="number">1000</span>L    <span class="comment">// l: Long</span>
+                        <span class="keyword">val</span> f = <span class="number">3.14</span>F    <span class="comment">// f: Float</span>
+                        <span class="keyword">val</span> ch = <span class="string">'A'</span>     <span class="comment">// ch: Char</span>
+                        <span class="keyword">val</span> str = <span class="string">"true"</span> <span class="comment">// str: String</span>
+                    </pre>
+                </div>
+            </section>
+        <section>
+            <h1>IX. Коллекции (введение)</h1>
+        </section>
+        <section>
+            Кортежи (Tuples):
+            <div class="code-block">
+                <pre>
+                    <span class="keyword">val</span> tup0 = <span class="class">Tuple2</span>(<span class="number">0</span>, <span class="string">"Zero"</span>)
+                    <span class="keyword">val</span> tup1 = <span class="class">Tuple3</span>(<span class="number">1.0</span>F, <span class="number">1</span>, <span class="string">"One"</span>)
+                    <span class="keyword">val</span> tup = (<span class="number">2.0</span>F, <span class="number">2</span>, <span class="string">"Two"</span>, tup0, tup1) <span class="comment">// tup: Tuple5(...)</span>
+
+                    println(tup._2) <span class="comment">// out: 2</span>
+
+                    <span class="keyword">val</span> (num, str) = tup0
+                    println(num) <span class="comment">// out: 0</span>
+                    println(str) <span class="comment">// out: Zero</span>
+
+                    <span class="keyword">val</span> users = <span class="class">List</span>((<span class="string">"Mike"</span>, <span class="number">19</span>), (<span class="string">"Joe"</span>, <span class="number">21</span>))
+                    <span class="keyword">for</span> ((name, age) <- users) {
+                        println(s<span class="string">"$name is $age years old"</span>)
+                    }
+
+                    users.foreach {
+                        <span class="keyword">case</span> (<span class="string">"Mike"</span>, age) => println(s<span class="string">"Mike is $age years old"</span>)
+                        <span class="keyword">case</span> _ => println(<span class="string">"unknown user"</span>)
+                    }
+                </pre>
+            </div>
+        </section>
+        <section>
+            Создание экземпляров списков (Lists):
+            <div class="code-block">
+                <pre>
+                    <span class="keyword">val</span> listInt = <span class="class">List</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)
+                    <span class="keyword">val</span> listStr: <span class="class">List</span>[<span class="type">String</span>] = <span class="class">List</span>(<span class="string">"One"</span>, <span class="string">"Two"</span>, <span class="string">"Three"</span>)
+                </pre>
+            </div>
+            Добавление элементов:
+            <div class="code-block">
+                <pre>
+                    <span class="keyword">val</span> listInt2 = <span class="number">0</span> +: listInt <span class="comment">// элемент в начало (prepend)</span>
+                    <span class="keyword">val</span> listInt3 = listInt :+ <span class="number">4</span> <span class="comment">// элемент в конец (append)</span>
+                    <span class="keyword">val</span> list4 = listInt2 ++ listInt3 <span class="comment">// объединение</span>
+                </pre>
+            </div>
+            Доступ к элементам:
+            <div class="code-block">
+                <pre>
+                    <span class="keyword">for</span> (el <- listStr) print(s<span class="string">"$el; "</span>) <span class="comment">// out: One; Two; Three;</span>
+                    <span class="keyword">for</span> (i <- <span class="number">1</span> to <span class="number">2</span>) print(s<span class="string">"${listInt(i)}; "</span>) <span class="comment">// out: 2; 3;</span>
+                    listInt(<span class="number">3</span>) <span class="comment">// java.lang.IndexOutOfBoundsException</span>
+                </pre>
+            </div>
+        </section>
+        <section>
+            Создание экземпляра ассоциативного массива (Maps):
+            <div class="code-block">
+                <pre>
+                    <span class="keyword">val</span> diameters = <span class="class">Map</span>(
+                        <span class="string">"Mercury"</span> -> <span class="number">4878</span>,
+                        (<span class="string">"Mars"</span>, <span class="number">6779</span>),
+                        <span class="string">"Earth"</span> -> <span class="number">12742</span>
+                    )
+                </pre>
+            </div>
+            Объединение ассоциативных массивов:
+            <div class="code-block">
+                <pre>
+                    <span class="keyword">val</span> moreDiameters = <span class="class">Map</span>(<span class="string">"Pluto"</span> -> 2302) ++ diameters
+                </pre>
+            </div>
+            Доступ к элементам:
+            <div class="code-block">
+                <pre>
+                    <span class="keyword">for</span> (d <- diameters) print(s<span class="string">"$d; "</span>) <span class="comment">// out: (Mercury,4878); (Mars,6779); (Earth,12742);</span>
+                        println(diameters(<span class="string">"Mars"</span>) <span class="comment">// out: 6779</span>
+
+                    diameters(<span class="string">"Sun"</span>) <span class="comment">// java.util.NoSuchElementException</span>
+                </pre>
+            </div>
+        </section>
+        <section>
+            Общие методы коллекций (map, filter, foreach, reduce etc.):
+            <div class="code-block">
+            <pre>
+                <span class="keyword">val</span> listInt = <span class="class">List</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)
+                <span class="keyword">val</span> listDoubleInt = listInt.map(x => x * <span class="number">2</span>) <span class="comment">// List(2, 4, 6)</span>
+
+                <span class="keyword">val</span> filteredInt = listDoubleInt.filter(x => x > <span class="number">5</span>) <span class="comment">// List(6)</span>
+
+                <span class="keyword">val</span> listStr: <span class="class">List</span>[<span class="type">String</span>] = <span class="class">List</span>(<span class="string">"One"</span>, <span class="string">"Two"</span>, <span class="string">"Three"</span>)
+                listStr.foreach(println) <span class="comment">// out: One Two Three</span>
+
+                listStr.reduce((x, y) => s<span class="string">"$x AND $y"</span>) <span class="comment">// "One AND Two AND Three"</span>
+            </pre>
+            </div>
+            Методы явных преобразований (toList, toMap, toSeq, toSet etc.)
+            <div class="code-block">
+                <pre>
+                    <span class="keyword">val</span> diameters = <span class="class">Map</span>(
+                        <span class="string">"Mercury"</span> -> <span class="number">4878</span>,
+                        <span class="string">"Mars"</span> -> <span class="number">6779</span>,
+                        <span class="string">"Earth"</span> -> <span class="number">12742</span>
+                    )
+                    diameters.toSeq <span class="comment">// Seq[(String, Int)]((Mercury,4878), (Mars,6779), (Earth,12742))</span>
+                </pre>
+            </div>
+        </section>
+        <section>
+            Изменяемые коллекции (mutable):
+            <div class="code-block">
+                <pre>
+                    <span class="keyword">import</span> <span class="import">scala.collection.mutable.ListBuffer</span>
+
+                    <span class="keyword">val</span> mutableList = ListBuffer.empty[<span class="type">Int</span>]
+                    mutableList += <span class="number">1</span>
+                    mutableList ++= <span class="class">List</span>(<span class="number">2</span>, <span class="number">3</span>)
+                    mutableList.foreach(println) <span class="comment">// out: 1 2 3</span>
+                </pre>
+            </div>
+            <div class="code-block">
+                <pre>
+                    <span class="keyword">import</span> <span class="import">scala.collection.mutable.Map</span>
+
+                    <span class="keyword">val</span> diameters = <span class="class">Map</span>(
+                        <span class="string">"Mars"</span> -> <span class="number">6779</span>,
+                        <span class="string">"Earth"</span> -> <span class="number">12742</span>
+                    )
+                    diameters += <span class="string">"Uranus"</span> -> <span class="number">51118</span>
+                    diameters(<span class="string">"Mars"</span>) = <span class="number">-100</span>
+                    diameters ++= <span class="class">Map</span>(<span class="string">"A-C"</span> -> diameters(<span class="string">"Earth"</span>))
+                    diameters -= <span class="string">"Earth"</span>
+                    println(diameters) <span class="comment">// out: Map(A-C -> 12742, Uranus -> 51118, Mars -> -100)</span>
+                </pre>
+            </div>
+        </section>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+
+        // Full list of configuration options available at:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: false,
+            progress: true,
+            history: true,
+            center: true,
+            slideNumber: true,
+
+            transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+            // Optional reveal.js plugins
+            dependencies: [
+                {
+                    src: 'lib/js/classList.js', condition: function () {
+                        return !document.body.classList;
+                    }
+                },
+                {
+                    src: 'plugin/markdown/marked.js', condition: function () {
+                        return !!document.querySelector('[data-markdown]');
+                    }
+                },
+                {
+                    src: 'plugin/markdown/markdown.js', condition: function () {
+                        return !!document.querySelector('[data-markdown]');
+                    }
+                },
+                {
+                    src: 'plugin/highlight/highlight.js', async: true, condition: function () {
+                        return !!document.querySelector('pre code');
+                    }, callback: function () {
+                        hljs.initHighlightingOnLoad();
+                    }
+                },
+                { src: 'plugin/zoom-js/zoom.js', async: true },
+                { src: 'plugin/notes/notes.js', async: true }
+            ]
+        });
+
+        window.addEventListener("mousedown", handleClick, false);
+        window.addEventListener("contextmenu", function (e) {
+            e.preventDefault();
+        }, false);
+
+        function handleClick(e) {
+            e.preventDefault();
+            if (e.button === 0) Reveal.next();
+            if (e.button === 2) Reveal.prev();
+        }
+    </script>
+</body>
+</html>
