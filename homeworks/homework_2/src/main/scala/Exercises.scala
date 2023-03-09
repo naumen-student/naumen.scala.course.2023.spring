@@ -59,15 +59,19 @@ object Exercises {
     def abs(vec: Vector2D): Double = java.lang.Math.sqrt(vec.x * vec.x + vec.y * vec.y)
     def scalar(vec0: Vector2D, vec1: Vector2D): Double = vec0.x * vec1.x + vec0.y * vec1.y
     def cosBetween(vec0: Vector2D, vec1: Vector2D): Double = scalar(vec0, vec1) / abs(vec0) / abs(vec1)
-    //def sumByFunc(leftVec0: Vector2D, leftVec1: Vector2D, ???, rightVec0: Vector2D, rightVec1: Vector2D) = ???
-    /*
+    def sumByFunc(leftVec0: Vector2D, leftVec1: Vector2D, parameter: String, rightVec0: Vector2D, rightVec1: Vector2D): Double = {
+     if (parameter == "scalar")
+            scalar(leftVec0, leftVec1) + scalar(rightVec0, rightVec1)
+     else
+         cosBetween(leftVec0, leftVec1) + cosBetween(rightVec0, rightVec1)
+    }
+
     def sumScalars(leftVec0: Vector2D, leftVec1: Vector2D, rightVec0: Vector2D, rightVec1: Vector2D): Double =
-        sumByFunc(leftVec0, leftVec1, scalar, rightVec0, rightVec1)
-    */
-    /*
+        sumByFunc(leftVec0, leftVec1, parameter = "scalar", rightVec0, rightVec1)
+
     def sumCosines(leftVec0: Vector2D, leftVec1: Vector2D, rightVec0: Vector2D, rightVec1: Vector2D): Double =
-        sumByFunc(leftVec0, leftVec1, cosBetween, rightVec0, rightVec1)
-    */
+        sumByFunc(leftVec0, leftVec1, parameter = "cosBetween" , rightVec0, rightVec1)
+
 
 
 

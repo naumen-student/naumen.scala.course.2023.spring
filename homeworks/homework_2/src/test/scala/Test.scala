@@ -18,5 +18,15 @@ object Test extends TestSuite{
             assert(Exercises.primeFactor(80) == Set(2,5))
             assert(Exercises.primeFactor(98) == Set(2,7))
         }
+        'sumScalars - {
+            assert(Exercises.sumScalars(Exercises.Vector2D(0, 0), Exercises.Vector2D(0, 0),Exercises.Vector2D(0, 0), Exercises.Vector2D(0, 0)) == 0)
+            assert(Exercises.sumScalars(Exercises.Vector2D(128, 96), Exercises.Vector2D(47, 16),Exercises.Vector2D(0, 0), Exercises.Vector2D(0, 0)) == 7552)
+            assert(Exercises.sumScalars(Exercises.Vector2D(128, 96), Exercises.Vector2D(47, 16),Exercises.Vector2D(34, 75), Exercises.Vector2D(50, 78)) == 7552+7550)
+        }
+        'sumCosines - {
+            assert(Exercises.sumCosines(Exercises.Vector2D(1, 0), Exercises.Vector2D(0, 1),Exercises.Vector2D(1, 0), Exercises.Vector2D(0, 1)) == 0)
+            assert(Exercises.sumCosines(Exercises.Vector2D(1, 0), Exercises.Vector2D(1, 0), Exercises.Vector2D(1, 0), Exercises.Vector2D(0, 1)) == 1)
+            assert(Exercises.sumCosines(Exercises.Vector2D(1, 0), Exercises.Vector2D(0, 1), Exercises.Vector2D(1, 0), Exercises.Vector2D(1, 0)) == 1)
+        }
     }
 }
