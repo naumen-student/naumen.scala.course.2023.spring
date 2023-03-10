@@ -41,6 +41,34 @@ object Test extends TestSuite {
             assert(Exercises.sumCosines(Vector2D(1, 0), Vector2D(0, -1), Vector2D(1, 0), Vector2D(0, 1)) == 0)
             assert(Exercises.sumCosines(Vector2D(Math.sqrt(2) / 2, Math.sqrt(2) / 2), Vector2D(Math.sqrt(2) / 2, Math.sqrt(2) / 2), Vector2D(1, 0), Vector2D(-1, 0)) <= 0.0000001)
             assert(Exercises.sumCosines(Vector2D(1, 0), Vector2D(Math.sqrt(3) / 2, 0.5), Vector2D(1, 0), Vector2D(Math.sqrt(3) / 2, 0.5)) - Math.sqrt(3) <= 0.0000001)
+
+        }
+        'test_sortByHeavyweight - {
+            val balls1: Map[String, (Int, Double)] =
+                Map(
+                    "Aluminum" -> (3, 2.6889), "Tungsten" -> (2, 19.35), "Graphite" -> (12, 2.1), "Iron" -> (3, 7.874),
+                    "Gold" -> (2, 19.32), "Potassium" -> (14, 0.862), "Calcium" -> (8, 1.55), "Cobalt" -> (4, 8.90),
+                    "Lithium" -> (12, 0.534), "Magnesium" -> (10, 1.738), "Copper" -> (3, 8.96), "Sodium" -> (5, 0.971),
+                    "Nickel" -> (2, 8.91), "Tin" -> (1, 7.29), "Platinum" -> (1, 21.45), "Plutonium" -> (3, 19.25),
+                    "Lead" -> (2, 11.336), "Titanium" -> (2, 10.50), "Silver" -> (4, 4.505), "Uranium" -> (2, 19.04),
+                    "Chrome" -> (3, 7.18), "Cesium" -> (7, 1.873), "Zirconium" -> (3, 6.45)
+                )
+            val balls2: Map[String, (Int, Double)] =
+                Map(
+                    "Aluminum" -> (3, 2.6889), "Tungsten" -> (3, 19.35), "Graphite" -> (3, 2.1), "Iron" -> (3, 7.874)
+                )
+            val balls3: Map[String, (Int, Double)] =
+                Map(
+                    "Gold" -> (1, 19.32), "Potassium" -> (100, 0.862), "Calcium" -> (8, 1.55), "Cobalt" -> (10, 8.90)
+                )
+            assert(Exercises.sortByHeavyweight(balls1) == Seq(
+                "Tin", "Platinum", "Nickel", "Aluminum", "Titanium",
+                "Lead", "Sodium", "Uranium", "Gold", "Tungsten",
+                "Zirconium", "Chrome", "Iron", "Copper", "Silver",
+                "Plutonium", "Cobalt", "Cesium", "Calcium",
+                "Lithium", "Magnesium", "Potassium", "Graphite"))
+            assert(Exercises.sortByHeavyweight(balls2) == Seq("Graphite", "Aluminum", "Iron", "Tungsten"))
+            assert(Exercises.sortByHeavyweight(balls3) == Seq("Gold", "Calcium", "Cobalt", "Potassium"))
         }
     }
 }
