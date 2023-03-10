@@ -1,7 +1,7 @@
 import utest._
 import Exercises.Vector2D
 
-object Test extends TestSuite {
+object Test extends TestSuite{
 
   val tests = Tests {
     'test_divBy3Or7 - {

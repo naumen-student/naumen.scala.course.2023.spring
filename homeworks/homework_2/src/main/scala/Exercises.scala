@@ -53,7 +53,7 @@ object Exercises {
 
   def sumCosines(leftVec0: Vector2D, leftVec1: Vector2D, rightVec0: Vector2D, rightVec1: Vector2D): Double =
     sumByFunc(leftVec0, leftVec1, cosBetween, rightVec0, rightVec1)
-
+  
 
   /*ЗАДАНИЕ IV*/
   val balls: Map[String, (Int, Double)] =
