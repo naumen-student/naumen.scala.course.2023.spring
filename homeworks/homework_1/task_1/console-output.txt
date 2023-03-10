@@ -1,0 +1,31 @@
+C:\Users\Dell>scala
+Welcome to Scala 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_51).
+Type in expressions for evaluation. Or try :help.
+
+scala> val myName = "Tretyakov Aleksey Vasilevich"
+myName: String = Tretyakov Aleksey Vasilevich
+
+scala> val reMyName = myName.reverse
+reMyName: String = hcivelisaV yeskelA vokayterT
+
+scala> val hMass = Array("Hello", "Hola", "Guten tag","KU", "privet")
+hMass: Array[String] = Array(Hello, Hola, Guten tag, KU, privet)
+
+scala> hMass.foreach(hi => println(f"$hi Scala! This is $myName"))
+Hello Scala! This is Tretyakov Aleksey Vasilevich
+Hola Scala! This is Tretyakov Aleksey Vasilevich
+Guten tag Scala! This is Tretyakov Aleksey Vasilevich
+KU Scala! This is Tretyakov Aleksey Vasilevich
+privet Scala! This is Tretyakov Aleksey Vasilevich
+
+scala> println()
+
+
+scala> hMass.foreach(hi => println(f"$hi Scala! This is $reMyName"))
+Hello Scala! This is hcivelisaV yeskelA vokayterT
+Hola Scala! This is hcivelisaV yeskelA vokayterT
+Guten tag Scala! This is hcivelisaV yeskelA vokayterT
+KU Scala! This is hcivelisaV yeskelA vokayterT
+privet Scala! This is hcivelisaV yeskelA vokayterT
+
+scala>
