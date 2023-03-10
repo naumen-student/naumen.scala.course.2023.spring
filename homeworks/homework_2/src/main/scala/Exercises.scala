@@ -19,10 +19,8 @@ object Exercises {
     def sumOfDivBy3Or5(iFrom: Int, iTo: Int): Long = {
         var sum: Int = 0
 
-        for (i <- iFrom to iTo) {
-            if (i % 3 == 0 || i % 5 == 0) sum+=i
-        }
-        println(sum)
+        for (i <- iFrom to iTo) if (i % 3 == 0 || i % 5 == 0) sum+=i
+
         sum
     }
 
@@ -33,7 +31,21 @@ object Exercises {
     Число 80 раскладывается на множители 1 * 2 * 2 * 2 * 2 * 5, результат выполнения функции => Seq(2, 5).
     Число 98 можно разложить на множители 1 * 2 * 7 * 7, результат выполнения функции => Seq(2, 7).*/
     /*Реализовать юнит-тесты в src/test/scala для данной функции.*/
-    def primeFactor(number: Int): Seq[Int] = ???
+    def primeFactor(number: Int): Seq[Int] = {
+        var value: Int = number
+
+        (2 to number).filter({
+            x1 => {
+                (2 until x1).forall({
+                    x2 => x1 % x2 != 0
+                })
+            }
+        }).filter({
+            x1 => {
+                value % x1 == 0
+            }
+        })
+    }
 
 
 
