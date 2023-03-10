@@ -1,0 +1,49 @@
+C:\Users\Delette>scala
+Welcome to Scala 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_361).
+Type in expressions for evaluation. Or try :help.
+
+scala> val name = "Sabrikhanov Ildar"
+name: String = Sabrikhanov Ildar
+
+scala> val english = "Hello Scala! This is " + name
+english: String = Hello Scala! This is Sabrikhanov Ildar
+
+scala> println(english)
+Hello Scala! This is Sabrikhanov Ildar
+
+scala> val spanish = english.replace("Hello", "Hola")
+spanish: String = Hola Scala! This is Sabrikhanov Ildar
+
+scala> println(spanish)
+Hola Scala! This is Sabrikhanov Ildar
+
+scala> val german = english.replace("Hello", "Guten tag")
+german: String = Guten tag Scala! This is Sabrikhanov Ildar
+
+scala> def reverseMyName(str: String, name: String): str.replace(name, name.reverse)
+<console>:1: error: '=' expected but '(' found.
+       def reverseMyName(str: String, name: String): str.replace(name, name.reverse)
+                                                                ^
+
+scala> def reverseMyName(str: String, name: String): String = str.replace(name, name.reverse)
+reverseMyName: (str: String, name: String)String
+
+scala> val englishRev = reverseMyName(english, name)
+englishRev: String = Hello Scala! This is radlI vonahkirbaS
+
+scala> println(englishRev)
+Hello Scala! This is radlI vonahkirbaS
+
+scala> val spanishRev = reverseMyName(spanish, name)
+spanishRev: String = Hola Scala! This is radlI vonahkirbaS
+
+scala> println(spanishRev)
+Hola Scala! This is radlI vonahkirbaS
+
+scala> val germanRev = reverseMyName(german, name)
+germanRev: String = Guten tag Scala! This is radlI vonahkirbaS
+
+scala> println(germanRev)
+Guten tag Scala! This is radlI vonahkirbaS
+
+scala>
