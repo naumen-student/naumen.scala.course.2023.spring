@@ -30,11 +30,17 @@ object Test extends TestSuite{
                                         Exercises.Vector2D(7, 70), Exercises.Vector2D(20, 0)) == 351 + 140)
         }
 
-        'sumCosines = {
+        'test_sumCosines = {
             assert(Exercises.sumCosines(Exercises.Vector2D(0, 1), Exercises.Vector2D(1, 0),
                                         Exercises.Vector2D(1, 0), Exercises.Vector2D(0, 1)) == 0))
             assert(Exercises.sumCosines(Exercises.Vector2D(1, 1), Exercises.Vector2D(10, 10),
                                         Exercises.Vector2D(2, 2), Exercises.Vector2D(20, 20)) == 1 + 1)
+        }
+
+        'test_sortByHeavyweight = {
+            assert(sortByHeavyweight(Map("some_material1" -> (1,1), "some_material2" -> (2,2))) == Seq("some_material1", "some_material2"))
+            assert(sortByHeavyweight(Map("some_material1" -> (5,1), "some_material2" -> (1,1))) == Seq("some_material2", "some_material1"))
+            assert(sortByHeavyweight() == Seq("Sodium", "Lithium", "Tin", "Aluminum", "Potassium", "Calcium", "Cesium", "Magnesium", "Nickel", "Silver", "Zirconium", "Titanium", "Platinum", "Chrome", "Lead", "Iron", "Graphite", "Copper", "Cobalt", "Uranium", "Gold", "Tungsten", "Plutonium"))
         }
     }
 }
