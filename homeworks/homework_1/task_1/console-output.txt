@@ -1,0 +1,32 @@
+Welcome to Scala 2.13.8-20220325-005602-unknown (OpenJDK 64-Bit Server VM, Java 17.0.6).
+Type in expressions for evaluation. Or try :help.
+
+scala> val name: String = Kirill
+
+scala> val greeting: String = Hello
+
+scala> println(s"$greeting Scala! This is $name")Hello Scala! This is Kirill
+
+scala> val greeting: String = Hallo
+
+scala> println(s"$greeting Scala! This is $name")Hallo Scala! This is Kirill
+
+scala> val greeting: String = Guten tag
+
+scala> println(s"$greeting Scala! This is $name")Guten tag Scala! This is Kirill
+
+scala> var name: String = Kirill
+
+scala> name = new StringBuffer(name).reverse().toString()// mutated name
+
+scala> println(s"$greeting Scala! This is $name")Guten tag Scala! This is lliriK
+
+scala> val greeting: String = Hallo
+
+scala> println(s"$greeting Scala! This is $name")Hallo Scala! This is lliriK
+
+scala> val greeting: String = Hello
+
+scala> println(s"$greeting Scala! This is $name")Hello Scala! This is lliriK
+
+scala> 
