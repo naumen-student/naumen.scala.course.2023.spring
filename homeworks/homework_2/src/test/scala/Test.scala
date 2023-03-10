@@ -20,5 +20,21 @@ object Test extends TestSuite{
             assert(Exercises.PrimeFactor(98) == Seq(2, 7))
             assert(Exercises.PrimeFactor(100) == Seq(2, 5))
         }
+
+        'test_sumScalars = {
+            assert(Exercises.sumScalars(Exercises.Vector2D(0, 0), Exercises.Vector2D(0, 0),
+                                        Exercises.Vector2D(0, 0), Exercises.Vector2D(0, 0)) == 0)
+            assert(Exercises.sumScalars(Exercises.Vector2D(1, 1), Exercises.Vector2D(10, 10),
+                                        Exercises.Vector2D(2, 2), Exercises.Vector2D(20, 20)) == 20 + 80)
+            assert(Exercises.sumScalars(Exercises.Vector2D(13, 26), Exercises.Vector2D(7, 10),
+                                        Exercises.Vector2D(7, 70), Exercises.Vector2D(20, 0)) == 351 + 140)
+        }
+
+        'sumCosines = {
+            assert(Exercises.sumCosines(Exercises.Vector2D(0, 1), Exercises.Vector2D(1, 0),
+                                        Exercises.Vector2D(1, 0), Exercises.Vector2D(0, 1)) == 0))
+            assert(Exercises.sumCosines(Exercises.Vector2D(1, 1), Exercises.Vector2D(10, 10),
+                                        Exercises.Vector2D(2, 2), Exercises.Vector2D(20, 20)) == 1 + 1)
+        }
     }
 }
