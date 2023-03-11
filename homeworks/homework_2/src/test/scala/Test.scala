@@ -22,5 +22,25 @@ object Test extends TestSuite{
             assert(primeFactor(3) == Seq(3))
             assert(primeFactor(100) == Seq(2, 5))
         }
+        'test_sumScalars - {
+            assert(sumScalars(Vector2D(0, 0), Vector2D(0, 0), Vector2D(0, 0), Vector2D(0, 0)) == 0)
+            assert(sumScalars(Vector2D(1, 0), Vector2D(0, 1), Vector2D(1, 0), Vector2D(0, 1)) == 0)
+            assert(sumScalars(Vector2D(1, 1), Vector2D(0, 1), Vector2D(0, 0), Vector2D(0, 0)) == 1)
+            assert(sumScalars(Vector2D(1, 1), Vector2D(0, 1), Vector2D(1, 1), Vector2D(0, 1)) == 2)
+            assert(sumScalars(Vector2D(2, 1), Vector2D(1, 1), Vector2D(0, 0), Vector2D(0, 0)) == 3)
+        }
+        'test_sumCosines - {
+            assert(sumCosines(Vector2D(0, 0), Vector2D(0, 0), Vector2D(0, 0), Vector2D(0, 0)).isNaN)
+            assert(sumCosines(Vector2D(1, 0), Vector2D(0, 1), Vector2D(1, 0), Vector2D(0, 1)) == 0)
+            assert(sumCosines(Vector2D(1, 0), Vector2D(0, 1), Vector2D(1, 0), Vector2D(1, 0)) == 1)
+            assert(sumCosines(Vector2D(1, 0), Vector2D(1, 0), Vector2D(1, 0), Vector2D(0, 1)) == 1)
+        }
+        'test_sortByHeavyweight - {
+            assert(sortByHeavyweight(Map()) == Seq())
+            assert(sortByHeavyweight(Map("a" -> (1, 1), "b" -> (1, 2))) == Vector("a", "b"))
+            assert(sortByHeavyweight(Map("a" -> (1, 1), "b" -> (2, 1))) == Vector("a", "b"))
+            assert(sortByHeavyweight(Map("b" -> (1, 2), "a" -> (1, 1))) == Vector("a", "b"))
+            assert(sortByHeavyweight(Map("a" -> (1, 1), "b" -> (1, 5), "c" -> (10, 1))) == Vector("a", "b", "c"))
+        }
     }
 }
