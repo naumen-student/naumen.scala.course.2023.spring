@@ -1,0 +1,30 @@
+➜  naumen-scala git:(homework_1) scala
+Welcome to Scala 2.13.10 (OpenJDK 64-Bit Server VM, Java 17.0.6).
+Type in expressions for evaluation. Or try :help.
+
+scala> val name = "Yura Perov"
+val name: String = Yura Perov
+
+scala> val greetings = Array("Hello", "Hola", "Guten tag")
+val greetings: Array[String] = Array(Hello, Hola, Guten tag)
+
+scala> val printGreeting = (greeting: String, name: String) => println(f"$greeting Scala! This is $name")
+val printGreeting: (String, String) => Unit = $Lambda$1124/0x000000080115b080@24955144
+
+scala> val printGreetings = (greetings: Array[String], name: String) => greetings.foreach(greeting => printGreeting(greeting, name))
+val printGreetings: (Array[String], String) => Unit = $Lambda$1147/0x000000080117a220@4a18e0f1
+
+scala> printGreeting("Hello", name)
+Hello Scala! This is Yura Perov
+
+scala> printGreetings(greetings, name)
+Hello Scala! This is Yura Perov
+Hola Scala! This is Yura Perov
+Guten tag Scala! This is Yura Perov
+
+scala> printGreetings(greetings, name.reverse)
+Hello Scala! This is voreP aruY
+Hola Scala! This is voreP aruY
+Guten tag Scala! This is voreP aruY
+
+scala> 
