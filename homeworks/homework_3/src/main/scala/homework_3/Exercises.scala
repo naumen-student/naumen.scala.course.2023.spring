@@ -55,16 +55,21 @@ object Exercises {
    * Задание №3
    * Допустим дана функция sumIntegers, которая умеет суммировать числа.
    */
-  def sumIntegers[CollectionType <: Iterable[Int]](xs: CollectionType): Int = xs.sum
+  private def sumIntegers[CollectionType <: Iterable[Int]](xs: CollectionType): Int = xs.sum
 
   /**
    * Реализуйте на основе нее 3 варианта суммирования 2х чисел, отличающиеся способом передачи этих 2х чисел в функцию sumIntegers.
    * Как минимум одна из реализаций должна использовать тип данных (класс) написанный вами самостоятельно.
    */
-  def sum1(x: Int, y: Int): Int = sumIntegers(???)
+  def sum1(x: Int, y: Int): Int = sumIntegers(Iterable(x, y))
 
-  def sum2(x: Int, y: Int): Int = sumIntegers(???)
+  def sum2(x: Int, y: Int): Int = sumIntegers(Seq(x, y))
 
-  def sum3(x: Int, y: Int): Int = sumIntegers(???)
+  def sum3(x: Int, y: Int): Int = sumIntegers(IntegersCollection(x, y))
 
+  case class IntegersCollection(integers: Int*) extends Iterable[Int] {
+    private val collection: List[Int] = List(integers: _*)
+
+    override def iterator: Iterator[Int] = collection.iterator
+  }
 }
