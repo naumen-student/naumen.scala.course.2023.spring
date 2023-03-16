@@ -56,11 +56,33 @@ object Exercises {
      * Реализуйте функцию тремя разными способами, отличающимися тем как функция себя ведет на пустой коллекции. 
      * Обратите внимание на возвращаемые типы.
      */
-    def max1(xs: Seq[Int]): Int = ???
+    def max1(xs: Seq[Int]): Int = {
+      try {
+        xs.max
+      }
+      catch {
+        case _: UnsupportedOperationException => 0
+      }
+    }
 
-    def max2(xs: Seq[Int]): Seq[Int] = ???
+    def max2(xs: Seq[Int]): Seq[Int] = {
+      if (xs.isEmpty) {
+        Seq()
+      }
+      else {
+        Seq(xs.max)
+      }
+    }
 
-    def max3(xs: Seq[Int]): Option[Int] = ???
+    def max3(xs: Seq[Int]): Option[Int] = {
+      try {
+        Option(xs.max)
+      }
+      catch {
+        case _: UnsupportedOperationException => None
+
+      }
+    }
 
     /**
      * Задание №3
