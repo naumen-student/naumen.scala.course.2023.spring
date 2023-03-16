@@ -32,5 +32,20 @@ object Test extends TestSuite{
             assert(Exercises.max3(Seq()) == None)
             assert(Exercises.max3(Seq(1, 89, 874, 32)) == Option(874))
         }
+        'sum1 - {
+            assert(Exercises.sum1(8, 9) == 17)
+            assert(Exercises.sum1(1, 3) == 4)
+            assert(Exercises.sum1(0, 1) == 1)
+        }
+        'sum2 - {
+            assert(Exercises.sum2(8, 9) == 17)
+            assert(Exercises.sum2(1, 3) == 4)
+            assert(Exercises.sum2(0, 1) == 1)
+        }
+        'sum3 - {
+            assert(Exercises.sum3(8, 9) == 17)
+            assert(Exercises.sum3(1, 3) == 4)
+            assert(Exercises.sum3(0, 1) == 1)
+        }
     }
 }
