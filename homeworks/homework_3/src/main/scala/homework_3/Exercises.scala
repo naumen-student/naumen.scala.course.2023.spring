@@ -18,7 +18,32 @@ object Exercises {
 
     def prettyBooleanFormatter3(x: Any): String = ???
 
+    // Method 1: using pattern matching
+    def prettyBooleanFormatter1(x: Any): String = x match {
+      case true => "правда"
+      case false => "ложь"
+      case _ => x.toString
+    }
 
+    // Method 2: using if-else statements
+    def prettyBooleanFormatter2(x: Any): String = {
+      if (x.isInstanceOf[Boolean]) {
+        if (x.asInstanceOf[Boolean]) "правда" else "ложь"
+      } else {
+        x.toString
+      }
+    }
+
+    // Method 3: using Java's class hierarchy
+    import java.{lang => jl}
+    def prettyBooleanFormatter3(x: Any): String = {
+      if (x.getClass == classOf[jl.Boolean]) {
+        if (x.asInstanceOf[Boolean]) "правда" else "ложь"
+      } else {
+        x.toString
+      }
+    }
+    
     /**
      * Задание №2
      * Реализуйте функцию нахождения максимального числа в переданной коллекции интов (можно использовать все методы стандартной библиотеки).
@@ -27,10 +52,21 @@ object Exercises {
      * Обратите внимание на возвращаемые типы.
      */
     def max1(xs: Seq[Int]): Int = ???
-
+    def max1(xs: Seq[Int]): Int = {
+      if (xs.isEmpty) 0
+      else xs.max
+    }
     def max2(xs: Seq[Int]): Seq[Int] = ???
-
+    def max2(xs: Seq[Int]): Seq[Int] = {
+      if (xs.isEmpty) Seq()
+      else Seq(xs.max)
+    }
     def max3(xs: Seq[Int]): Option[Int] = ???
+    def max3(xs: Seq[Int]): Option[Int] = {
+      if (xs.isEmpty) None
+      else Some(xs.max)
+    }
+
 
     /**
      * Задание №3
@@ -47,3 +83,12 @@ object Exercises {
     def sum3(x: Int, y: Int): Int = sumIntegers(???)
 
 }
+    def sum1(x: Int, y: Int): Int = sumIntegers(List(x, y))
+    def sum2(x: Int, y: Int): Int = sumIntegers((x, y))
+    case class IntPair(x: Int, y: Int)
+    class IntPairCollection(xs: IntPair*) extends Iterable[Int] {
+      def iterator = xs.iterator.flatMap(pair => Iterator(pair.x, pair.y))
+    }
+
+    def sum3(x: Int, y: Int): Int = sumIntegers(new IntPairCollection(IntPair(x, y)))
+
