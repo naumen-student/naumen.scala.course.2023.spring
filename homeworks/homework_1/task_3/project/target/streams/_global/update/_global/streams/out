@@ -1,0 +1,5 @@
+[debug] not up to date. inChanged = true, force = false
+[debug] Updating ProjectRef(uri("file:/D:/--DontLook--/Projects/--Study--/naumen.scala.course.2023.spring/homeworks/homework_1/task_3/project/"), "task_3-build")...
+[warn] Unrecognized repository Scala Plugin Bundled Repository, ignoring it
+[warn] Unrecognized repository Scala Plugin Bundled Repository, ignoring it
+[debug] Done updating ProjectRef(uri("file:/D:/--DontLook--/Projects/--Study--/naumen.scala.course.2023.spring/homeworks/homework_1/task_3/project/"), "task_3-build")

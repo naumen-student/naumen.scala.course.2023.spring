@@ -1,0 +1,9 @@
+[0m[[0m[0mdebug[0m] [0m[0mPackaging D:\--DontLook--\Projects\--Study--\naumen.scala.course.2023.spring\homeworks\homework_1\task_3\target\scala-2.13\task_3_2.13-0.1.0-SNAPSHOT.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	example[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  D:\--DontLook--\Projects\--Study--\naumen.scala.course.2023.spring\homeworks\homework_1\task_3\target\scala-2.13\classes\example[0m
+[0m[[0m[0mdebug[0m] [0m[0m	example\GreetingPrinter.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  D:\--DontLook--\Projects\--Study--\naumen.scala.course.2023.spring\homeworks\homework_1\task_3\target\scala-2.13\classes\example\GreetingPrinter.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	example\Main.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  D:\--DontLook--\Projects\--Study--\naumen.scala.course.2023.spring\homeworks\homework_1\task_3\target\scala-2.13\classes\example\Main.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m

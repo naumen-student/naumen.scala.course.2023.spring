@@ -1,0 +1,42 @@
+PS C:\Users\olgad> scala
+Welcome to Scala 2.12.10 (Java HotSpot(TM) Client VM, Java 1.8.0_333).
+Type in expressions for evaluation. Or try :help.
+
+scala> var name: String = "Andrey Morozov"
+name: String = Andrey Morozov
+
+scala> var greeting: String = "Hello"
+greeting: String = Hello
+
+scala> println(s"$greeting Scala! This is $name")
+Hello Scala! This is Andrey Morozov
+
+scala> greeting = "Hi"
+greeting: String = Hi
+
+scala> println(s"$greeting Scala! This is $name")
+Hi Scala! This is Andrey Morozov
+
+scala> greeting = "Shalom"
+greeting: String = Shalom
+
+scala> println(s"$greeting Scala! This is $name")
+Shalom Scala! This is Andrey Morozov
+
+scala> name = new StringBuffer(name).reverse().toString()
+name: String = vozoroM yerdnA
+
+scala> println(s"$greeting Scala! This is $name")
+Shalom Scala! This is vozoroM yerdnA
+
+scala> greeting = "Hi"
+greeting: String = Hi
+
+scala> println(s"$greeting Scala! This is $name")
+Hi Scala! This is vozoroM yerdnA
+
+scala> greeting = "Hello"
+greeting: String = Hello
+
+scala> println(s"$greeting Scala! This is $name")
+Hello Scala! This is vozoroM yerdnA
