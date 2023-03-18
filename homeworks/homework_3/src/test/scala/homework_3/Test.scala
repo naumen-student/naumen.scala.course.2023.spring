@@ -6,7 +6,6 @@ object Test extends TestSuite {
     val tests: Tests = Tests {
         val trueStr = "правда"
         val falseStr = "ложь"
-
         'test_prettyBooleanFormatter1 - {
             assert(Exercises.prettyBooleanFormatter1(true) == trueStr)
             assert(Exercises.prettyBooleanFormatter1(false) == falseStr)
