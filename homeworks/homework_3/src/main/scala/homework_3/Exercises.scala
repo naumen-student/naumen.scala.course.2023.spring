@@ -23,6 +23,7 @@ object Exercises {
             }
             return "ложь"
         }
+
         x.toString
     }
 
