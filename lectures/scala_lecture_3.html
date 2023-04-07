@@ -1,0 +1,850 @@
+<!doctype html>
+<html lang="ru" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Система типов в Scala</title>
+
+    <meta name="description" content="Система типов в Scala">
+    <meta name="author" content="Соломеин Илья">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/white.css" id="theme">
+
+    <link rel="stylesheet" href="css/hljs/vs.css" id="highlight-theme">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body>
+    <div class="reveal lecture3">
+        <div class="footer">
+            <span class="corp-name" style="text-align: center"><b>NAUMEN </b></span>Соломеин Илья
+        </div>
+
+        <div class="slides">
+            <section>
+                <h2>Система типов в Scala</h2>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Что такое тип?</h1>
+                <div class="fragment">
+                    <p>
+                        Тип данных — категоризация абстрактного множества возможных значений, характеристик и набор
+                        операций для некоторого атрибута (IEEE Std 1320.2-1998)
+                    </p>
+                    <p>
+                        Тип данных — категоризация аргументов операций над значениями, как правило,
+                        охватывающая как поведение, так и представление (ISO/IEC 19500-2:2003)
+                    </p>
+                </div>
+                <p class="fragment">
+                    Тип данных определяет множество значений, которые могут принимать данные.
+                    Одновременно тип определяет набор операций, которые можно осуществлять над данными этого типа.
+                </p>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Что такое тип?</h1>
+                <pre><code class="data-trim cs" data-noescape>
+                    int a;
+                    a = 42; // Ok
+                    a = "Hello!" // Error
+                </code></pre>
+                <pre><code class="data-trim scala" data-noescape>
+                    val b: Boolean = false
+                    b || true // Ок
+                    b > 1 // Error
+                    b.someMethod() // ??
+                </code></pre>
+            </section>
+        </div>
+        <div class="slides">
+                <section>
+                    <h1>Система типов</h1>
+                    <div class="fragment">
+                        <p>Система типов - это:</p>
+                        <ul>
+                            <li>набор базовых типов</li>
+                            <li>правила и механизмы для описания новых типов</li>
+                            <li>правила по применению различных типов</li>
+                        </ul>
+                    </div>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Виды систем типов</h1>
+                <div class="fragment">
+                    <ol>
+                        <li>По времени проверки правил
+                            <ul>
+                                <li>Статическая типизация</li>
+                                <li>Динамическая типизация</li>
+                            </ul>
+                        </li>
+                        <li>По строгости проверки правил
+                            <ul>
+                                <li>Строго типизированные (сильная типизация, strongly typed)</li>
+                                <li>Нестрого типизированные (слабая типизация, weakly typed)</li>
+                            </ul>
+                        </li>
+                        <li>По необходимости явно указывать тип
+                            <ul>
+                                <li>Явные</li>
+                                <li>Неявные</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Виды систем типов</h1><h4>Статическая/динамическая типизация</h4>
+                <ul>
+                    <li>Статическая - проверка типов осуществляется <b>во время компиляции</b>
+                        <p>Примеры: Java, C#, TypeScript, C/C++, Rust, Scala и др.</p></li>
+                    <li>Динамическая - проверка типов осуществляется <b>во время работы программы</b>
+                        <p>Примеры: JavaScript, Python, PHP, Ruby, Perl, Clojure и др.</p></li>
+                </ul>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Виды систем типов</h1>
+                <h4>Статическая/динамическая типизация</h4>
+                <p>Статические языки зачастую имеют возможность использовать динамическую типизацию
+                    <p><b>(scala.Dynamic)</b></p>
+                </p>
+                <p>Динамические прикручивают поверх себя инструменты проводящие статическую <br>
+                    проверку кода, в том числе типов
+                </p>
+                <p><b>(JavaScript - Flow/TypeScript, Python - PEP 484 introduced type hints)</b></p>
+                <p>Отличие в том, что закладывалось изначально в язык</p>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Виды систем типов</h1>
+                <h4>Строгая/нестрогая типизация</h4>
+                <p>Строгая типизация - необходимо явно приводить типы</p>
+                <p>Примеры: Java, C#, Scala, Python и др.</p>
+                <p>Нестрогая типизация - компилятором (интерпретатором) делаются допущения при проверке типов</p>
+                <p>Примеры: JavaScript, PHP и др.</p>
+                <p>
+                    На нестрого типизированных языках проще писать (не надо бороться с системой типов),<br> но
+                    сложнее писать корректные и безопасные программы
+                </p>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Виды систем типов</h1>
+                <h4>Явная/неявная типизация</h4>
+                <p>Явная типизация - необходимо явно задавать тип функций, значений, аргументов</p>
+                <p>Пример: Java, C++, <span style="color: darkgray">C#, Scala</span> и др.</p>
+                <p>Неявная типизация - тип функций, переменных, аргументов не указывается</p>
+                <p>JavaScrip, PHP и др.</p>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Система типов в Scala</h1>
+                <h4>Вывод типов</h4>
+                <p class="left">Возможность компилятором самостоятельно выводить типы значений, функций</p>
+                <p class="left">Пример:</p>
+                <pre><code class="scala">
+val x = "Hello world" // val x: String
+
+def someFunction() = 42 // def someFunction(): Int
+
+val y = {
+    if(randomBoolean) {
+        Cat // наследует Animal
+    } else {
+        Dog // наследует Animal
+    }
+}
+// val y: Animal
+                </code></pre>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Виды систем типов</h1>
+                <h4>Что лучше..?</h4>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Виды систем типов</h1><h4>Что лучше?</h4>
+                <p>
+                    <b>Большинство программистов</b> считают что в <b>большинстве случаев</b><br>
+                    лучше использовать язык со статической и строгой типизацией
+                </p>
+                <p>
+                    Ниша динамических и/или слабо типизированных языков - небольших <br>и простые
+                    приложения (скрипты, примитивные приложения, обучение),<br> но есть и исключения
+                </p>
+                <p>
+                    В каждом конкретном случае лучше провести анализ и выбрать подходящий <br> язык,
+                    в зависимости от приложения, которое планируется написать
+                </p>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Виды систем типов</h1>
+                <h4>Статическая строгая типизация</h4>
+                <div style="display: flex; margin-left: 50px">
+                    <div>
+                        <p style="text-align: start">Проблемы для языка:</p>
+                        <ul>
+                            <li>Сложный компилятор (дорого, багоемко, неповоротливо)</li>
+                            <li>Долгая компиляция</li>
+
+                        </ul>
+                        <p style="text-align: start">Проблемы для разработчика:</p>
+                        <ul style="display: inherit">
+                            <li>Нужно описывать типы</li>
+                            <li>Сложнее использовать</li>
+                        </ul>
+                    </div>
+                    <div style="margin-left: 200px">
+                        <img style="width: 500px" src="img/lecture_3/compilation_time.png">
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Виды систем типов</h1>
+                <h4>Статическая строгая типизация</h4>
+                <p>Решение проблем разработчиков в Scala:</p>
+                <li>Вывод типов чтобы их писать по минимуму</li>
+                <li>Мощная система типов позволяющая использовать типы легко
+                    <p class="fragment">(однако создателям библиотек приходиться попотеть) </p>
+                    <p class="fragment">((также как и создателям языка)) </p>
+                </li>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Система типов в Scala</h1>
+                <p>Гибко и удобно использовать систему типов позволяет полиморфизм</p>
+                <h4>Что такое полиморфизм..?</h4>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Система типов в Scala</h1>
+                <h3>Полиморфизм</h3>
+                <p>Принципиальная возможность для одного и того же кода обрабатывать данные разных типов</p>
+                <p>Зачастую ставятся определенные условия, которым должны соответствовать типы</p>
+                <p>В каждом конкретном языке - набор отдельных фич которые дают ту или иную степерь полиморфизма</p>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Полиморфизм</h1><h3>Виды</h3>
+                <p><b>полиморфизм подтипов</b> (subtyping | наследование)</p>
+                <p><b>параметрический полиморфизм</b> (generics)</p>
+                <p><b>ad-hoc полиморфизм</b> (перегрузка функций/операторов, авто приведение)</p>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Полиморфизм подтипов</h1>
+                <p>Полифморфизм подтипов даёт возможность выстраивать иерархию типов<br> (задавать отношение между типами)</p>
+                <p>Новые типы задаются через определение новых class/trait</p>
+                <p>Отношения задаются в основном через наследование</p>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Полиморфизм подтипов</h1>
+                <p>Буква L в SOLID</p>
+                <p><b>Liskov Substitution Principle</b> (Принцип подстановки Барбары Лисков)</p>
+                Формально:
+                <p>если для некоторого типа A выполняется какое-то правило</p> <p><span>foo(A.value) == OK</span></p>
+                <p>то тогда для любого типа B, являющегося подтипом типа A </p>
+                <p>B <: A</p>
+                <p>также должно выполняться это правило</p>
+                <p>foo(B.value) == OK</p>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Полиморфизм подтипов</h1><h3>Liskov Substitution Principle</h3>
+                <pre><code class="scala">
+
+// для обозначения подтипа в Scala используется "<:"
+// Subtype <: Supertype
+
+class Animal
+
+class Cat extends Animal
+// Cat <: Animal
+
+class Dog extends Animal
+// Dog <: Animal
+
+def foo(x: Animal) = ???
+
+foo(new Cat()) // OK if Cat <: Animal
+
+foo(new Dog()) // OK if Dog <: Animal
+
+foo("Hello world") // compile error
+                </code></pre>
+
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h2>Базовые типы в scala</h2>
+                <h3>Иерархия</h3>
+                <img src="img/lecture_3/types.png"  width="1121" height="700"/>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Полиморфизм подтипов</h1>
+                <p>Any - надтип (supertype) всех типов в Scala</p>
+                <p class="left">Использование:</p>
+                <pre><code>
+def foo(x: Any) = ???
+
+val a = if (randomBoolean) {
+            "Hello world"
+        } else {
+            42
+        }
+
+// val a: Any - Почему..?
+                </code></pre>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Базовые типы в scala</h1>
+                <p>AnyVal - тип оберток над значениями</p>
+                <p>Компилятор с такими типами обходится по особенному - стремится оптимизировать так, чтобы обертка не создавала реальный объект в памяти</p>
+                Использование:
+                <p>примитивы - Int, Long, Double, и т.д.</p>
+                <p>Обертки добавляющие методы или дополнительный тип</p>
+            </section>
+        </div>
+
+        <div class="slides">
+            <section>
+                <h1>Базовые типы в scala</h1>
+                <p>Пример создания типа от AnyVal</p>
+                <pre><code>
+// Обёртка над типом для добавления новых функций
+class Age(val underlying: Int) extends AnyVal {
+    def foo: Wrapper = new Wrapper(underlying * 19)
+}
+                </code></pre>
+                <pre><code>
+class Meter(val value: Double) extends AnyVal {
+    def +(m: Meter): Meter = new Meter(value + m.value)
+}
+// по сути, после компиляции здесь просто будут операции над Double
+val x = new Meter(3.4)
+val y = new Meter(4.3)
+val z = x + y
+               </code></pre>
+                <pre><code>
+// Помогает работать с примитивными типами как с чем-то осмысленным
+case class Age(val value: Int) extends AnyVal
+def isOlderThen18(age: Age): Boolean = age.value >= 18
+                </code></pre>
+            </section>
+        </div>
+
+
+        <div class="slides">
+            <section>
+                <h1>Базовые типы в scala</h1>
+                <h3>Unit</h3>
+                <p>Тип с единственным значением "()"</p>
+                <p>Используется в местах где в C#/Java стоял бы "void"</p>
+                <p>Обычно связано с сайд-эффектами (печать в консоль, запись в <br>базу, мутацию какого-то внешнего объекта, и т.д.)</p>
+                <p>Значения "()" не существует во время исполнения (абстракция на уровне компилятора)</p>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h2>Полиморфизм подтипов</h2><h3>Переходим к AnyRef</h3>
+                <img src="img/lecture_3/types.png"  width="1121" height="700"/>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Базовые типы в scala</h1>
+                <p>AnyRef - надтип для всех <b>ссылочных типов</b>.</p>
+                <li>В jvm - соответствует java.lang.Object, т.е. объектам в heap</li>
+                <p>Использование:</p>
+                <li>В практике особо не используется</li>
+                <li>Но для полноты системы типов нужен</li>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Базовые типы в scala</h1>
+                <p>Null - подтип для всех подтипов AnyRef.</p>
+                <p>Т.е. для любого X <: AnyRef справедливо Null <: X</p>
+                <p>Это делается автоматически на уровне компилятора</p>
+                <p>Литерал <span style="color: blue">null</span> имеет этот тип</p>
+                <p>Так как Null - это подтип любого подтипа AnyRef, то на место любого ссылочного типа можно подставить null</p>
+                <p>Также это позволяет работать системе вывода типов при проставлении null</p>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Базовые типы в scala</h1>
+                <p>Null</p>
+                <pre><code>
+val a = if (randomBoolean) {
+    "Hello world" // String
+} else {
+    null // Null
+}
+
+// val a: String - потому что Null <: String
+                </code></pre>
+
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Базовые типы в scala</h1>
+                <p>Nothing - подтип всех типов, также называемый bottom type.</p>
+                <p>Т.е. для любого X справедливо Nothing <: X</p>
+                <p>Тип у которого нет значениний</p>
+                <p>Нужен для полноты системы типов</p>
+                <p>Выражение в результате которого выбрасывается exception имеет тип Nothing</p>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Базовые типы в scala</h1>
+                <p>Nothing</p>
+                <pre><code>
+val a = if (randomBoolean) {
+    42 // Int
+} else {
+    ??? // Nothing
+}
+
+// val a: Int - потому что Nothing <: Int
+
+
+sealed abstract class Option[+A] { ... }
+
+final case class Some[+A](x: A) extends Option[A] {
+  def isEmpty = false
+  def get = x
+}
+
+case object None extends Option[Nothing] {
+  def isEmpty = true
+  def get = throw new NoSuchElementException("None.get")
+}
+                </code></pre>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h2>Базовые типы в scala</h2>
+                <h3>Подведем итоги</h3>
+                <img src="img/lecture_3/types.png"  width="1121" height="700"/>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Парам. полиморфизм</h1>
+                <li>Второй по распространенности и используемости вид полиморфизма</li>
+                <li>Generics и параметры типов</li>
+                <li>Параметризировать можно функции, классы, trait</li>
+                <pre><code class="scala">
+def someMethod[T](x: T) = ???
+
+class List[A] {
+    def add(a: A) = ???
+}
+
+trait Box[A] {
+    val value: A
+    def compare[B](other: Box[B]): Boolean
+}
+                </code></pre>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Парам. полиморфизм</h1>
+                <h4>является ли List[A] - типом?</h4>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Парам. полиморфизм</h1>
+                <h4>является ли List[A] типом? - Нет</h4>
+                <p>Нельзя задать переменную с типом List[A]:</p>
+                <pre><code>
+        val x: List[A] // compile error
+                        </code></pre>
+                <p>Можно задать переменную с типом, сконструированным с помощью дженерика:</p>
+                <pre><code>
+        val x: List[Int] // OK - тип списка интов
+                </code></pre>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Парам. полиморфизм</h1>
+                <p>List[A] - множество типов различных типов</p>
+                <p>Конструктор типа</p>
+                <p>Тип Х -> Конструктор List[_] -> конструируем тип List[X]</p>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Парам. полиморфизм</h1>
+                <h3>List[A] в иерархии подтипов</h3>
+                <img src="img/lecture_3/types.png"  width="1121" height="700"/>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Парам. полиморфизм</h1>
+                <p>Вариантность</p>
+                <li>Инвариантный (invariant) дженерик - по умолчанию Shape[T]</li>
+                <li>Ковариантный (covariance) - List[+A]</li>
+                <li>Контравариантный (contravariance) - Consumer[-A]</li>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Парам. полиморфизм</h1>
+                <p>Ковариантный (covariance) - List[+A]</p>
+                <img src="img/lecture_3/covariance.png" />
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Парам. полиморфизм</h1>
+                <p>Ковариантный (covariance) - List[+A]</p>
+                <pre><code>
+trait Animal {
+  def makeSound: String
+}
+class Cat extends Animal {
+  def makeSound = "meow"
+}
+class Dog extends Animal {
+  def makeSound = "bark"
+}
+
+
+def fooWithCovarianceParam(items: List[Animal]): Unit = {
+  //some side effect
+}
+
+def fooWithInvariantParam(items: Array[Animal]): Unit = {
+  //some side effect
+}
+
+fooWithCovarianceParam(List(new Dog())) // OK, так как List[+A] ковариантен
+
+fooWithInvariantParam(Array(new Dog()))// ERROR, так как тип Array[A] инвариантен
+                </code></pre>
+            </section>
+        </div>
+
+        <div class="slides">
+            <section>
+                <h1>Парам. полиморфизм</h1>
+                <p>Проблема ковариантности</p>
+                <pre><code>
+//допустим, MutableList - ковариантен. Помимо этого MutableList - мутабелен
+trait Animal {
+  def makeSound: String
+}
+class Cat extends Animal {
+  def makeSound = "meow"
+  def jump = "jump"
+}
+class Dog extends Animal {
+  def makeSound = "bark"
+}
+
+def addDog(xs: MutableList[Animal]) = {
+  xs += new Dog()
+}
+
+val cats = MutableList[Cat](new Cat(), new Cat())
+val horror = addDog(cats)
+
+cats.forEach(cat => cat.jump) //error
+                </code></pre>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Парам. полиморфизм</h1>
+                <p>Проблема ковариантности</p>
+                <pre><code>
+trait Box[+A] {
+    val value: A
+    def contains(a: A): Boolean
+}
+// Потенциальная опасность получить RunTimeError - Почему?
+                </code></pre>
+                <pre class="fragment"><code>
+trait Animal
+case class Cat(name: String) extends Animal
+case class Dog(age: Int) extends Animal
+
+val catBox = new Box[Cat] {
+    override val value: Cat = Cat("Sinus")
+    override def contains(a: Cat): Boolean = value.name == a.name
+}
+val animalBox: Box[Animal] = catBox
+animalBox.contains(Dog(12)) // RunTimeError
+                </code></pre>
+            <pre class="fragment"><code>
+trait Box[+A] {
+    def contains(a: A): Boolean
+}
+// compile error (Covariant type A occurs in contravariant position in type A of value a)
+            </code></pre>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Парам. полиморфизм</h1>
+                <p>Решение</p>
+                <pre><code>
+trait Box[+A] {
+    val value: A
+    def contains[B >: A](a: B): Boolean
+}
+
+val catBox = new Box[Cat] {
+    override val value: Cat = Cat("Sinus")
+    override def contains(a: Cat): Boolean = value.name == a.name // compile error
+}
+
+val catBox = new Box[Cat] {
+    override val value: Cat = Cat("Sinus")
+    override def contains[B >: Cat](a: B): Boolean = ???
+}
+                </code></pre>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                    <h1>Парам. полиморфизм</h1>
+                <p>Контравариантность (contravariance) - Vet[-A]</p>
+                <img src="img/lecture_3/contrvariance.png" />
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Парам. полиморфизм</h1>
+                <p>Контрвариантность (contravariance)</p>
+                <pre><code>
+trait Animal {
+    def makeSound: String
+}
+class Cat extends Animal {
+    def makeSound = "meow"
+}
+class Dog extends Animal {
+    def makeSound = "bark"
+}
+
+class Vet[-A]
+
+def treatDogs(vet: Vet[Dog]) {}
+
+val commonVet = new Vet[Animal]()
+
+treatDogs(commonVet) // OK, ошибки не будет, так как Vet Контрвариантный
+                </code></pre>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>Дополнительные фичи <br> системы типов</h1>
+            </section>
+        </div>
+
+        <div class="slides">
+            <section>
+                <h1>mixins</h1>
+                <p>Mixins, как правило, используются для добавления дополнительной функциональности</p>
+                <p>Для использования mixin используется ключевое слово <b>with</b></p>
+                <pre><code>
+trait Human {
+    def say(): Unit = ???
+}
+
+trait Wizard {
+    def doMagic(): Unit = ???
+}
+
+class HumanWithMagic extends Human with Wizard
+val a: Human with Wizard = new HumanWithMagic
+a.say()
+a.doMagic()
+                </code></pre>
+            </section>
+        </div>
+
+        <div class="slides">
+            <section>
+                <h1>self-type</h1>
+                <p>Помогают накладывать ограничение на использование mixin</p>
+                <pre><code>
+trait Animal
+trait Car
+
+trait CanJump { self: Animal =>
+    def jump: Unit = ???
+}
+
+class Cat extends Animal with CanJump
+class Kia extends Car with CanJump // compile error
+                </code></pre>
+            </section>
+        </div>
+
+        <div class="slides">
+            <section>
+                <h1>Система типов в Scala 3</h1>
+                <h4>Нововведения в выведении типов</h4>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>intersection type</h1>
+                <p>Тип вида <b>A & B & C & ... </b> интерпретируется как все эти типы в один момент</p>
+                <pre><code>
+trait Foo
+    def foo(): Unit
+
+trait Bar[A]
+    def setBar(value: A): Unit
+
+def fooBar(x: Foo & Bar[String]): Unit =
+    x.foo()
+    x.setBar("Hello")
+                </code></pre>
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <h1>union type</h1>
+                <p>Тип вида <b>A | B | C | ...</b> может быть одним из перечисленных типов в один момент</p>
+                <p>Для обработки такого типа необходимо использовать pattern matching</p>
+                <pre><code>
+case class Username(name: String)
+case class Password(hash: Hash)
+
+def help(id: Username | Password) =
+    val user = id match
+        case Username(name) => ???
+        case Password(hash) => ???
+                </code></pre>
+            </section>
+        </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+
+        // Full list of configuration options available at:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: false,
+            progress: true,
+            history: true,
+            center: true,
+            slideNumber: true,
+
+            transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+            // Optional reveal.js plugins
+            dependencies: [
+                {
+                    src: 'lib/js/classList.js', condition: function () {
+                        return !document.body.classList;
+                    }
+                },
+                {
+                    src: 'plugin/markdown/marked.js', condition: function () {
+                        return !!document.querySelector('[data-markdown]');
+                    }
+                },
+                {
+                    src: 'plugin/markdown/markdown.js', condition: function () {
+                        return !!document.querySelector('[data-markdown]');
+                    }
+                },
+                {
+                    src: 'plugin/highlight/highlight.js', async: true, condition: function () {
+                        return !!document.querySelector('pre code');
+                    }, callback: function () {
+                        hljs.initHighlightingOnLoad();
+                    }
+                },
+                { src: 'plugin/zoom-js/zoom.js', async: true },
+                { src: 'plugin/notes/notes.js', async: true }
+            ]
+        });
+
+        window.addEventListener("mousedown", handleClick, false);
+        window.addEventListener("contextmenu", function (e) {
+            e.preventDefault();
+        }, false);
+
+        function handleClick(e) {
+            e.preventDefault();
+            if (e.button === 0) Reveal.next();
+            if (e.button === 2) Reveal.prev();
+        }
+    </script>
+
+</body>
+
+</html>
