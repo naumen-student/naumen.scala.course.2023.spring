@@ -1,16 +1,16 @@
 import utest._
 
 object Test extends TestSuite {
-    val tests = Tests {
+    val tests: Tests = Tests {
         'test_createTable - {
             val table = new Table(3, 3)
             for (i <- 0 until 9) {
-                assert(table.getCell(i / 3, i % 3).map(_.toString) == Some("empty"))
+                assert(table.getCell(i / 3, i % 3).map(_.toString).contains("empty"))
             }
-            assert(table.getCell(0, -1).map(_.toString) == None)
-            assert(table.getCell(-1, 0).map(_.toString) == None)
-            assert(table.getCell(9, 8).map(_.toString) == None)
-            assert(table.getCell(8, 9).map(_.toString) == None)
+            assert(table.getCell(0, -1).map(_.toString).isEmpty)
+            assert(table.getCell(-1, 0).map(_.toString).isEmpty)
+            assert(table.getCell(9, 8).map(_.toString).isEmpty)
+            assert(table.getCell(8, 9).map(_.toString).isEmpty)
         }
         'test_numberCell - {
             val table = new Table(2, 2)
@@ -18,10 +18,10 @@ object Test extends TestSuite {
             val cellInt11 = new NumberCell(2147483647)
             table.setCell(0, 0, cellInt00)
             table.setCell(1, 1, cellInt11)
-            assert(table.getCell(0, 0).map(_.toString) == Some("5"))
-            assert(table.getCell(0, 1).map(_.toString) == Some("empty"))
-            assert(table.getCell(1, 0).map(_.toString) == Some("empty"))
-            assert(table.getCell(1, 1).map(_.toString) == Some("2147483647"))
+            assert(table.getCell(0, 0).map(_.toString).contains("5"))
+            assert(table.getCell(0, 1).map(_.toString).contains("empty"))
+            assert(table.getCell(1, 0).map(_.toString).contains("empty"))
+            assert(table.getCell(1, 1).map(_.toString).contains("2147483647"))
         }
         'test_stringCell - {
             val table = new Table(2, 2)
@@ -29,10 +29,10 @@ object Test extends TestSuite {
             val cellStr10 = new StringCell("10")
             table.setCell(0, 1, cellStr01)
             table.setCell(1, 0, cellStr10)
-            assert(table.getCell(0, 0).map(_.toString) == Some("empty"))
-            assert(table.getCell(0, 1).map(_.toString) == Some("01"))
-            assert(table.getCell(1, 0).map(_.toString) == Some("10"))
-            assert(table.getCell(1, 1).map(_.toString) == Some("empty"))
+            assert(table.getCell(0, 0).map(_.toString).contains("empty"))
+            assert(table.getCell(0, 1).map(_.toString).contains("01"))
+            assert(table.getCell(1, 0).map(_.toString).contains("10"))
+            assert(table.getCell(1, 1).map(_.toString).contains("empty"))
         }
         'test_referenceCell - {
             val table = new Table(3, 3)
