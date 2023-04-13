@@ -1,7 +1,5 @@
 package homework_3
 
-import java.lang
-
 object Exercises {
     /**
      * Задание №1
