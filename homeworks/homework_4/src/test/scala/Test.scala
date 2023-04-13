@@ -3,7 +3,7 @@ import utest._
 object Test extends TestSuite {
     val tests = Tests {
         'test_createTable - {
-            val table = new Table(3, 3)
+            val table = new TableImpl(3, 3)
             for (i <- 0 until 9) {
                 assert(table.getCell(i / 3, i % 3).map(_.toString) == Some("empty"))
             }
@@ -13,7 +13,7 @@ object Test extends TestSuite {
             assert(table.getCell(8, 9).map(_.toString) == None)
         }
         'test_numberCell - {
-            val table = new Table(2, 2)
+            val table = new TableImpl(2, 2)
             val cellInt00 = new NumberCell(5)
             val cellInt11 = new NumberCell(2147483647)
             table.setCell(0, 0, cellInt00)
@@ -24,7 +24,7 @@ object Test extends TestSuite {
             assert(table.getCell(1, 1).map(_.toString) == Some("2147483647"))
         }
         'test_stringCell - {
-            val table = new Table(2, 2)
+            val table = new TableImpl(2, 2)
             val cellStr01 = new StringCell("01")
             val cellStr10 = new StringCell("10")
             table.setCell(0, 1, cellStr01)
@@ -35,7 +35,7 @@ object Test extends TestSuite {
             assert(table.getCell(1, 1).map(_.toString) == Some("empty"))
         }
         'test_referenceCell - {
-            val table = new Table(3, 3)
+            val table = new TableImpl(3, 3)
             /*ix = 0*/
             val cellStr00 = new StringCell("00")
             val cellRef01 = new ReferenceCell(0, 2, table)
