@@ -8,8 +8,18 @@ object Exercises {
   case class Dog(override val name: String) extends Animal
 
 
+  case class Shelter[+T <: Animal](list: List[T]) {
+    def +[A >: T <: Animal](animal: A): Shelter[A] = Shelter(list :+ animal)
 
-  case class Shelter ...
+    def ++[A >: T <: Animal](shelter: Shelter[A]): Shelter[A] = {
+      val listA: List[A] = list
+      Shelter(listA ++ shelter.list)
+    }
+
+    def getNames: List[String] = list.map(_.name)
+
+
+  }
 
 
 
