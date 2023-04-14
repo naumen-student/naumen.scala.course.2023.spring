@@ -1,4 +1,5 @@
 import scala.annotation.tailrec
+import scala.collection.mutable
 
 trait Cell {
   def toString: String
@@ -18,22 +19,25 @@ class StringCell(string: String) extends Cell {
 
 class ReferenceCell(val ix: Int, val iy: Int, table: Table) extends Cell {
   override def toString: String = {
-    if (isOutOfRange(ix, iy)) return "outOfRange"
-    if (isCyclic(this, table.getCell(ix, iy).get)) return "cyclic"
-    table.getCell(ix, iy).get.toString
-  }
-
-  private def isOutOfRange(ix: Int, iy: Int): Boolean = {
-    !table.isInBounds(ix, iy)
+    table.getCell(ix, iy) match {
+      case None => "outOfRange"
+      case Some(cell) =>
+        cell match {
+          case ref: ReferenceCell => if (this == ref) "cyclic" else ref.toString(mutable.HashSet[Cell](this))
+          case other => other.toString
+        }
+    }
   }
 
   @tailrec
-  private def isCyclic(startCell: ReferenceCell, currentCell: Cell): Boolean = {
-    if (!currentCell.isInstanceOf[ReferenceCell])
-      return false
-    val refCell = currentCell.asInstanceOf[ReferenceCell]
-    if (startCell == refCell)
-      return true
-    isCyclic(startCell, table.getCell(refCell.ix, refCell.iy).get)
+  private def toString(visited: mutable.HashSet[Cell]): String = {
+    table.getCell(ix, iy) match {
+      case None => "outOfRange"
+      case Some(cell) =>
+        cell match {
+          case ref: ReferenceCell => if (visited.contains(this)) "cyclic" else ref.toString(visited += this)
+          case other => other.toString
+        }
+    }
   }
 }

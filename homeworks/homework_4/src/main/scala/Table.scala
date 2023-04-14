@@ -11,9 +11,8 @@ class Table(val height: Int, val width: Int) {
     cells(getIndex(ix, iy)) = cell
   }
 
-  def isInBounds(ix: Int, iy: Int): Boolean = {
-    val index = getIndex(ix, iy)
-    index >= 0 && index < length
+  private def isInBounds(ix: Int, iy: Int): Boolean = {
+    ix >= 0 && ix < height && iy >= 0 && iy < width
   }
 
   private def getIndex(ix: Int, iy: Int): Int = ix + iy * width
