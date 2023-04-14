@@ -21,7 +21,7 @@ object Test extends TestSuite {
             assert(table.getCell(0, 0).map(_.toString).contains("5"))
             assert(table.getCell(0, 1).map(_.toString).contains("empty"))
             assert(table.getCell(1, 0).map(_.toString).contains("empty"))
-            assert(table.getCell(1, 1).map(_.toString) .contains("2147483647"))
+            assert(table.getCell(1, 1).map(_.toString).contains("2147483647"))
         }
         'test_stringCell - {
             val table = new Table(2, 2)
@@ -29,10 +29,10 @@ object Test extends TestSuite {
             val cellStr10 = new StringCell("10")
             table.setCell(0, 1, cellStr01)
             table.setCell(1, 0, cellStr10)
-            assert(table.getCell(0, 0).map(_.toString) == Some("empty"))
-            assert(table.getCell(0, 1).map(_.toString) == Some("01"))
-            assert(table.getCell(1, 0).map(_.toString) == Some("10"))
-            assert(table.getCell(1, 1).map(_.toString) == Some("empty"))
+            assert(table.getCell(0, 0).map(_.toString).contains("empty"))
+            assert(table.getCell(0, 1).map(_.toString).contains("01"))
+            assert(table.getCell(1, 0).map(_.toString).contains("10"))
+            assert(table.getCell(1, 1).map(_.toString).contains("empty"))
         }
         'test_referenceCell - {
             val table = new Table(3, 3)
