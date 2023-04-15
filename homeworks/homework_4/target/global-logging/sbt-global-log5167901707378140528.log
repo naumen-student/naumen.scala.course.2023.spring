@@ -1,0 +1,144 @@
+[debug] > Exec(early(addDefaultCommands), None, None)
+[debug] > Exec(addDefaultCommands, None, None)
+[debug] > Exec(early(initialize), None, None)
+[debug] > Exec(initialize, None, None)
+[debug] > Exec(early(addPluginSbtFile="""C:\Users\Lansk\AppData\Local\Temp\idea.sbt"""), None, None)
+[debug] > Exec(addPluginSbtFile="""C:\Users\Lansk\AppData\Local\Temp\idea.sbt""", None, None)
+[debug] > Exec(boot, None, None)
+[debug] > Exec(writeSbtVersion, None, None)
+[debug] > Exec(reload, None, None)
+[debug] > Exec(sbtStashOnFailure, None, None)
+[debug] > Exec(onFailure loadFailed, None, None)
+[debug] > Exec(loadp, None, None)
+[info] welcome to sbt 1.8.2 (Oracle Corporation Java 19.0.2)
+[debug]       Load.loadUnit: plugins took 120.6922ms
+[debug]       Load.loadUnit: defsScala took 0.4722ms
+[debug] [Loading] Scanning directory C:\Users\Lansk\.sbt\1.0\plugins
+[debug] [Loading] Found non-root projects 
+[debug] [Loading] Done in C:\Users\Lansk\.sbt\1.0\plugins, returning: ()
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin)))
+[debug] Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)
+[debug] Plugins.deducer#function took 28.0502 ms
+[debug]           Load.resolveProject(global-plugins) took 64.6047ms
+[debug]         Load.loadTransitive: finalizeProject(Project(id global-plugins, base: C:\Users\Lansk\.sbt\1.0\plugins, plugins: List(<none>))) took 125.5462ms
+[debug] [Loading] Done in C:\Users\Lansk\.sbt\1.0\plugins, returning: (global-plugins)
+[debug]       Load.loadUnit: loadedProjectsRaw took 159.8264ms
+[debug]       Load.loadUnit: cleanEvalClasses took 0.2714ms
+[debug]     Load.loadUnit(file:/C:/Users/Lansk/.sbt/1.0/plugins/, ...) took 295.288ms
+[debug]   Load.apply: load took 550.4028ms
+[debug]   Load.apply: resolveProjects took 7.1958ms
+[debug]   Load.apply: finalTransforms took 74.3136ms
+[debug]   Load.apply: config.delegates took 10.5893ms
+[debug]   Load.apply: Def.make(settings)... took 537.9383ms
+[debug]   Load.apply: structureIndex took 139.0377ms
+[debug]   Load.apply: mkStreams took 1.7359ms
+[info] loading global plugins from C:\Users\Lansk\.sbt\1.0\plugins
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[debug] Load.defaultLoad until apply took 2775.1823ms
+[debug]           Load.loadUnit: plugins took 37.3283ms
+[debug]           Load.loadUnit: defsScala took 0.0039ms
+[debug] [Loading] Scanning directory D:\projects\scala\naumen.scala.course.2023.spring\homeworks\homework_4\project
+[debug]             Load.loadUnit: mkEval took 8.0737ms
+[debug] [Loading] Found non-root projects 
+[debug] [Loading] Done in D:\projects\scala\naumen.scala.course.2023.spring\homeworks\homework_4\project, returning: ()
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin)))
+[debug] Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)
+[debug] Plugins.deducer#function took 3.0353 ms
+[info] loading settings for project homework_4-build from idea.sbt ...
+[debug]               Load.resolveProject(homework_4-build) took 3.3425ms
+[debug]             Load.loadTransitive: finalizeProject(Project(id homework_4-build, base: D:\projects\scala\naumen.scala.course.2023.spring\homeworks\homework_4\project, plugins: List(<none>))) took 7.3248ms
+[debug] [Loading] Done in D:\projects\scala\naumen.scala.course.2023.spring\homeworks\homework_4\project, returning: (homework_4-build)
+[debug]           Load.loadUnit: loadedProjectsRaw took 2888.1846ms
+[debug]           Load.loadUnit: cleanEvalClasses took 6.8793ms
+[debug]         Load.loadUnit(file:/D:/projects/scala/naumen.scala.course.2023.spring/homeworks/homework_4/project/, ...) took 2933.5547ms
+[debug]       Load.apply: load took 2935.4548ms
+[debug]       Load.apply: resolveProjects took 0.2181ms
+[debug]       Load.apply: finalTransforms took 21.6922ms
+[debug]       Load.apply: config.delegates took 0.4858ms
+[debug]       Load.apply: Def.make(settings)... took 92.9915ms
+[debug]       Load.apply: structureIndex took 34.2864ms
+[debug]       Load.apply: mkStreams took 0.0034ms
+[info] loading project definition from D:\projects\scala\naumen.scala.course.2023.spring\homeworks\homework_4\project
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[warn] Unrecognized repository Scala Plugin Bundled Repository, ignoring it
+[warn] Unrecognized repository Scala Plugin Bundled Repository, ignoring it
+[debug]     Load.loadUnit: plugins took 4617.705ms
+[debug]     Load.loadUnit: defsScala took 0.0032ms
+[debug] [Loading] Scanning directory D:\projects\scala\naumen.scala.course.2023.spring\homeworks\homework_4
+[debug]       Load.loadUnit: mkEval took 0.3274ms
+[debug] [Loading] Found non-root projects 
+[debug] [Loading] Done in D:\projects\scala\naumen.scala.course.2023.spring\homeworks\homework_4, returning: ()
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin)))
+[debug] Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(org.jetbrains.sbt.StructurePlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(org.jetbrains.sbt.IdeaShellPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(org.jetbrains.sbt.indices.SbtIntellijIndicesPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(org.jetbrains.sbt.StructurePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(org.jetbrains.sbt.IdeaShellPlugin)))
+[debug] Clause(And(Set(Atom(sbt.plugins.CorePlugin), Atom(sbt.plugins.JvmPlugin))),Set(Atom(org.jetbrains.sbt.indices.SbtIntellijIndicesPlugin))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.SemanticdbPlugin,org.jetbrains.sbt.indices.SbtIntellijIndicesPlugin,sbt.plugins.JUnitXmlReportPlugin,org.jetbrains.sbt.IdeaShellPlugin,org.jetbrains.sbt.StructurePlugin,sbt.plugins.MiniDependencyTreePlugin)
+[debug] Plugins.deducer#function took 4.1486 ms
+[info] loading settings for project homework_4 from build.sbt ...
+[debug]         Load.resolveProject(homework_4) took 49.8565ms
+[debug]       Load.loadTransitive: finalizeProject(Project(id homework_4, base: D:\projects\scala\naumen.scala.course.2023.spring\homeworks\homework_4, plugins: List(<none>))) took 55.725ms
+[debug] [Loading] Done in D:\projects\scala\naumen.scala.course.2023.spring\homeworks\homework_4, returning: (homework_4)
+[debug]     Load.loadUnit: loadedProjectsRaw took 1920.0556ms
+[debug]     Load.loadUnit: cleanEvalClasses took 23.6088ms
+[debug]   Load.loadUnit(file:/D:/projects/scala/naumen.scala.course.2023.spring/homeworks/homework_4/, ...) took 6562.61ms
+[debug] Load.apply: load took 6564.7059ms
+[debug] Load.apply: resolveProjects took 0.1467ms
+[debug] Load.apply: finalTransforms took 31.3053ms
+[debug] Load.apply: config.delegates took 0.3471ms
+[debug] Load.apply: Def.make(settings)... took 80.9006ms
+[debug] Load.apply: structureIndex took 27.7239ms
+[debug] Load.apply: mkStreams took 0.0025ms
+[info] set current project to Lecture4 (in build file:/D:/projects/scala/naumen.scala.course.2023.spring/homeworks/homework_4/)
+[debug] > Exec(sbtPopOnFailure, None, None)
+[debug] > Exec(resumeFromFailure, None, None)
+[debug] > Exec(notifyUsersAboutShell, None, None)
+[debug] > Exec(iflast shell, None, None)
+[debug] > Exec(; set ideaPort in Global := 61198 ; idea-shell, None, None)
+[debug] > Exec(set ideaPort in Global := 61198, None, None)
+[info] Defining Global / ideaPort
+[info] The new value will be used by Compile / compile, Test / compile
+[debug] Defining 
+[debug] 	Global / ideaPort
+[debug] 
+[debug] The new value will be used by 
+[debug] 	Compile / compile
+[debug] 	Test / compile
+[info] Reapplying settings...
+[info] set current project to Lecture4 (in build file:/D:/projects/scala/naumen.scala.course.2023.spring/homeworks/homework_4/)
+[debug] > Exec(idea-shell, None, None)

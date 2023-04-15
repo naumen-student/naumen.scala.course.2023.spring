@@ -1,0 +1,266 @@
+{
+    "version": "1.4.0",
+    "project": {
+        "name": "root-test",
+        "directory": "D:\\projects\\scala\\naumen.scala.course.2023.spring\\homeworks\\homework_3",
+        "workspaceDir": "D:\\projects\\scala\\naumen.scala.course.2023.spring\\homeworks\\homework_3",
+        "sources": [
+            "D:\\projects\\scala\\naumen.scala.course.2023.spring\\homeworks\\homework_3\\src\\test\\scala",
+            "D:\\projects\\scala\\naumen.scala.course.2023.spring\\homeworks\\homework_3\\src\\test\\scala-2.13",
+            "D:\\projects\\scala\\naumen.scala.course.2023.spring\\homeworks\\homework_3\\src\\test\\scala-2",
+            "D:\\projects\\scala\\naumen.scala.course.2023.spring\\homeworks\\homework_3\\src\\test\\java",
+            "D:\\projects\\scala\\naumen.scala.course.2023.spring\\homeworks\\homework_3\\target\\scala-2.13\\src_managed\\test"
+        ],
+        "dependencies": [
+            "root"
+        ],
+        "classpath": [
+            "D:\\projects\\scala\\naumen.scala.course.2023.spring\\homeworks\\homework_3\\.bloop\\root\\scala-2.13\\classes",
+            "C:\\Users\\Lansk\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala-library\\2.13.10\\scala-library-2.13.10.jar",
+            "C:\\Users\\Lansk\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\com\\lihaoyi\\utest_2.13\\0.8.1\\utest_2.13-0.8.1.jar",
+            "C:\\Users\\Lansk\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-sbt\\test-interface\\1.0\\test-interface-1.0.jar",
+            "C:\\Users\\Lansk\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\portable-scala\\portable-scala-reflect_2.13\\1.1.2\\portable-scala-reflect_2.13-1.1.2.jar",
+            "C:\\Users\\Lansk\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala-reflect\\2.13.10\\scala-reflect-2.13.10.jar"
+        ],
+        "out": "D:\\projects\\scala\\naumen.scala.course.2023.spring\\homeworks\\homework_3\\.bloop\\root",
+        "classesDir": "D:\\projects\\scala\\naumen.scala.course.2023.spring\\homeworks\\homework_3\\.bloop\\root\\scala-2.13\\test-classes",
+        "resources": [
+            "D:\\projects\\scala\\naumen.scala.course.2023.spring\\homeworks\\homework_3\\src\\test\\resources",
+            "D:\\projects\\scala\\naumen.scala.course.2023.spring\\homeworks\\homework_3\\target\\scala-2.13\\resource_managed\\test"
+        ],
+        "scala": {
+            "organization": "org.scala-lang",
+            "name": "scala-compiler",
+            "version": "2.13.10",
+            "options": [
+                
+            ],
+            "jars": [
+                "C:\\Users\\Lansk\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala-library\\2.13.10\\scala-library-2.13.10.jar",
+                "C:\\Users\\Lansk\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala-compiler\\2.13.10\\scala-compiler-2.13.10.jar",
+                "C:\\Users\\Lansk\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala-reflect\\2.13.10\\scala-reflect-2.13.10.jar",
+                "C:\\Users\\Lansk\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\io\\github\\java-diff-utils\\java-diff-utils\\4.12\\java-diff-utils-4.12.jar",
+                "C:\\Users\\Lansk\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\jline\\jline\\3.21.0\\jline-3.21.0.jar",
+                "C:\\Users\\Lansk\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\net\\java\\dev\\jna\\jna\\5.9.0\\jna-5.9.0.jar"
+            ],
+            "setup": {
+                "order": "mixed",
+                "addLibraryToBootClasspath": true,
+                "addCompilerToClasspath": false,
+                "addExtraJarsToClasspath": false,
+                "manageBootClasspath": true,
+                "filterLibraryFromClasspath": true
+            }
+        },
+        "java": {
+            "options": [
+                
+            ]
+        },
+        "test": {
+            "frameworks": [
+                {
+                    "names": [
+                        "org.scalacheck.ScalaCheckFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.specs2.runner.Specs2Framework",
+                        "org.specs2.runner.SpecsFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.specs.runner.SpecsFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.scalatest.tools.Framework",
+                        "org.scalatest.tools.ScalaTestFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "com.novocode.junit.JUnitFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "munit.Framework"
+                    ]
+                },
+                {
+                    "names": [
+                        "zio.test.sbt.ZTestFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "utest.runner.Framework"
+                    ]
+                }
+            ],
+            "options": {
+                "excludes": [
+                    
+                ],
+                "arguments": [
+                    
+                ]
+            }
+        },
+        "platform": {
+            "name": "jvm",
+            "config": {
+                "home": "D:\\jdk",
+                "options": [
+                    "-Duser.dir=D:\\projects\\scala\\naumen.scala.course.2023.spring\\homeworks\\homework_3"
+                ]
+            },
+            "mainClass": [
+                
+            ]
+        },
+        "resolution": {
+            "modules": [
+                {
+                    "organization": "org.scala-lang",
+                    "name": "scala-library",
+                    "version": "2.13.10",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "scala-library",
+                            "path": "C:\\Users\\Lansk\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala-library\\2.13.10\\scala-library-2.13.10.jar"
+                        },
+                        {
+                            "name": "scala-library",
+                            "classifier": "sources",
+                            "path": "C:\\Users\\Lansk\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala-library\\2.13.10\\scala-library-2.13.10-sources.jar"
+                        },
+                        {
+                            "name": "scala-library",
+                            "classifier": "javadoc",
+                            "path": "C:\\Users\\Lansk\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala-library\\2.13.10\\scala-library-2.13.10-javadoc.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.scala-lang",
+                    "name": "scala-library",
+                    "version": "2.13.10",
+                    "configurations": "optional",
+                    "artifacts": [
+                        {
+                            "name": "scala-library",
+                            "path": "C:\\Users\\Lansk\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala-library\\2.13.10\\scala-library-2.13.10.jar"
+                        },
+                        {
+                            "name": "scala-library",
+                            "classifier": "sources",
+                            "path": "C:\\Users\\Lansk\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala-library\\2.13.10\\scala-library-2.13.10-sources.jar"
+                        },
+                        {
+                            "name": "scala-library",
+                            "classifier": "javadoc",
+                            "path": "C:\\Users\\Lansk\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala-library\\2.13.10\\scala-library-2.13.10-javadoc.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.scala-lang",
+                    "name": "scala-reflect",
+                    "version": "2.13.10",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "scala-reflect",
+                            "path": "C:\\Users\\Lansk\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala-reflect\\2.13.10\\scala-reflect-2.13.10.jar"
+                        },
+                        {
+                            "name": "scala-reflect",
+                            "classifier": "sources",
+                            "path": "C:\\Users\\Lansk\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala-reflect\\2.13.10\\scala-reflect-2.13.10-sources.jar"
+                        },
+                        {
+                            "name": "scala-reflect",
+                            "classifier": "javadoc",
+                            "path": "C:\\Users\\Lansk\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala-reflect\\2.13.10\\scala-reflect-2.13.10-javadoc.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.lihaoyi",
+                    "name": "utest_2.13",
+                    "version": "0.8.1",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "utest_2.13",
+                            "path": "C:\\Users\\Lansk\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\com\\lihaoyi\\utest_2.13\\0.8.1\\utest_2.13-0.8.1.jar"
+                        },
+                        {
+                            "name": "utest_2.13",
+                            "classifier": "sources",
+                            "path": "C:\\Users\\Lansk\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\com\\lihaoyi\\utest_2.13\\0.8.1\\utest_2.13-0.8.1-sources.jar"
+                        },
+                        {
+                            "name": "utest_2.13",
+                            "classifier": "javadoc",
+                            "path": "C:\\Users\\Lansk\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\com\\lihaoyi\\utest_2.13\\0.8.1\\utest_2.13-0.8.1-javadoc.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.scala-sbt",
+                    "name": "test-interface",
+                    "version": "1.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "test-interface",
+                            "path": "C:\\Users\\Lansk\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-sbt\\test-interface\\1.0\\test-interface-1.0.jar"
+                        },
+                        {
+                            "name": "test-interface",
+                            "classifier": "sources",
+                            "path": "C:\\Users\\Lansk\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-sbt\\test-interface\\1.0\\test-interface-1.0-sources.jar"
+                        },
+                        {
+                            "name": "test-interface",
+                            "classifier": "javadoc",
+                            "path": "C:\\Users\\Lansk\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-sbt\\test-interface\\1.0\\test-interface-1.0-javadoc.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.portable-scala",
+                    "name": "portable-scala-reflect_2.13",
+                    "version": "1.1.2",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "portable-scala-reflect_2.13",
+                            "path": "C:\\Users\\Lansk\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\portable-scala\\portable-scala-reflect_2.13\\1.1.2\\portable-scala-reflect_2.13-1.1.2.jar"
+                        },
+                        {
+                            "name": "portable-scala-reflect_2.13",
+                            "classifier": "sources",
+                            "path": "C:\\Users\\Lansk\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\portable-scala\\portable-scala-reflect_2.13\\1.1.2\\portable-scala-reflect_2.13-1.1.2-sources.jar"
+                        },
+                        {
+                            "name": "portable-scala-reflect_2.13",
+                            "classifier": "javadoc",
+                            "path": "C:\\Users\\Lansk\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\portable-scala\\portable-scala-reflect_2.13\\1.1.2\\portable-scala-reflect_2.13-1.1.2-javadoc.jar"
+                        }
+                    ]
+                }
+            ]
+        },
+        "tags": [
+            "test"
+        ]
+    }
+}
