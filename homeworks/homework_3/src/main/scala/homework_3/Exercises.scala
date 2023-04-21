@@ -12,11 +12,18 @@ object Exercises {
      * Реализуйте функцию тремя разными способами, отличающимися тем, как определяется какой тип имеет значение переданное в аргументе. 
      * Определение типа необходимо для реализации специальной логики работы с Boolean значениями, которая описана в условии выше.
      */
-    def prettyBooleanFormatter1(x: Any): String = ???
+    val boolMapper = Map(true -> "правда", false -> "ложь")
 
-    def prettyBooleanFormatter2(x: Any): String = ???
+    def prettyBooleanFormatter1(x: Any): String = if (x.isInstanceOf[Boolean]) boolMapper.get(x.asInstanceOf[Boolean]).get else x.toString
 
-    def prettyBooleanFormatter3(x: Any): String = ???
+    def prettyBooleanFormatter2(x: Any): String = if (x.getClass.equals(classOf[java.lang.Boolean])) boolMapper.get(x.asInstanceOf[Boolean]).get else x.toString
+
+    def prettyBooleanFormatter3(x: Any): String = {
+      x match { 
+        case b: Boolean => boolMapper.get(b).get 
+        case _ => x.toString 
+      }
+    }
 
 
     /**
@@ -26,11 +33,11 @@ object Exercises {
      * Реализуйте функцию тремя разными способами, отличающимися тем как функция себя ведет на пустой коллекции. 
      * Обратите внимание на возвращаемые типы.
      */
-    def max1(xs: Seq[Int]): Int = ???
+    def max1(xs: Seq[Int]): Int = if (xs != null) xs.max else 0
 
-    def max2(xs: Seq[Int]): Seq[Int] = ???
+    def max2(xs: Seq[Int]): Seq[Int] = if (xs != null) Seq(xs.max) else Seq.empty
 
-    def max3(xs: Seq[Int]): Option[Int] = ???
+    def max3(xs: Seq[Int]): Option[Int] = if (xs != null) Option(xs.max) else None
 
     /**
      * Задание №3
@@ -42,8 +49,16 @@ object Exercises {
      * Реализуйте на основе нее 3 варианта суммирования 2х чисел, отличающиеся способом передачи этих 2х чисел в функцию sumIntegers.
      * Как минимум одна из реализаций должна использовать тип данных (класс) написанный вами самостоятельно.
      */ 
-    def sum1(x: Int, y: Int): Int = sumIntegers(???)
-    def sum2(x: Int, y: Int): Int = sumIntegers(???)
-    def sum3(x: Int, y: Int): Int = sumIntegers(???)
+    def sum1(x: Int, y: Int): Int = sumIntegers(Seq(x, y))
+    def sum2(x: Int, y: Int): Int = sumIntegers(new DataContainer(x, y))
+    def sum3(x: Int, y: Int): Int = sumIntegers(new IterableWithLambda(_ => Seq(x, y)))
+
+    class DataContainer[T](val elems: T*) extends Iterable[T]{
+      def iterator: Iterator[T] = elems.toIterator
+    }
+
+    class IterableWithLambda[T] (val data: Unit => Iterable[T]) extends Iterable[T] {
+      def iterator: Iterator[T] = data().iterator
+    }
 
 }
