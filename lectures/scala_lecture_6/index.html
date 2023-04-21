@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Scala Collection</title>
+
+    <meta name="description" content="Scala. Collection">
+    <meta name="author" content="Ilia Solomein">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'naumen-custom-css/pdf.css' : 'naumen-custom-css/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+
+
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme">
+    <link rel="stylesheet" href="naumen-custom-css/vs.css" id="highlight-theme">
+    <link rel="stylesheet" type="text/css" href="naumen-custom-css/paper.css">
+    <link rel="stylesheet" href="naumen-custom-css/custom.css">
+
+    <style type="text/css">
+        .hljs-ln {
+            border-collapse: collapse
+        }
+
+        .hljs-ln td {
+            padding: 0
+        }
+
+        .hljs-ln-n:before {
+            content: attr(data-line-number)
+        }
+    </style>
+</head>
+
+<body style="transition: transform 0.8s ease 0s;">
+
+    <div class="reveal slide center" role="application" data-transition-speed="default"
+        data-background-transition="fade">
+        <div class="footer">
+            <span class="corp-name"><b>NAUMEN </b></span>Соломеин Илья
+        </div>
+
+
+        <!-- Тут подключать md со слайдами -->
+
+        <div class="slides"
+            style="width: 960px; height: 700px; inset: 50% auto auto 50%; transform: translate(-50%, -50%) scale(1.20986);"
+            googl="true">
+            <section data-markdown="markdown.md" data-separator="^\n---\n"></section>
+        </div>
+
+        <!--   -->
+
+
+        <div class="progress" style="display: block;"><span style="width: 0px;"></span></div>
+        <aside class="controls" style="display: none;">
+            <div class="navigate-left"></div>
+            <div class="navigate-right enabled"></div>
+            <div class="navigate-up"></div>
+            <div class="navigate-down"></div>
+        </aside>
+        <div class="pause-overlay"></div>
+        <div style="position: absolute; height: 1px; width: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px);"
+            id="aria-status-div" aria-live="polite" aria-atomic="true">
+            Scala collection
+        </div>
+    </div>
+
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script>
+
+        Reveal.initialize({
+            controls: false,
+            progress: true,
+            history: true,
+            center: true,
+            slideNumber: true,
+
+
+            plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+        });
+
+        window.addEventListener("mousedown", handleClick, false);
+        window.addEventListener("contextmenu", function (e) {
+            e.preventDefault();
+        }, false);
+
+        function handleClick(e) {
+            e.preventDefault();
+            if (e.button === 0) Reveal.next();
+            if (e.button === 2) Reveal.prev();
+        }
+
+    </script>
+</body>
+
+</html>
