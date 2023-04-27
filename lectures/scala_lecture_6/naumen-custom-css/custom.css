@@ -1,0 +1,48 @@
+.reveal .slide-number {
+    font-size: 22pt;
+    color: black;
+}
+
+.reveal pre {
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+
+.reveal pre code {
+    color: black;
+    background: none;
+    box-shadow: none;
+    max-height: none;
+}
+
+.reveal section img {
+    border: none;
+    box-shadow: none;
+}
+
+.reveal pre code {
+    overflow: hidden;
+}
+
+.reveal.lecture3 pre code {
+    font-size: 115%; 
+}
+
+.reveal.lecture3 p.left{
+    text-align: left;
+    margin-left: 30px;
+}
+
+.reveal .footer {
+    font-size: 22pt;
+    color: black;
+
+    position: absolute;
+    left: 35%;
+    bottom: 0.5em;
+}
+.corp-name {
+    color: orangered;
+    font-family: "Circe", sans-serif;;
+} 
