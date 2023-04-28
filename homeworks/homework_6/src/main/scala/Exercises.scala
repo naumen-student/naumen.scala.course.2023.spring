@@ -6,7 +6,7 @@ object Exercises {
   def reverse[T](seq: Seq[T]): Seq[T] = seq.foldRight(Seq[T]())((x, reversed) => reversed :+ x)
 
   /**
-   * https://ru.wikipedia.org/wiki/Числа_Фибоначчи
+   * https://ru.wikipedia.org/wiki/Числа_Фибоначчиu
    *
    * @param idx
    * @return
