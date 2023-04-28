@@ -17,3 +17,127 @@ SLF4J: See https://www.slf4j.org/codes.html#ignoredBindings for an explanation.
 2023.03.22 13:23:27 INFO  Shutting down server
 2023.03.22 13:23:27 INFO  shutting down Metals
 2023.03.22 13:23:27 INFO  Exiting server
+2023.04.23 21:22:58 INFO  Started: Metals version 0.11.11 in workspace 'D:\projects\scala\naumen.scala.course.2023.spring' for client Visual Studio Code 1.77.1.
+SLF4J: No SLF4J providers were found.
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See https://www.slf4j.org/codes.html#noProviders for further details.
+SLF4J: Class path contains SLF4J bindings targeting slf4j-api versions 1.7.x or earlier.
+SLF4J: Ignoring binding found at [jar:file:/C:/Users/Lansk/AppData/Local/Coursier/cache/v1/https/repo1.maven.org/maven2/com/outr/scribe-slf4j_2.13/3.11.0/scribe-slf4j_2.13-3.11.0.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See https://www.slf4j.org/codes.html#ignoredBindings for an explanation.
+2023.04.23 21:22:59 INFO  time: initialize in 0.92s
+2023.04.23 21:23:02 WARN  Build server is not auto-connectable.
+2023.04.23 21:23:02 WARN  no build tool detected in workspace 'D:\projects\scala\naumen.scala.course.2023.spring'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2023.04.23 21:23:03 WARN  no build target for: D:\projects\scala\naumen.scala.course.2023.spring\homeworks\homework_3\src\test\scala\homework_3\Test.scala
+2023.04.23 21:23:09 INFO  no build target found for D:\projects\scala\naumen.scala.course.2023.spring\homeworks\homework_3\src\test\scala\homework_3\Test.scala. Using presentation compiler with project's scala-library version: 3.2.2
+2023.04.23 21:23:12 INFO  time: code lens generation in 9.19s
+апр. 23, 2023 9:26:52 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+апр. 23, 2023 9:30:42 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+апр. 23, 2023 9:30:48 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+апр. 23, 2023 9:31:55 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+апр. 23, 2023 9:31:56 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+2023.04.23 21:32:03 INFO  Shutting down server
+2023.04.23 21:32:03 INFO  shutting down Metals
+2023.04.23 21:32:03 INFO  Exiting server
+2023.04.23 21:37:38 INFO  Started: Metals version 0.11.12 in workspace 'D:\projects\scala\naumen.scala.course.2023.spring' for client Visual Studio Code 1.77.1.
+апр. 23, 2023 9:37:38 PM org.flywaydb.core.internal.license.VersionPrinter printVersionOnly
+INFO: Flyway Community Edition 9.16.3 by Redgate
+апр. 23, 2023 9:37:39 PM org.flywaydb.core.internal.license.VersionPrinter printVersion
+INFO: See release notes here: https://rd.gt/416ObMi
+апр. 23, 2023 9:37:39 PM org.flywaydb.core.internal.license.VersionPrinter printVersion
+INFO: 
+апр. 23, 2023 9:37:39 PM org.flywaydb.core.internal.database.base.BaseDatabaseType createDatabase
+INFO: Database: jdbc:h2:file:D:\projects\scala\naumen.scala.course.2023.spring\.metals\metals (H2 2.1)
+апр. 23, 2023 9:37:39 PM org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.031s)
+апр. 23, 2023 9:37:39 PM org.flywaydb.core.internal.command.DbMigrate migrateGroup
+INFO: Current version of schema "PUBLIC": 4
+апр. 23, 2023 9:37:39 PM org.flywaydb.core.internal.command.DbMigrate logSummary
+INFO: Schema "PUBLIC" is up to date. No migration necessary.
+2023.04.23 21:37:39 INFO  time: initialize in 0.81s
+2023.04.23 21:37:42 WARN  Build server is not auto-connectable.
+2023.04.23 21:37:42 WARN  no build tool detected in workspace 'D:\projects\scala\naumen.scala.course.2023.spring'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2023.04.23 21:37:42 WARN  no build target for: D:\projects\scala\naumen.scala.course.2023.spring\homeworks\homework_3\src\main\scala\homework_3\Exercises.scala
+2023.04.23 21:37:59 INFO  no build target found for D:\projects\scala\naumen.scala.course.2023.spring\homeworks\homework_3\src\main\scala\homework_3\Exercises.scala. Using presentation compiler with project's scala-library version: 3.2.2
+2023.04.23 21:38:50 INFO  Shutting down server
+2023.04.23 21:38:50 INFO  shutting down Metals
+2023.04.23 21:38:50 INFO  Exiting server
+2023.04.23 22:26:38 INFO  Started: Metals version 0.11.12 in workspace 'D:\projects\scala\naumen.scala.course.2023.spring' for client Visual Studio Code 1.77.1.
+апр. 23, 2023 10:26:38 PM org.flywaydb.core.internal.license.VersionPrinter printVersionOnly
+INFO: Flyway Community Edition 9.16.3 by Redgate
+апр. 23, 2023 10:26:38 PM org.flywaydb.core.internal.license.VersionPrinter printVersion
+INFO: See release notes here: https://rd.gt/416ObMi
+апр. 23, 2023 10:26:38 PM org.flywaydb.core.internal.license.VersionPrinter printVersion
+INFO: 
+апр. 23, 2023 10:26:39 PM org.flywaydb.core.internal.database.base.BaseDatabaseType createDatabase
+INFO: Database: jdbc:h2:file:D:\projects\scala\naumen.scala.course.2023.spring\.metals\metals (H2 2.1)
+апр. 23, 2023 10:26:39 PM org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.028s)
+апр. 23, 2023 10:26:39 PM org.flywaydb.core.internal.command.DbMigrate migrateGroup
+INFO: Current version of schema "PUBLIC": 4
+апр. 23, 2023 10:26:39 PM org.flywaydb.core.internal.command.DbMigrate logSummary
+INFO: Schema "PUBLIC" is up to date. No migration necessary.
+2023.04.23 22:26:39 INFO  time: initialize in 0.77s
+2023.04.23 22:26:42 WARN  Build server is not auto-connectable.
+2023.04.23 22:26:42 WARN  no build tool detected in workspace 'D:\projects\scala\naumen.scala.course.2023.spring'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2023.04.23 22:26:42 WARN  no build target for: D:\projects\scala\naumen.scala.course.2023.spring\homeworks\homework_3\src\main\scala\homework_3\Exercises.scala
+2023.04.23 22:26:45 INFO  no build target found for D:\projects\scala\naumen.scala.course.2023.spring\homeworks\homework_3\src\main\scala\homework_3\Exercises.scala. Using presentation compiler with project's scala-library version: 3.2.2
+2023.04.23 22:26:48 INFO  time: code lens generation in 6.54s
+2023.04.23 22:27:14 INFO  Shutting down server
+2023.04.23 22:27:14 INFO  shutting down Metals
+2023.04.23 22:27:14 INFO  Exiting server
+2023.04.24 09:33:24 INFO  Started: Metals version 0.11.12 in workspace 'D:\projects\scala\naumen.scala.course.2023.spring' for client Visual Studio Code 1.77.1.
+апр. 24, 2023 9:33:24 AM org.flywaydb.core.internal.license.VersionPrinter printVersionOnly
+INFO: Flyway Community Edition 9.16.3 by Redgate
+апр. 24, 2023 9:33:24 AM org.flywaydb.core.internal.license.VersionPrinter printVersion
+INFO: See release notes here: https://rd.gt/416ObMi
+апр. 24, 2023 9:33:24 AM org.flywaydb.core.internal.license.VersionPrinter printVersion
+INFO: 
+апр. 24, 2023 9:33:24 AM org.flywaydb.core.internal.database.base.BaseDatabaseType createDatabase
+INFO: Database: jdbc:h2:file:D:\projects\scala\naumen.scala.course.2023.spring\.metals\metals (H2 2.1)
+апр. 24, 2023 9:33:24 AM org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.038s)
+апр. 24, 2023 9:33:24 AM org.flywaydb.core.internal.command.DbMigrate migrateGroup
+INFO: Current version of schema "PUBLIC": 4
+апр. 24, 2023 9:33:24 AM org.flywaydb.core.internal.command.DbMigrate logSummary
+INFO: Schema "PUBLIC" is up to date. No migration necessary.
+2023.04.24 09:33:25 INFO  time: initialize in 1.02s
+2023.04.24 09:33:29 WARN  Build server is not auto-connectable.
+2023.04.24 09:33:29 WARN  no build tool detected in workspace 'D:\projects\scala\naumen.scala.course.2023.spring'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2023.04.24 09:33:29 WARN  no build target for: D:\projects\scala\naumen.scala.course.2023.spring\homeworks\homework_3\src\main\scala\homework_3\Exercises.scala
+2023.04.24 09:33:35 INFO  no build target found for D:\projects\scala\naumen.scala.course.2023.spring\homeworks\homework_3\src\main\scala\homework_3\Exercises.scala. Using presentation compiler with project's scala-library version: 3.2.2
+2023.04.24 09:33:39 INFO  time: code lens generation in 10s
+2023.04.24 09:33:39 INFO  time: code lens generation in 1.85s
+апр. 24, 2023 9:38:27 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+2023.04.24 09:38:33 INFO  Shutting down server
+2023.04.24 09:38:33 INFO  shutting down Metals
+2023.04.24 09:38:33 INFO  Exiting server
+2023.04.24 10:03:31 INFO  Started: Metals version 0.11.12 in workspace 'D:\projects\scala\naumen.scala.course.2023.spring' for client Visual Studio Code 1.77.3.
+апр. 24, 2023 10:03:32 AM org.flywaydb.core.internal.license.VersionPrinter printVersionOnly
+INFO: Flyway Community Edition 9.16.3 by Redgate
+апр. 24, 2023 10:03:32 AM org.flywaydb.core.internal.license.VersionPrinter printVersion
+INFO: See release notes here: https://rd.gt/416ObMi
+апр. 24, 2023 10:03:32 AM org.flywaydb.core.internal.license.VersionPrinter printVersion
+INFO: 
+апр. 24, 2023 10:03:32 AM org.flywaydb.core.internal.database.base.BaseDatabaseType createDatabase
+INFO: Database: jdbc:h2:file:D:\projects\scala\naumen.scala.course.2023.spring\.metals\metals (H2 2.1)
+апр. 24, 2023 10:03:32 AM org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.040s)
+апр. 24, 2023 10:03:32 AM org.flywaydb.core.internal.command.DbMigrate migrateGroup
+INFO: Current version of schema "PUBLIC": 4
+апр. 24, 2023 10:03:32 AM org.flywaydb.core.internal.command.DbMigrate logSummary
+INFO: Schema "PUBLIC" is up to date. No migration necessary.
+2023.04.24 10:03:33 INFO  time: initialize in 1.09s
+2023.04.24 10:03:37 WARN  Build server is not auto-connectable.
+2023.04.24 10:03:37 WARN  no build tool detected in workspace 'D:\projects\scala\naumen.scala.course.2023.spring'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2023.04.24 10:03:37 WARN  no build target for: D:\projects\scala\naumen.scala.course.2023.spring\homeworks\homework_3\src\main\scala\homework_3\Exercises.scala
+2023.04.24 10:03:41 INFO  no build target found for D:\projects\scala\naumen.scala.course.2023.spring\homeworks\homework_3\src\main\scala\homework_3\Exercises.scala. Using presentation compiler with project's scala-library version: 3.2.2
+2023.04.24 10:03:46 INFO  time: code lens generation in 9.09s
+2023.04.24 10:17:04 INFO  Shutting down server
+2023.04.24 10:17:04 INFO  shutting down Metals
+2023.04.24 10:17:04 INFO  Exiting server
