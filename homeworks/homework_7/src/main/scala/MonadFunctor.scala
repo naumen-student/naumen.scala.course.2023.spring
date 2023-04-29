@@ -8,7 +8,7 @@ trait Monad[F[_]] {
     flatMap(fa)(a => flatMap(fb)(b => pure(f(a, b))))
 
   def sequence[A](fas: List[F[A]]): F[List[A]] =
-    fas.foldLeft(pure(List[A]()))((fList, fa) => flatMap(fList)(list => flatMap(fa)(a => pure(list :+ a))))
+    fas.foldLeft(pure(List[A]()))(map2(_, _)(_ :+ _))
 
   def compose[A, B, C](f: A => F[B])(g: B => F[C]): A => F[C] =
     a => flatMap(f(a))(g(_))
