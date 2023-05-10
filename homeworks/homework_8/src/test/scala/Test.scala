@@ -1,5 +1,6 @@
-import utest._
 
+import Exercises.Read.ReadOps
+import utest._
 import Exercises._
 
 object Test extends TestSuite {
