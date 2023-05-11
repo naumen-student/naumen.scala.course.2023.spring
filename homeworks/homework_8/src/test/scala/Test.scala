@@ -1,5 +1,5 @@
+import Exercises.Read.ReadableString
 import utest._
-
 import Exercises._
 
 object Test extends TestSuite {
