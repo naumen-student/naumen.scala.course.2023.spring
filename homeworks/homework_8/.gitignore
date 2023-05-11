@@ -1,3 +1,6 @@
 /.idea
-/target
-project/target
+target
+.vscode
+.metals
+metals.sbt
+.bloop
