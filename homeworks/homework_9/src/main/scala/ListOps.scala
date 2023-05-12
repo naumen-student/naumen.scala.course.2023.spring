@@ -3,7 +3,6 @@ import DataList._
 import scala.annotation.tailrec
 
 object ListOps {
-
   /**
    * Функция fold "сворачивает" список из Т в один элемент типа Т.
    * Если в списке лишь один элемент, то он и вернётся, два - вернётся результат применения f к этим элементам,
@@ -17,7 +16,6 @@ object ListOps {
     case NonEmptyList(head, EmptyList) => Some(head)
     case NonEmptyList(head, NonEmptyList(tailHead, tail)) => foldOption(f)(NonEmptyList(f(head, tailHead), tail))
   }
-
 
   /**
    * Используя foldOption[T](f: (T, T) => T) реализуйте суммирование всех элементов списка.
@@ -33,6 +31,14 @@ object ListOps {
     foldOption(sumT)(list).getOrElse(implicitly[Numeric[T]].zero)
   }
 
+  @tailrec
+  private def reverseImpl[T](buffer: DataList[T])(l: DataList[T]): DataList[T] = l match {
+    case EmptyList => buffer
+    case NonEmptyList(head, tail) => reverseImpl(NonEmptyList(head, buffer))(tail)
+  }
+
+  final def reverse[T]: DataList[T] => DataList[T] = reverseImpl(EmptyList)
+
   /**
    * Фильтрация списка. Хвостовая рекурсия
    *
@@ -40,22 +46,16 @@ object ListOps {
    */
   @tailrec
   private def filterImpl[T](f: T => Boolean)(buffer: DataList[T])(l: DataList[T]): DataList[T] = l match {
-    case EmptyList => reverseImpl(EmptyList)(buffer)
+    case EmptyList => reverse(buffer)
     case NonEmptyList(head, tail) if f(head) => filterImpl(f)(NonEmptyList(head, buffer))(tail)
     case NonEmptyList(_, tail) => filterImpl(f)(buffer)(tail)
   }
 
-  @tailrec
-  private def reverseImpl[T](buffer: DataList[T])(l: DataList[T]): DataList[T] = l match {
-    case EmptyList => buffer
-    case NonEmptyList(head, tail) => reverseImpl(NonEmptyList(head, buffer))(tail)
-  }
-
-  final def filter[T](f: T => Boolean): DataList[T] => DataList[T] = filterImpl(f)(DataList.EmptyList)
+  final def filter[T](f: T => Boolean): DataList[T] => DataList[T] = filterImpl(f)(EmptyList)
 
   final def map[A, B](f: A => B): DataList[A] => DataList[B] = {
-    case DataList.EmptyList => DataList.EmptyList
-    case DataList.NonEmptyList(head, tail) => DataList.NonEmptyList(f(head), map(f)(tail))
+    case EmptyList => EmptyList
+    case NonEmptyList(head, tail) => NonEmptyList(f(head), map(f)(tail))
   }
 
   /**
