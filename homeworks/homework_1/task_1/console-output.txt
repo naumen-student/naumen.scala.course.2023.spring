@@ -1,0 +1,29 @@
+C:\Users\ -usejavacp -Xnojline
+Welcome to Scala 2.13.10 (OpenJDK 64-Bit Server VM, Java 19.0.1).
+Type in expressions for evaluation. Or try :help.
+
+scala> var name="Irina"
+warning: -Xnojline is deprecated: Replaced by -Xjline:off
+var name: String = Irina
+
+scala> println(s"Hello Scala! This is $name")
+warning: -Xnojline is deprecated: Replaced by -Xjline:off
+Hello Scala! This is Irina
+
+scala> var greetings=Array("Hallo","Konichiwa","Oh, hi")
+warning: -Xnojline is deprecated: Replaced by -Xjline:off
+var greetings: Array[String] = Array(Hallo, Konichiwa, Oh, hi)
+
+scala> for(greeting<-greetings) println(s"$greeting Scala! This is $name")
+warning: -Xnojline is deprecated: Replaced by -Xjline:off
+Hallo Scala! This is Irina
+Konichiwa Scala! This is Irina
+Oh, hi Scala! This is Irina
+
+scala> for(greeting<-greetings) println(s"$greeting Scala! This is ${name.reverse}")
+warning: -Xnojline is deprecated: Replaced by -Xjline:off
+Hallo Scala! This is anirI
+Konichiwa Scala! This is anirI
+Oh, hi Scala! This is anirI
+
+scala>
