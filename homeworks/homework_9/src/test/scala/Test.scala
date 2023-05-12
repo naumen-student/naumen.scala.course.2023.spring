@@ -12,7 +12,11 @@ class Test extends AnyFlatSpec with should.Matchers {
     ListOps.foldOption[String](_ ++ _)(DataList("1", "2", "3")) should be (Some("123"))
   }
 
-  "sum" should "work correctly" in {
+  "sum" should "work correctly on empty list" in {
+    ListOps.sum[Int](DataList.EmptyList) should be(0)
+  }
+
+  "sum" should "work correctly on non empty list" in {
     ListOps.sum[Int](DataList(1, 2, 3)) should be (6)
   }
 
