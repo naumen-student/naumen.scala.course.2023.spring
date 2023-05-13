@@ -1,0 +1,876 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Параметрический полиморфизм в Scala</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/white.css" id="theme">
+
+    <link rel="stylesheet" href="css/hljs/vs.css" id="highlight-theme">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <style>
+        .reveal .slide-number {
+            font-size: 22pt;
+            color: black;
+        }
+
+        .reveal pre {
+            background: none;
+            border: none;
+            box-shadow: none;
+        }
+
+        .reveal pre code {
+            color: black;
+            background: none;
+            box-shadow: none;
+            max-height: none;
+        }
+
+        .reveal section img {
+            border: none;
+            box-shadow: none;
+        }
+
+        .reveal pre code {
+            overflow: hidden;
+        }
+
+        .reveal .footer {
+            font-size: 22pt;
+            color: black;
+
+            position: absolute;
+            left: 47.5%;
+            bottom: 0.5em;
+        }
+
+        .corp-name {
+            color: orangered;
+            font-family: "Circe", sans-serif;
+        }
+
+        /* .reveal .slides {
+            margin: 0 auto;
+        } */
+
+        /* body {
+            transform: scale(.8) translateY(-135px);
+        } */
+
+        img {
+            transform: scale(.8)
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="reveal">
+
+    <div class="footer">
+        <span class="corp-name"><b>NAUMEN</b></span>
+    </div>
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+
+        <section>
+            <h1>Type Classes</h1>
+        </section>
+
+        <!--
+            Представим, к примеру, что мы пишем функцию, которая к каждому числу в списке прибавляет заданное значение
+            и возвращает новый список. Функция представлена на слайде и реализована при помощи метода map.
+	        Теперь представим, что нам понадобилась функция, которая делает то же самое для строк. Заметим, что их
+	        реализации абсолютно идентичны. Для небольших функций подобных данной, подобное дублирование кода не
+	        является критичным, однако в случае более сложного алгоритма мы явно не хотим копировать его реализацию
+	        для каждого типа.
+        -->
+        <section>
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 914px; left: 23px; top: 239px;"
+                 data-block-id="881b21bf7e3dbcdcf0e6d8b768583429">
+                <div class="sl-block-style" style="z-index: 10;">
+                    <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+                         data-has-custom-html=""
+                         style="z-index: 10; text-align: left; border-width: 1px; font-size: 95%;" dir="ui">
+                        <span style=' font-family: "Courier New"; font-variant: normal; color: black; font-weight: bold; font-style: normal;'>
+                            def addToAll(<br>&nbsp;&nbsp;&nbsp;&nbsp;list: List[Int],<br>&nbsp;&nbsp;&nbsp;&nbsp;value: Int<br>): List[Int] =<br>&nbsp;&nbsp;list.map(x => x + value)<br>
+                            <br>
+                            def addToAll(<br>&nbsp;&nbsp;&nbsp;&nbsp;list: List[String],<br>&nbsp;&nbsp;&nbsp;&nbsp;value: String<br>): List[String] =<br>&nbsp;&nbsp;list.map(x => x + value)<br>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--
+            Попробуем реализовать ее полиморфно, использовав типовый параметр A. Это приведет к ошибке, в которой
+            говорится, что ожидаемый тип переменной value (String) не совпадает с действительным (A). Ошибка связана с
+            тем, что компилятор пытается сложить переменные x и value как строки а не как значения типа A. Вызванно
+            это тем, что для произвольного типа A операция сложения не определена.
+        -->
+        <section>
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 914px; left: 23px; top: 239px;"
+                 data-block-id="881b21bf7e3dbcdcf0e6d8b768583429">
+                <div class="sl-block-style" style="z-index: 10;">
+                    <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+                         data-has-custom-html=""
+                         style="z-index: 10; text-align: left; border-width: 1px; font-size: 95%;" dir="ui">
+                        <span style=' font-family: "Courier New"; font-variant: normal; color: black; font-weight: bold; font-style: normal;'>
+                            def addToAll[A](<br>&nbsp;&nbsp;&nbsp;&nbsp;list: List[A],<br>&nbsp;&nbsp;&nbsp;&nbsp;value: A<br>): List[A] =<br>&nbsp;&nbsp;list.map(x => x + value)<br>
+                            <br>
+                            &lt;console>:11: error: type mismatch;<br>
+                            &nbsp;found&nbsp;&nbsp;&nbsp;: A<br>
+                            &nbsp;required: String<br>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--
+            Попытаемся решить эту проблему с помощью стандартной для ООП концепции наследования. Определим
+            trait Addable, для которого определим оператор сложения add. Таким образом мы сможем ограничить функцию
+            addToAll для типов, которые реализуют данный интерфейс и использовать нужный нам оператор сложения.
+            Однако сразу же возникает вопрос какой тип написать для параметра other? Если указать в качестве типа
+            Addable, то other может иметь произвольный тип, реализующий trait Addable, в то время как мы хотим
+            складывать числа с числами, строки со строками и т.д.
+        -->
+        <section>
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 914px; left: 23px; top: 239px;"
+                 data-block-id="881b21bf7e3dbcdcf0e6d8b768583429">
+                <div class="sl-block-style" style="z-index: 10;">
+                    <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+                         data-has-custom-html=""
+                         style="z-index: 10; text-align: left; border-width: 1px; font-size: 95%;" dir="ui">
+                        <span style=' font-family: "Courier New"; font-variant: normal; color: black; font-weight: bold; font-style: normal;'>
+                            trait Addable {<br>
+                            &nbsp;&nbsp;def add(other: ???)<br>
+                            }
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--
+            Чтобы решить эту проблему добавим интерфейсу Addable параметр A, ограничивающий тип элементов,с которыми
+            мы будем складывать элемент, реализующий интерфейс. Добавим функции addToAll ограничение на тип A, указав,
+            что элементы этого типа можно складывать с другими элементами этого же типа.
+        -->
+        <section>
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 914px; left: 23px; top: 239px;"
+                 data-block-id="881b21bf7e3dbcdcf0e6d8b768583429">
+                <div class="sl-block-style" style="z-index: 10;">
+                    <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+                         data-has-custom-html=""
+                         style="z-index: 10; text-align: left; border-width: 1px; font-size: 95%;" dir="ui">
+                        <span style=' font-family: "Courier New"; font-variant: normal; color: black; font-weight: bold; font-style: normal;'>
+                            trait Addable[A] {<br>
+                            &nbsp;&nbsp;def add(other: A): A<br>
+                            }<br>
+                            <br>
+                            def addToAll[A &lt: Addable[A]](<br>&nbsp;&nbsp;&nbsp;&nbsp;list: List[A],<br>&nbsp;&nbsp;&nbsp;&nbsp;value: A<br>): List[A] =<br>&nbsp;&nbsp;list.map(x => x.add(value))
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--
+            Чтобы протестировать ее реализуем класс двухмерных векторов с операцией сложения.
+        -->
+        <section>
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 914px; left: 23px; top: 239px;"
+                 data-block-id="881b21bf7e3dbcdcf0e6d8b768583429">
+                <div class="sl-block-style" style="z-index: 10;">
+                    <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+                         data-has-custom-html=""
+                         style="z-index: 10; text-align: left; border-width: 1px; font-size: 95%;" dir="ui">
+                        <span style=' font-family: "Courier New"; font-variant: normal; color: black; font-weight: bold; font-style: normal;'>
+                            case class Vector2D(<br>&nbsp;&nbsp;&nbsp;&nbsp;x: Int,<br>&nbsp;&nbsp;&nbsp;&nbsp;y: Int<br>) extends Addable[Vector2D] {<br>
+                            &nbsp;&nbsp;override def add(other: Vector2D) =<br>&nbsp;&nbsp;&nbsp;&nbsp;Vector2D(
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.x + other.x,
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.y + other.y<br>&nbsp;&nbsp;&nbsp;&nbsp;)<br>
+                            }
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--
+            Запустив функцию получим ожидаемый результат.
+        -->
+        <section>
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 914px; left: 23px; top: 239px;"
+                 data-block-id="881b21bf7e3dbcdcf0e6d8b768583429">
+                <div class="sl-block-style" style="z-index: 10;">
+                    <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+                         data-has-custom-html=""
+                         style="z-index: 10; text-align: left; border-width: 1px; font-size: 95%;" dir="ui">
+                        <span style=' font-family: "Courier New"; font-variant: normal; color: black; font-weight: bold; font-style: normal;'>
+                            scala> addToAll(<br>&nbsp;&nbsp;List(<br>&nbsp;&nbsp;&nbsp;&nbsp;Vector2D(3, 4),<br>&nbsp;&nbsp;&nbsp;&nbsp;Vector2D(5, 6)<br>&nbsp;&nbsp;),<br>&nbsp;&nbsp;Vector2D(1, 2)<br>)<br><br>
+                            res1: List[Vector2D] =<br>&nbsp;&nbsp;List(Vector2D(4,6), Vector2D(6,8))
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--
+             У подобного подхода, однако, есть один недостаток. Для того, чтобы добавить векторам оператор сложения нам
+             пришлось указать в определении класса, что он реализует Addable и реализовать соответствующий метод. Это
+             возможно с написанным нами классом Vector2D, но с классами из стандартной библиотеки, такими как
+             Int и String, и классами из библиотек, подключенных как зависимости, такое сделать невозможно т.к. мы не
+             имеем возможности менять их исходный код. К тому же подобных интерфейсов может быть много и не всегда было
+             бы разумно реализовывать их все непосредственно в классе, даже имея возможность сделать это. Для того
+             чтобы устранить этот недостаток, заметим, что метод add мы вызываем на элементе x, в то время как элемент
+             other является обычным параметром этого метода. Однако нам ничто не мешает разделить определение класса и
+             реализацию интерфейса, если параметр x, который внутри реализации метода add выступает в качестве
+             переменной this, также сделать явным аргументом функции. Таким образом мы переписываем определение метода
+             add, так что он принимает два аргумента, и больше не зависит от неявного параметра this.
+                -->
+        <section>
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 914px; left: 23px; top: 239px;"
+                 data-block-id="881b21bf7e3dbcdcf0e6d8b768583429">
+                <div class="sl-block-style" style="z-index: 10;">
+                    <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+                         data-has-custom-html=""
+                         style="z-index: 10; text-align: left; border-width: 1px; font-size: 95%;" dir="ui">
+                        <span style=' font-family: "Courier New"; font-variant: normal; color: black; font-weight: bold; font-style: normal;'>
+                            trait Addable[A] {<br>
+                            &nbsp;&nbsp;def add(first: A, second: A): A<br>
+                            }
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!--        Классу вектора больше не нужно реализовывать trait Addable, а его реализация выносится в отдельную
+            переменную vector2DAddable.-->
+        <section>
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 914px; left: 23px; top: 239px;"
+                 data-block-id="881b21bf7e3dbcdcf0e6d8b768583429">
+                <div class="sl-block-style" style="z-index: 10;">
+                    <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+                         data-has-custom-html=""
+                         style="z-index: 10; text-align: left; border-width: 1px; font-size: 95%;" dir="ui">
+                        <span style=' font-family: "Courier New"; font-variant: normal; color: black; font-weight: bold; font-style: normal;'>
+                            case class Vector2D(x: Int, y: Int)<br>
+                            <br>
+                            val vector2DAddable: Addable[Vector2D] =<br>&nbsp;&nbsp;new Addable[Vector2D] {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;override def add(
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;first: Vector2D,
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;second: Vector2D
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;): Vector2D =<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vector2D(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;first.x + second.x,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;first.y + second.y
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)
+                            <br>&nbsp;&nbsp;}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!--        Т.к. тип A больше не реализует Addable, то функции addToAll нужно добавить дополнительный параметр,
+            в котором будет передаваться реализация интерфейса для типа A.-->
+        <section>
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 914px; left: 23px; top: 239px;"
+                 data-block-id="881b21bf7e3dbcdcf0e6d8b768583429">
+                <div class="sl-block-style" style="z-index: 10;">
+                    <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+                         data-has-custom-html=""
+                         style="z-index: 10; text-align: left; border-width: 1px; font-size: 95%;" dir="ui">
+                        <span style=' font-family: "Courier New"; font-variant: normal; color: black; font-weight: bold; font-style: normal;'>
+                            def addToAll[A](<br>&nbsp;&nbsp;&nbsp;&nbsp;list: List[A],<br>&nbsp;&nbsp;&nbsp;&nbsp;value: A,<br>&nbsp;&nbsp;&nbsp;&nbsp;addable: Addable[A]<br>): List[A] =<br>
+                            &nbsp;&nbsp;list.map(x => addable.add(x, value))
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!--        Убедимся, что это работает.-->
+        <section>
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 914px; left: 23px; top: 239px;"
+                 data-block-id="881b21bf7e3dbcdcf0e6d8b768583429">
+                <div class="sl-block-style" style="z-index: 10;">
+                    <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+                         data-has-custom-html=""
+                         style="z-index: 10; text-align: left; border-width: 1px; font-size: 95%;" dir="ui">
+                        <span style=' font-family: "Courier New"; font-variant: normal; color: black; font-weight: bold; font-style: normal;'>
+                            scala> addToAll(<br>&nbsp;&nbsp;List(<br>&nbsp;&nbsp;&nbsp;&nbsp;Vector2D(3, 4),<br>&nbsp;&nbsp;&nbsp;&nbsp;Vector2D(5, 6)
+                            <br>&nbsp;&nbsp;),<br>&nbsp;&nbsp;Vector2D(1, 2),<br>&nbsp;&nbsp;vector2Daddable<br>)<br>
+                            <br>
+                            res2: List[Vector2D] =<br>&nbsp;&nbsp;List(Vector2D(4,6), Vector2D(6,8))
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!--        Теперь мы можем написать реализацию Addable для Int-ов и проверить, что это также работает.-->
+        <section>
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 914px; left: 23px; top: 239px;"
+                 data-block-id="881b21bf7e3dbcdcf0e6d8b768583429">
+                <div class="sl-block-style" style="z-index: 10;">
+                    <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+                         data-has-custom-html=""
+                         style="z-index: 10; text-align: left; border-width: 1px; font-size: 95%;" dir="ui">
+                        <span style=' font-family: "Courier New"; font-variant: normal; color: black; font-weight: bold; font-style: normal;'>
+                            val intAddable: Addable[Int] =<br>&nbsp;&nbsp;new Addable[Int] {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;override def add(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;first: Int,
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;second: Int<br>&nbsp;&nbsp;&nbsp;&nbsp;): Int =<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;first + second<br>
+                            &nbsp;&nbsp;}<br>
+                            <br>
+                            scala> addToAll(<br>&nbsp;&nbsp;List(1, 2), 3, intAddable<br>)<br>
+                            res3: List[Int] = List(4, 5)
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+<!--        Передавать в функцию еще один аргумент не совсем удобно, поэтому воспользуемся такой возможностью Scala как
+            неявные значения. Объявим Addable неявным аргументом функции, а реализации – неявными значениями.-->
+        <section>
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 914px; left: 23px; top: 239px;"
+                 data-block-id="881b21bf7e3dbcdcf0e6d8b768583429">
+                <div class="sl-block-style" style="z-index: 10;">
+                    <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+                         data-has-custom-html=""
+                         style="z-index: 10; text-align: left; border-width: 1px; font-size: 95%;" dir="ui">
+                        <span style=' font-family: "Courier New"; font-variant: normal; color: black; font-weight: bold; font-style: normal;'>
+                            def addToAll[A](<br>&nbsp;&nbsp;&nbsp;&nbsp;list: List[A],<br>&nbsp;&nbsp;&nbsp;&nbsp;value: A<br>)(<br>&nbsp;&nbsp;&nbsp;&nbsp;implicit addable: Addable[A]<br>): List[A] =<br>
+                            &nbsp;&nbsp;list.map(x => addable.add(x, value))
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!--        Теперь соответствующая реализация будет автоматически передаваться в функцию.
+	        Заметим, что подобный подход дает нам еще одно преимущество в сравнении с наследованием – мы можем иметь
+	        несколько различных реализаций одного интерфейса для одного и того же типа и контролировать какая из них
+	        используется, добавляя ту или иную в область видимости, либо явно передавая в функцию.-->
+        <section>
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 914px; left: 23px; top: 239px;"
+                 data-block-id="881b21bf7e3dbcdcf0e6d8b768583429">
+                <div class="sl-block-style" style="z-index: 10;">
+                    <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+                         data-has-custom-html=""
+                         style="z-index: 10; text-align: left; border-width: 1px; font-size: 95%;" dir="ui">
+                        <span style=' font-family: "Courier New"; font-variant: normal; color: black; font-weight: bold; font-style: normal;'>
+                            implicit val intAddable: Addable[Int] =<br>&nbsp;&nbsp;...<br>
+                            <br>
+                            scala> addToAll(List(1, 2), 3)<br>
+                            res4: List[Int] = List(4, 5)<br>
+                            <br>
+                            scala> addToAll(<br>&nbsp;&nbsp;List(1, 2), 3<br>)(intAddable)<br>
+                            res5: List[Int] = List(4, 5)<br>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!--        Конструкция, которую мы получили называется Type Class-ом. Она представляет собой интерфейс с как минимум
+            одним типовым параметром и определениями функций над данным типом.
+	        Реализации этого интерфейса для конкретных типов называются экземплярами Type Class-а.
+	        В Scala Type Class-ы обычно имеют 4 основных состовляющих.-->
+        <section>
+            <h2>Type Classes</h2>
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 914px; left: 23px; top: 239px;"
+                 data-block-id="881b21bf7e3dbcdcf0e6d8b768583429">
+                <div class="sl-block-style" style="z-index: 10;">
+                    <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+                         data-has-custom-html=""
+                         style="z-index: 10; text-align: left; border-width: 1px; font-size: 95%;" dir="ui">
+                        <span style=' font-family: "Courier New"; font-variant: normal; color: black; font-weight: bold; font-style: normal;'>
+                            trait Addable[A] {<br>
+                            &nbsp;&nbsp;def add(first: A, second: A): A<br>
+                            }
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <li>Класс типов</li>
+            <li>Экземпляры класса типов</li>
+            <li>Интерфейсы с использованием неявных параметров</li>
+            <li>Интерфейсы с использованием обогащающих классов и неявных параметров</li>
+        </section>
+
+<!--        У получившейся у нас конструкции есть недостаток в том, что для того чтобы вызвать функцию Type Class-а
+            нужно обращаться непосредственно к его экземпляру. Если эти экземпляры объявленны не локально, то это может
+            быть весьма неудобным.-->
+        <section>
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 914px; left: 23px; top: 239px;"
+                 data-block-id="881b21bf7e3dbcdcf0e6d8b768583429">
+                <div class="sl-block-style" style="z-index: 10;">
+                    <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+                         data-has-custom-html=""
+                         style="z-index: 10; text-align: left; border-width: 1px; font-size: 95%;" dir="ui">
+                        <span style=' font-family: "Courier New"; font-variant: normal; color: black; font-weight: bold; font-style: normal;'>
+                            intAddable.add(0, 1)<br>
+                            <br>
+                            vectorAddable.add(<br>&nbsp;&nbsp;Vector2D(0, 1),<br>&nbsp;&nbsp;Vector2D(2, 3)<br>)<br>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!--        Воспользуемся тем, что они объявленны как неявные значения, и напишем интерфейс, который для любого типа,
+            для которого в области видимости есть реализация Type Class-а, будет реализовывать необходимые методы.-->
+        <section>
+            <h2>Интерфейсы с неявными параметрами</h2>
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 914px; left: 23px; top: 239px;"
+                 data-block-id="881b21bf7e3dbcdcf0e6d8b768583429">
+                <div class="sl-block-style" style="z-index: 10;">
+                    <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+                         data-has-custom-html=""
+                         style="z-index: 10; text-align: left; border-width: 1px; font-size: 95%;" dir="ui">
+                        <span style=' font-family: "Courier New"; font-variant: normal; color: black; font-weight: bold; font-style: normal;'>
+                            object Addable {<br>
+                            &nbsp;&nbsp;def add[A](<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;first: A,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;second: A<br>&nbsp;&nbsp;)(<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;implicit addable: Addable[A]<br>&nbsp;&nbsp;): A =<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;addable.add(first, second)<br>
+                            }
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!--        Перепишем метод addToAll с использованием этого интерфейса. Обратим внимание на использование новой
+            нотации A : Addable, которая эквивалентна объявлению неявного параметра типа Addable[A] c некоторым именем.-->
+        <section>
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 914px; left: 23px; top: 239px;"
+                 data-block-id="881b21bf7e3dbcdcf0e6d8b768583429">
+                <div class="sl-block-style" style="z-index: 10;">
+                    <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+                         data-has-custom-html=""
+                         style="z-index: 10; text-align: left; border-width: 1px; font-size: 95%;" dir="ui">
+                        <span style=' font-family: "Courier New"; font-variant: normal; color: black; font-weight: bold; font-style: normal;'>
+                            Addable.add(0, 1)<br>
+                            Addable.add(<br>&nbsp;&nbsp;Vector2D(0, 1),<br>&nbsp;&nbsp;Vector2D(2, 3)<br>)<br>
+                            <br>
+                            def addToAll[A: Addable](<br>&nbsp;&nbsp;&nbsp;&nbsp;list: List[A],<br>&nbsp;&nbsp;&nbsp;&nbsp;value: A<br>): List[A] =<br>
+                            &nbsp;&nbsp;list.map(x => Addable.add(x, value))
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Обогащающие классы</h2>
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 914px; left: 23px; top: 239px;"
+                 data-block-id="881b21bf7e3dbcdcf0e6d8b768583429">
+                <div class="sl-block-style" style="z-index: 10;">
+                    <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+                         data-has-custom-html=""
+                         style="z-index: 10; text-align: left; border-width: 1px; font-size: 95%;" dir="ui">
+                        <span style=' font-family: "Courier New"; font-variant: normal; color: black; font-weight: bold; font-style: normal;'>
+                            implicit class AddableOps[A](value: A) {<br>
+                            &nbsp;&nbsp;def +(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;other: A<br>&nbsp;&nbsp;)(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;implicit addable: Addable[A]<br>&nbsp;&nbsp;): A =<br>&nbsp;&nbsp;&nbsp;&nbsp;addable.add(value, other)<br>
+                            }
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 914px; left: 23px; top: 239px;"
+                 data-block-id="881b21bf7e3dbcdcf0e6d8b768583429">
+                <div class="sl-block-style" style="z-index: 10;">
+                    <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+                         data-has-custom-html=""
+                         style="z-index: 10; text-align: left; border-width: 1px; font-size: 95%;" dir="ui">
+                        <span style=' font-family: "Courier New"; font-variant: normal; color: black; font-weight: bold; font-style: normal;'>
+                            scala> Vector2D(1, 2) + Vector2D(3, 4)<br>
+                            res1: Vector2D = Vector2D(4,6)<br>
+                            <br>
+                            def addToAll[A: Addable](<br>&nbsp;&nbsp;&nbsp;&nbsp;list: List[A],<br>&nbsp;&nbsp;&nbsp;&nbsp;value: A<br>): List[A] =<br>&nbsp;&nbsp;list.map(x => x + value)
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Конструкторы типов</h2>
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 914px; left: 23px; top: 239px;"
+                 data-block-id="881b21bf7e3dbcdcf0e6d8b768583429">
+                <div class="sl-block-style" style="z-index: 10;">
+                    <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+                         data-has-custom-html=""
+                         style="z-index: 10; text-align: left; border-width: 1px; font-size: 95%;" dir="ui">
+                        <span style=' font-family: "Courier New"; font-variant: normal; color: black; font-weight: bold; font-style: normal;'>
+                            implicit def lAdd[A]: Addable[List[A]] =<br>&nbsp;&nbsp;new Addable[List[A]] {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;override def add(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;first: List[A],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;second: List[A]<br>&nbsp;&nbsp;&nbsp;&nbsp;): List[A] =<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;first ++ second<br>
+                            &nbsp;&nbsp;}<br>
+                            <br>
+                            scala> List(1, 2) + List(3, 4, 5)<br>
+                            res0: List[Int] = List(1, 2, 3, 4, 5)
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 914px; left: 23px; top: 239px;"
+                 data-block-id="881b21bf7e3dbcdcf0e6d8b768583429">
+                <div class="sl-block-style" style="z-index: 10;">
+                    <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+                         data-has-custom-html=""
+                         style="z-index: 10; text-align: left; border-width: 1px; font-size: 95%;" dir="ui">
+                        <span style=' font-family: "Courier New"; font-variant: normal; color: black; font-weight: bold; font-style: normal;'>
+                            implicit def oa[A : Addable]<br>&nbsp;&nbsp;: Addable[Option[A]] =<br>&nbsp;&nbsp;new Addable[Option[A]] {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;override def add(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;first: Option[A],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;second: Option[A]<br>&nbsp;&nbsp;&nbsp;&nbsp;): Option[A] =<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;first.fold(second){ x =><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;second.fold(first){ y =><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Some(x + y)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                            &nbsp;&nbsp;}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 914px; left: 23px; top: 239px;"
+                 data-block-id="881b21bf7e3dbcdcf0e6d8b768583429">
+                <div class="sl-block-style" style="z-index: 10;">
+                    <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+                         data-has-custom-html=""
+                         style="z-index: 10; text-align: left; border-width: 1px; font-size: 95%;" dir="ui">
+                        <span style=' font-family: "Courier New"; font-variant: normal; color: black; font-weight: bold; font-style: normal;'>
+                            scala> Option(3) + Option(5)<br>
+                            res1: Option[Int] = Some(8)
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Отношения типов</h2>
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 914px; left: 23px; top: 239px;"
+                 data-block-id="881b21bf7e3dbcdcf0e6d8b768583429">
+                <div class="sl-block-style" style="z-index: 10;">
+                    <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+                         data-has-custom-html=""
+                         style="z-index: 10; text-align: left; border-width: 1px; font-size: 95%;" dir="ui">
+                        <span style=' font-family: "Courier New"; font-variant: normal; color: black; font-weight: bold; font-style: normal;'>
+                            trait Convertible[A, B] {<br>
+                            &nbsp;&nbsp;def convert(value: A) : B<br>
+                            }<br>
+                            <br>
+                            object Convertible {<br>
+                            &nbsp;&nbsp;def convert[A, B](<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value: A<br>&nbsp;&nbsp;&nbsp;&nbsp;)(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;implicit cv: Convertible[A, B]<br>&nbsp;&nbsp;): B =<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;convertible.convert(value)<br>
+                            }<br>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 914px; left: 23px; top: 239px;"
+                 data-block-id="881b21bf7e3dbcdcf0e6d8b768583429">
+                <div class="sl-block-style" style="z-index: 10;">
+                    <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+                         data-has-custom-html=""
+                         style="z-index: 10; text-align: left; border-width: 1px; font-size: 95%;" dir="ui">
+                        <span style=' font-family: "Courier New"; font-variant: normal; color: black; font-weight: bold; font-style: normal;'>
+                            implicit def optionListCV[A]<br>&nbsp;&nbsp;: Convertible[Option[A], List[A]] =<br>
+                            &nbsp;&nbsp;new Convertible[Option[A], List[A]] {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;override def convert(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value: Option[A]<br>&nbsp;&nbsp;&nbsp;&nbsp;): List[A] =<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value.fold(List.empty[A])(List(_))
+                            &nbsp;&nbsp;}<br>
+                            <br>
+                            scala> Convertible.convert(Option(5))<br>
+                            res0: List[Int] = List(5)
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Вариантность типовых параметров</h2>
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 914px; left: 23px; top: 239px;"
+                 data-block-id="881b21bf7e3dbcdcf0e6d8b768583429">
+                <div class="sl-block-style" style="z-index: 10;">
+                    <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+                         data-has-custom-html=""
+                         style="z-index: 10; text-align: left; border-width: 1px; font-size: 95%;" dir="ui">
+                        <span style=' font-family: "Courier New"; font-variant: normal; color: black; font-weight: bold; font-style: normal;'>
+                            scala> Convertible.convert(Some(3))<br>
+                            <br>
+                            &lt;console>:15: error: could not find implicit value for parameter convertible: Convertible[Some[Int],B]
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 914px; left: 23px; top: 239px;"
+                 data-block-id="881b21bf7e3dbcdcf0e6d8b768583429">
+                <div class="sl-block-style" style="z-index: 10;">
+                    <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+                         data-has-custom-html=""
+                         style="z-index: 10; text-align: left; border-width: 1px; font-size: 95%;" dir="ui">
+                        <span style=' font-family: "Courier New"; font-variant: normal; color: black; font-weight: bold; font-style: normal;'>
+                            trait Convertible[-A, +B] {<br>
+                            &nbsp;&nbsp;def convert(value: A): B<br>
+                            }<br>
+                            <br>
+                            scala> Convertible.convert(Some(3))<br>
+                            res0: List[Int] = List(3)<br>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Реализация методов</h2>
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 914px; left: 23px; top: 239px;"
+                 data-block-id="881b21bf7e3dbcdcf0e6d8b768583429">
+                <div class="sl-block-style" style="z-index: 10;">
+                    <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+                         data-has-custom-html=""
+                         style="z-index: 10; text-align: left; border-width: 1px; font-size: 95%;" dir="ui">
+                        <span style=' font-family: "Courier New"; font-variant: normal; color: black; font-weight: bold; font-style: normal;'>
+                            trait Eq[A] {<br>
+                            <br>
+                            &nbsp;&nbsp;def eqv(a: A, b: A): Boolean =<br>&nbsp;&nbsp;&nbsp;&nbsp;!neqv(a, b)<br>
+                            <br>
+                            &nbsp;&nbsp;def neqv(a: A, b: A): Boolean =<br>&nbsp;&nbsp;&nbsp;&nbsp;!eqv(a, b)<br>
+                            <br>
+                            }
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 914px; left: 23px; top: 239px;"
+                 data-block-id="881b21bf7e3dbcdcf0e6d8b768583429">
+                <div class="sl-block-style" style="z-index: 10;">
+                    <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+                         data-has-custom-html=""
+                         style="z-index: 10; text-align: left; border-width: 1px; font-size: 95%;" dir="ui">
+                        <span style=' font-family: "Courier New"; font-variant: normal; color: black; font-weight: bold; font-style: normal;'>
+                            implicit val intEq: Eq[Int] =<br>&nbsp;&nbsp;new Eq[Int] {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;override def eqv(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a: Int,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b: Int<br>&nbsp;&nbsp;&nbsp;&nbsp;): Boolean =<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;first == second<br>
+                            }<br>
+                            <br>
+                            scala> intEq.neqv(0, 1)<br>
+                            res1: Boolean = true
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Наследование</h2>
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 914px; left: 23px; top: 239px;"
+                 data-block-id="881b21bf7e3dbcdcf0e6d8b768583429">
+                <div class="sl-block-style" style="z-index: 10;">
+                    <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+                         data-has-custom-html=""
+                         style="z-index: 10; text-align: left; border-width: 1px; font-size: 95%;" dir="ui">
+                        <span style=' font-family: "Courier New"; font-variant: normal; color: black; font-weight: bold; font-style: normal;'>
+                            trait Ordered[A] extends Eq[A] {<br>
+                            <br>
+                            &nbsp;&nbsp;def order(first: A, second: A): Int<br>
+                            <br>
+                            &nbsp;&nbsp;override def eqv(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;first: A,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;second: A<br>&nbsp;&nbsp;): Boolean =<br>&nbsp;&nbsp;&nbsp;&nbsp;order(first, second) == 0<br>
+                            <br>
+                            }
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Классы типов для конструкторов типов</h2>
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 914px; left: 23px; top: 239px;"
+                 data-block-id="881b21bf7e3dbcdcf0e6d8b768583429">
+                <div class="sl-block-style" style="z-index: 10;">
+                    <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+                         data-has-custom-html=""
+                         style="z-index: 10; text-align: left; border-width: 1px; font-size: 95%;" dir="ui">
+                        <span style=' font-family: "Courier New"; font-variant: normal; color: black; font-weight: bold; font-style: normal;'>
+                            trait Functor[F[_]]{<br>
+                            &nbsp;&nbsp;def fmap[A, B](<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value : F[A],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;func: A => B<br>&nbsp;&nbsp;): F[B]<br>
+                            }
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 914px; left: 23px; top: 239px;"
+                 data-block-id="881b21bf7e3dbcdcf0e6d8b768583429">
+                <div class="sl-block-style" style="z-index: 10;">
+                    <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+                         data-has-custom-html=""
+                         style="z-index: 10; text-align: left; border-width: 1px; font-size: 95%;" dir="ui">
+                        <span style=' font-family: "Courier New"; font-variant: normal; color: black; font-weight: bold; font-style: normal;'>
+                            implicit val lFunc: Functor[List] =<br>&nbsp;&nbsp;new Functor[List] {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;override def fmap[A, B](<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value: List[A],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;func: A => B<br>&nbsp;&nbsp;&nbsp;&nbsp;): List[B] =<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value.map(func)<br>
+                            &nbsp;&nbsp;}<br>
+                            <br>
+                            scala> def add1(x: Int) = x + 1<br>
+                            scala> lFunc.fmap(List(1, 2), add1)<br>
+                            res1: List[Int] = List(2, 3)
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Автоматическая генерация экземпляров</h2>
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 914px; left: 23px; top: 239px;"
+                 data-block-id="881b21bf7e3dbcdcf0e6d8b768583429">
+                <div class="sl-block-style" style="z-index: 10;">
+                    <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+                         data-has-custom-html=""
+                         style="z-index: 10; text-align: left; border-width: 1px; font-size: 95%;" dir="ui">
+                        <span style=' font-family: "Courier New"; font-variant: normal; color: black; font-weight: bold; font-style: normal;'>
+                            case class A(a: Int, b: String)<br>
+                            <br>
+                            case class B(a: A, b: List[Int])<br>
+                            <br>
+                            import io.circe.generic.semiauto._
+                            implicit val aEncoder: Encoder[A] =<br>&nbsp;&nbsp;deriveEncoder[A]<br>
+                            implicit val bEncoder: Encoder[B] =<br>&nbsp;&nbsp;deriveEncoder[B]<br>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="sl-block" data-block-type="text" style="height: auto; width: 914px; left: 23px; top: 239px;"
+                 data-block-id="881b21bf7e3dbcdcf0e6d8b768583429">
+                <div class="sl-block-style" style="z-index: 10;">
+                    <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+                         data-has-custom-html=""
+                         style="z-index: 10; text-align: left; border-width: 1px; font-size: 95%;" dir="ui">
+                        <span style=' font-family: "Courier New"; font-variant: normal; color: black; font-weight: bold; font-style: normal;'>
+                            scala> bEncoder(<br>&nbsp;&nbsp;B(A(1, "a"), List(3, 2))<br>).spaces2<br>
+                            <br>
+                            res0: String =<br>
+                            {<br>
+                            &nbsp;&nbsp;"a" : {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"a" : 1,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"b" : "a"<br>
+                            &nbsp;&nbsp;},<br>
+                            &nbsp;&nbsp;"b" : [3, 2]<br>
+                            }
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: false,
+        progress: true,
+        history: true,
+        center: true,
+        slideNumber: true,
+        zoomKey: 'shift',
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+            {
+                src: 'lib/js/classList.js', condition: function () {
+                    return !document.body.classList;
+                }
+            },
+            {
+                src: 'plugin/markdown/marked.js', condition: function () {
+                    return !!document.querySelector('[data-markdown]');
+                }
+            },
+            {
+                src: 'plugin/markdown/markdown.js', condition: function () {
+                    return !!document.querySelector('[data-markdown]');
+                }
+            },
+            {
+                src: 'plugin/highlight/highlight.js', async: true, condition: function () {
+                    return !!document.querySelector('pre code');
+                }, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            },
+            {src: 'plugin/zoom-js/zoom.js', async: true},
+            {src: 'plugin/notes/notes.js', async: true}
+        ]
+    });
+
+    window.addEventListener("mousedown", handleClick, false);
+    window.addEventListener("contextmenu", function (e) {
+        e.preventDefault();
+    }, false);
+
+    function handleClick(e) {
+        e.preventDefault();
+        if (e.button === 0) Reveal.next();
+        if (e.button === 2) Reveal.prev();
+    }
+</script>
+
+</body>
+</html>
