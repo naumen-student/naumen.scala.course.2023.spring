@@ -1,0 +1,59 @@
+Microsoft Windows [Version 10.0.19044.2965]
+(c) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
+
+C:\Users\kit>scala
+Welcome to Scala 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_351).
+Type in expressions for evaluation. Or try :help.
+
+scala> val a ="Hello Scala! This is Vitaliy Yakovenko"
+a: String = Hello Scala! This is Vitaliy Yakovenko
+
+scala> prin(a)
+<console>:13: error: not found: value prin
+       prin(a)
+       ^
+
+scala> print(a)
+Hello Scala! This is Vitaliy Yakovenko
+scala> val a ="hola Scala! This is Vitaliy Yakovenko"
+a: String = hola Scala! This is Vitaliy Yakovenko
+
+scala> print(a)
+hola Scala! This is Vitaliy Yakovenko
+scala> val a ="Hello Scala! This is "
+a: String = "Hello Scala! This is "
+
+scala> val userName = readLine("enter your name")
+<console>:11: warning: method readLine in trait DeprecatedPredef is deprecated (since 2.11.0): use the method in `scala.io.StdIn`
+       val userName = readLine("enter your name")
+                      ^
+enter your nameuserName: String = "      das"
+
+scala> println("$a","$userName")
+($a,$userName)
+
+scala> val userName = readLine("enter your name")
+<console>:11: warning: method readLine in trait DeprecatedPredef is deprecated (since 2.11.0): use the method in `scala.io.StdIn`
+       val userName = readLine("enter your name")
+                      ^
+enter your nameuserName: String = vitaliyYakovenko
+
+scala> println(userName)
+vitaliyYakovenko
+
+scala> println(a,userName)
+(Hello Scala! This is ,vitaliyYakovenko)
+
+scala> userNameme.reverse
+<console>:12: error: not found: value userNameme
+       userNameme.reverse
+       ^
+
+scala> userName.reverse
+res7: String = oknevokaYyilativ
+
+scala> println(a,userName)
+(Hello Scala! This is ,vitaliyYakovenko)
+
+scala> println(a,userName.reverse)
+(Hello Scala! This is ,oknevokaYyilativ)
