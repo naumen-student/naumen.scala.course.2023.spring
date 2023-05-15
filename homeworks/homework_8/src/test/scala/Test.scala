@@ -4,7 +4,7 @@ import Exercises._
 
 object Test extends TestSuite {
 
-  val tests = Tests {
+  val tests: Tests = Tests {
     'string - {
       val success = Read.read[String]("test")
       assert(success == Right("test"))
