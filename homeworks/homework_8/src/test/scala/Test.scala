@@ -8,6 +8,8 @@ object Test extends TestSuite {
     'string - {
       val success = Read.read[String]("test")
       assert(success == Right("test"))
+      val secondSyntax = "test2".read[String]
+      assert(secondSyntax == Right("test2"))
     }
 
     'int - {
