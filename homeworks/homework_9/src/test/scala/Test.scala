@@ -25,5 +25,4 @@ class Test extends AnyFlatSpec with should.Matchers {
       case i: Int if i % 2 == 0 => i.toString
     }(DataList((0 to 4).toList: _*)) should be (DataList("0", "2", "4"))
   }
-
 }
