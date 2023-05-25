@@ -1,0 +1,143 @@
+[debug] > Exec(early(addDefaultCommands), None, None)
+[debug] > Exec(addDefaultCommands, None, None)
+[debug] > Exec(early(initialize), None, None)
+[debug] > Exec(initialize, None, None)
+[debug] > Exec(early(addPluginSbtFile="""C:\Users\Dell\AppData\Local\Temp\idea2.sbt"""), None, None)
+[debug] > Exec(addPluginSbtFile="""C:\Users\Dell\AppData\Local\Temp\idea2.sbt""", None, None)
+[debug] > Exec(boot, None, None)
+[debug] > Exec(writeSbtVersion, None, None)
+[debug] > Exec(reload, None, None)
+[debug] > Exec(sbtStashOnFailure, None, None)
+[debug] > Exec(onFailure loadFailed, None, None)
+[debug] > Exec(loadp, None, None)
+[info] welcome to sbt 1.8.2 (Oracle Corporation Java 18.0.2.1)
+[debug]       Load.loadUnit: plugins took 70.5765ms
+[debug]       Load.loadUnit: defsScala took 0.2022ms
+[debug] [Loading] Scanning directory C:\Users\Dell\.sbt\1.0\plugins
+[debug] [Loading] Found non-root projects 
+[debug] [Loading] Done in C:\Users\Dell\.sbt\1.0\plugins, returning: ()
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin)))
+[debug] Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)
+[debug] Plugins.deducer#function took 17.9682 ms
+[debug]           Load.resolveProject(global-plugins) took 45.9975ms
+[debug]         Load.loadTransitive: finalizeProject(Project(id global-plugins, base: C:\Users\Dell\.sbt\1.0\plugins, plugins: List(<none>))) took 84.9371ms
+[debug] [Loading] Done in C:\Users\Dell\.sbt\1.0\plugins, returning: (global-plugins)
+[debug]       Load.loadUnit: loadedProjectsRaw took 106.6865ms
+[debug]       Load.loadUnit: cleanEvalClasses took 0.2488ms
+[debug]     Load.loadUnit(file:/C:/Users/Dell/.sbt/1.0/plugins/, ...) took 186.5761ms
+[debug]   Load.apply: load took 367.1989ms
+[debug]   Load.apply: resolveProjects took 7.7741ms
+[debug]   Load.apply: finalTransforms took 56.1346ms
+[debug]   Load.apply: config.delegates took 9.4019ms
+[debug]   Load.apply: Def.make(settings)... took 352.1028ms
+[debug]   Load.apply: structureIndex took 85.2612ms
+[debug]   Load.apply: mkStreams took 1.2479ms
+[info] loading global plugins from C:\Users\Dell\.sbt\1.0\plugins
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[debug] Load.defaultLoad until apply took 1864.3332ms
+[debug]           Load.loadUnit: plugins took 17.2021ms
+[debug]           Load.loadUnit: defsScala took 0.0028ms
+[debug] [Loading] Scanning directory C:\Users\Dell\IdeaProjects\nextTR DZ\project
+[debug]             Load.loadUnit: mkEval took 4.6527ms
+[debug] [Loading] Found non-root projects 
+[debug] [Loading] Done in C:\Users\Dell\IdeaProjects\nextTR DZ\project, returning: ()
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin)))
+[debug] Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)
+[debug] Plugins.deducer#function took 2.0705 ms
+[info] loading settings for project nexttr-dz-build from idea2.sbt ...
+[debug]               Load.resolveProject(nexttr-dz-build) took 3.1733ms
+[debug]             Load.loadTransitive: finalizeProject(Project(id nexttr-dz-build, base: C:\Users\Dell\IdeaProjects\nextTR DZ\project, plugins: List(<none>))) took 5.8888ms
+[debug] [Loading] Done in C:\Users\Dell\IdeaProjects\nextTR DZ\project, returning: (nexttr-dz-build)
+[debug]           Load.loadUnit: loadedProjectsRaw took 1915.7498ms
+[debug]           Load.loadUnit: cleanEvalClasses took 5.9234ms
+[debug]         Load.loadUnit(file:/C:/Users/Dell/IdeaProjects/nextTR%20DZ/project/, ...) took 1939.7619ms
+[debug]       Load.apply: load took 1941.7154ms
+[debug]       Load.apply: resolveProjects took 0.2723ms
+[debug]       Load.apply: finalTransforms took 13.5224ms
+[debug]       Load.apply: config.delegates took 0.4072ms
+[debug]       Load.apply: Def.make(settings)... took 183.2853ms
+[debug]       Load.apply: structureIndex took 49.8287ms
+[debug]       Load.apply: mkStreams took 0.0024ms
+[info] loading project definition from C:\Users\Dell\IdeaProjects\nextTR DZ\project
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[warn] Unrecognized repository Scala Plugin Bundled Repository, ignoring it
+[warn] Unrecognized repository Scala Plugin Bundled Repository, ignoring it
+[debug]     Load.loadUnit: plugins took 3158.4121ms
+[debug]     Load.loadUnit: defsScala took 0.0024ms
+[debug] [Loading] Scanning directory C:\Users\Dell\IdeaProjects\nextTR DZ
+[debug]       Load.loadUnit: mkEval took 0.2153ms
+[debug] [Loading] Found root project root w/ remaining 
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin)))
+[debug] Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(org.jetbrains.sbt.StructurePlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(org.jetbrains.sbt.IdeaShellPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(org.jetbrains.sbt.indices.SbtIntellijIndicesPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(org.jetbrains.sbt.StructurePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(org.jetbrains.sbt.IdeaShellPlugin)))
+[debug] Clause(And(Set(Atom(sbt.plugins.CorePlugin), Atom(sbt.plugins.JvmPlugin))),Set(Atom(org.jetbrains.sbt.indices.SbtIntellijIndicesPlugin))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.SemanticdbPlugin,org.jetbrains.sbt.indices.SbtIntellijIndicesPlugin,sbt.plugins.JUnitXmlReportPlugin,org.jetbrains.sbt.IdeaShellPlugin,org.jetbrains.sbt.StructurePlugin,sbt.plugins.MiniDependencyTreePlugin)
+[debug] Plugins.deducer#function took 1.6903 ms
+[info] loading settings for project root from build.sbt ...
+[debug]         Load.resolveProject(root) took 24.8403ms
+[debug]       Load.loadTransitive: finalizeProject(Project(id root, base: C:\Users\Dell\IdeaProjects\nextTR DZ, plugins: List(<none>))) took 27.7032ms
+[debug] [Loading] Done in C:\Users\Dell\IdeaProjects\nextTR DZ, returning: (root)
+[debug]     Load.loadUnit: loadedProjectsRaw took 941.7143ms
+[debug]     Load.loadUnit: cleanEvalClasses took 8.1657ms
+[debug]   Load.loadUnit(file:/C:/Users/Dell/IdeaProjects/nextTR%20DZ/, ...) took 4108.9264ms
+[debug] Load.apply: load took 4110.4237ms
+[debug] Load.apply: resolveProjects took 0.1518ms
+[debug] Load.apply: finalTransforms took 20.3301ms
+[debug] Load.apply: config.delegates took 0.33ms
+[debug] Load.apply: Def.make(settings)... took 54.7831ms
+[debug] Load.apply: structureIndex took 18.432ms
+[debug] Load.apply: mkStreams took 0.0019ms
+[info] set current project to nextTR DZ (in build file:/C:/Users/Dell/IdeaProjects/nextTR%20DZ/)
+[debug] > Exec(sbtPopOnFailure, None, None)
+[debug] > Exec(resumeFromFailure, None, None)
+[debug] > Exec(notifyUsersAboutShell, None, None)
+[debug] > Exec(iflast shell, None, None)
+[debug] > Exec(; set ideaPort in Global := 64967 ; idea-shell, None, None)
+[debug] > Exec(set ideaPort in Global := 64967, None, None)
+[info] Defining Global / ideaPort
+[info] The new value will be used by Compile / compile, Test / compile
+[debug] Defining 
+[debug] 	Global / ideaPort
+[debug] 
+[debug] The new value will be used by 
+[debug] 	Compile / compile
+[debug] 	Test / compile
+[info] Reapplying settings...
+[info] set current project to nextTR DZ (in build file:/C:/Users/Dell/IdeaProjects/nextTR%20DZ/)
+[debug] > Exec(idea-shell, None, None)
