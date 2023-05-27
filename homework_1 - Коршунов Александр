@@ -1,0 +1,39 @@
+Microsoft Windows [Version 10.0.19044.2604]
+(c) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
+
+C:\Users\САНЯ>scala
+Welcome to Scala 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 19.0.2).
+Type in expressions for evaluation. Or try :help.
+
+scala> val myName = "Korshunov Alexander"
+myName: String = Korshunov Alexander
+
+scala> val hiList = List("Hello")
+hiList: List[String] = List(Hello)
+
+scala> hiList.foreach(el =>
+     | println(f"$el Scala! This is $myName")
+     | )
+Hello Scala! This is Korshunov Alexander
+
+scala> val hiList = List("Hello", "Hola", "Guten tag")
+hiList: List[String] = List(Hello, Hola, Guten tag)
+
+scala> hiList.foreach(el =>
+     |      | println(f"$el Scala! This is $myName")
+     |      | )
+Hello Scala! This is Korshunov Alexander
+Hola Scala! This is Korshunov Alexander
+Guten tag Scala! This is Korshunov Alexander
+
+scala> val myName = "Korshunov Alexander".reverse
+myName: String = rednaxelA vonuhsroK
+
+scala> hiList.foreach(el =>
+     |      | println(f"$el Scala! This is $myName")
+     |      | )
+Hello Scala! This is rednaxelA vonuhsroK
+Hola Scala! This is rednaxelA vonuhsroK
+Guten tag Scala! This is rednaxelA vonuhsroK
+
+scala>
