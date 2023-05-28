@@ -1,0 +1,40 @@
+Microsoft Windows [Version 10.0.19045.2965]
+(c) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
+
+C:\Users\Ilya>scala
+Welcome to Scala 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 17.0.4.1).
+Type in expressions for evaluation. Or try :help.
+
+scala> val name = "Ilya Kozik"
+name: String = Ilya Kozik
+
+scala> println(f"Hello Scala! This is $name")
+Hello Scala! This is Ilya Kozik
+
+scala> val helloHawaiian = "Hola"
+helloHawaiian: String = Hola
+
+scala> val helloGerman = "Guten tag"
+helloGerman: String = Guten tag
+
+scala> println(f"$helloHawaiian Scala! This is $name")
+Hola Scala! This is Ilya Kozik
+
+scala> println(f"$helloGerman Scala! This is $name")
+Guten tag Scala! This is Ilya Kozik
+
+scala>
+
+scala> val reversedName = name.reverse
+reversedName: String = kizoK aylI
+
+scala> println(f"Hello Scala! This is $reversedName")
+Hello Scala! This is kizoK aylI
+
+scala> println(f"$helloHawaiian Scala! This is $reversedName")
+Hola Scala! This is kizoK aylI
+
+scala> println(f"$helloGerman Scala! This is $reversedName")
+Guten tag Scala! This is kizoK aylI
+
+scala>
