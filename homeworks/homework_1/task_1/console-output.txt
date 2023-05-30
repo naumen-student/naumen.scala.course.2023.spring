@@ -1,0 +1,30 @@
+C:\Windows\System32>scala
+Welcome to Scala 2.12.10 (OpenJDK 64-Bit Server VM, Java 1.8.0_292).
+Type in expressions for evaluation. Or try :help.
+
+scala> var a = "Hello Scala! This is Andrey Radchuk"
+a: String = Hello Scala! This is Andrey Radchuk
+
+scala> println(a)
+Hello Scala! This is Andrey Radchuk
+
+scala> var helloArray = Array("Hola", "Guten Tag", "Hei")
+helloArray: Array[String] = Array(Hola, Guten Tag, Hei)
+
+scala> val name = "Andrey Radchuk"
+name: String = Andrey Radchuk
+
+scala> def hello(hello: String, name: String): Unit = {println(hello + " Scala! This is " + name)}
+hello: (hello: String, name: String)Unit
+
+scala> for (helloItem <- helloArray) hello(helloItem, name)
+Hola Scala! This is Andrey Radchuk
+Guten Tag Scala! This is Andrey Radchuk
+Hei Scala! This is Andrey Radchuk
+
+scala> for (helloItem <- helloArray) hello(helloItem, name.reverse)
+Hola Scala! This is kuhcdaR yerdnA
+Guten Tag Scala! This is kuhcdaR yerdnA
+Hei Scala! This is kuhcdaR yerdnA
+
+scala>
