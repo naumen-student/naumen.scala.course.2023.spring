@@ -12,12 +12,27 @@ object Exercises {
      * Реализуйте функцию тремя разными способами, отличающимися тем, как определяется какой тип имеет значение переданное в аргументе. 
      * Определение типа необходимо для реализации специальной логики работы с Boolean значениями, которая описана в условии выше.
      */
-    def prettyBooleanFormatter1(x: Any): String = ???
+    def prettyBooleanFormatter1(x: Any): String =
+        x match {
+            case bool: Boolean => return if (bool) "правда" else "ложь"
+            case _ => x.toString
+        }
 
-    def prettyBooleanFormatter2(x: Any): String = ???
 
-    def prettyBooleanFormatter3(x: Any): String = ???
+    def prettyBooleanFormatter2(x: Any): String =
+    if (x.isInstanceOf[Boolean])
+        if (x.asInstanceOf[Boolean]) "правда" else "ложь"
+    else
+        x.toString
 
+    def prettyBooleanFormatter3(x: Any): String = {
+
+
+    if (x.getClass==classOf[java.lang.Boolean])
+        if(x.asInstanceOf[Boolean]) "правда" else "ложь"
+    else
+        x.toString
+    }
 
     /**
      * Задание №2
@@ -26,12 +41,31 @@ object Exercises {
      * Реализуйте функцию тремя разными способами, отличающимися тем как функция себя ведет на пустой коллекции. 
      * Обратите внимание на возвращаемые типы.
      */
-    def max1(xs: Seq[Int]): Int = ???
+    def max1(xs: Seq[Int]): Int =
+        {
+            if (xs.isEmpty)
+                throw new IllegalArgumentException("empty.max")
+            else
+                xs.max
+        }
 
-    def max2(xs: Seq[Int]): Seq[Int] = ???
+    def max2(xs: Seq[Int]): Seq[Int] =
+    {
+        if (xs.isEmpty) {
+            Seq()
+        }
+        else {
+            Seq(xs.max)
+        }
+    }
 
-    def max3(xs: Seq[Int]): Option[Int] = ???
-
+    def max3(xs: Seq[Int]): Option[Int] =
+    {
+        if (xs.isEmpty)
+            None
+        else
+            Some(xs.max)
+    }
     /**
      * Задание №3
      * Допустим дана функция sumIntegers, которая умеет суммировать числа.
@@ -41,9 +75,19 @@ object Exercises {
     /**
      * Реализуйте на основе нее 3 варианта суммирования 2х чисел, отличающиеся способом передачи этих 2х чисел в функцию sumIntegers.
      * Как минимум одна из реализаций должна использовать тип данных (класс) написанный вами самостоятельно.
-     */ 
-    def sum1(x: Int, y: Int): Int = sumIntegers(???)
-    def sum2(x: Int, y: Int): Int = sumIntegers(???)
-    def sum3(x: Int, y: Int): Int = sumIntegers(???)
+     */
+    case class IntIterable(x:Int,y:Int) extends Iterable[Int]
+    {
+        override def iterator: Iterator[Int] = Iterator(x,y)
+    }
 
+    def sum1(x: Int, y: Int): Int = sumIntegers(Seq(x,y))
+    def sum2(x: Int, y: Int): Int = sumIntegers(List(x,y))
+    def sum3(x: Int, y: Int): Int = sumIntegers(IntIterable(x,y))
+
+
+
+    def main(args: Array[String]): Unit = {
+
+    }
 }
