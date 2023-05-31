@@ -1,0 +1,16 @@
+Welcome to Scala 3.2.2 (11.0.12, Java OpenJDK 64-Bit Server VM).
+Type in expressions for evaluation. Or try :help.
+
+scala> var helloWords = Array("Hello, ", "Hola, ", "Benvenuto, ")
+var helloWords: Array[String] = Array("Hello, ", "Hola, ", "Benvenuto, ")
+
+scala> var name="Виктор"
+var name: String = Виктор
+
+scala> for (i<-0 to helloWords.length-1)
+     |   print(helloWords{i}+name+"\n")
+     | print(name.reverse)
+Hello, Виктор
+Hola, Виктор
+Benvenuto, Виктор
+роткиВ~          
