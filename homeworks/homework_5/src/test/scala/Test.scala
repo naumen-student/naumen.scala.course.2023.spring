@@ -25,33 +25,33 @@ object Test extends TestSuite {
 
     assert(s6.getNames.toSet == Set("Goofy", "Barbos"))
 
-    //Test task 2
+    //    Test task 2
 
-//    val r1 = s1.feed(Meat)
-//
-//    assert(r1.toSet == Set("Garfield eats meat"))
-//
-//    val r2 = s1.feed(Milk)
-//
-//    assert(r2.toSet == Set("Garfield eats milk"))
-//
-//    val r3 = s2.feed(Meat)
-//
-//    assert(r3.toSet == Set("Goofy eats meat"))
-//
-//    val r4 = s2.feed(Bread)
-//
-//    assert(r4.toSet == Set("Goofy eats bread"))
-//
-//    val r5 = s4.feed(Meat)
-//
-//    assert(
-//      r5.toSet == Set(
-//        "Garfield eats meat",
-//        "Goofy eats meat",
-//        "Kuzya eats meat"
-//      )
-//    )
+    val r1 = s1.feed(Meat)
+
+    assert(r1.toSet == Set("Garfield eats meat"))
+
+    val r2 = s1.feed(Milk)
+
+    assert(r2.toSet == Set("Garfield eats milk"))
+
+    val r3 = s2.feed(Meat)
+
+    assert(r3.toSet == Set("Goofy eats meat"))
+
+    val r4 = s2.feed(Bread)
+
+    assert(r4.toSet == Set("Goofy eats bread"))
+
+    val r5 = s4.feed(Meat)
+
+    assert(
+      r5.toSet == Set(
+        "Garfield eats meat",
+        "Goofy eats meat",
+        "Kuzya eats meat"
+      )
+    )
 
   }
 
