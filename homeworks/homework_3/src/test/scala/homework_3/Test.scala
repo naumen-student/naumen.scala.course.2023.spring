@@ -57,5 +57,23 @@ object Test extends TestSuite{
             assert(Exercises.max3(Seq(8, 6, 11, 55, 21)).contains(55))
             assert(Exercises.max3(null).isEmpty)
         }
+
+        "test_sum1" - {
+            assert(Exercises.sum1(12, 5) == 17)
+            assert(Exercises.sum1(-1, -3) == -4)
+            assert(Exercises.sum1(-12, 12) == 0)
+        }
+
+        "test_sum2" - {
+            assert(Exercises.sum2(12, 5) == 17)
+            assert(Exercises.sum2(-1, -3) == -4)
+            assert(Exercises.sum2(-12, 12) == 0)
+        }
+
+        "test_sum3" - {
+            assert(Exercises.sum3(12, 5) == 17)
+            assert(Exercises.sum3(-1, -3) == -4)
+            assert(Exercises.sum3(-12, 12) == 0)
+        }
     }
 }
