@@ -5,7 +5,7 @@ object Test extends TestSuite {
 
   val tests = Tests {
 
-    //Test task 1
+    // Test task 1
 
     val s1: Shelter[Cat] = Shelter(List(Cat("Garfield")))
 
@@ -25,7 +25,7 @@ object Test extends TestSuite {
 
     assert(s6.getNames.toSet == Set("Goofy", "Barbos"))
 
-    //Test task 2
+    // Test task 2
 
     val r1 = s1.feed(Meat)
 
