@@ -1,0 +1,27 @@
+C:\Users\doguhankaan\.jdks\openjdk-20.0.1\bin\java.exe "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2023.1.1\lib\idea_rt.jar=52060:C:\Program Files\JetBrains\IntelliJ IDEA 2023.1.1\bin" -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath C:\Users\doguhankaan\Desktop\naumen.scala.course.2023.spring\homeworks\homework_1\task_3\target\scala-2.13\classes;C:\Users\doguhankaan\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-lang\scala-library\2.13.10\scala-library-2.13.10.jar;C:\Users\doguhankaan\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\io\github\java-diff-utils\java-diff-utils\4.12\java-diff-utils-4.12.jar;C:\Users\doguhankaan\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\net\java\dev\jna\jna\5.9.0\jna-5.9.0.jar;C:\Users\doguhankaan\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\jline\jline\3.21.0\jline-3.21.0.jar;C:\Users\doguhankaan\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-lang\scala-compiler\2.13.10\scala-compiler-2.13.10.jar;C:\Users\doguhankaan\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-lang\scala-reflect\2.13.10\scala-reflect-2.13.10.jar;C:\Users\doguhankaan\AppData\Roaming\JetBrains\IntelliJIdea2023.1\plugins\Scala\lib\runners.jar scala.tools.nsc.MainGenericRunner -usejavacp -Xjline:off
+Welcome to Scala 2.13.10 (OpenJDK 64-Bit Server VM, Java 20.0.1).
+Type in expressions for evaluation. Or try :help.
+
+scala> val name: String = "Doguhan Kaan"
+val name: String = Doguhan Kaan
+
+scala> val helloString: String = s"Hello Scala! This is $name"
+val helloString: String = Hello Scala! This is Doguhan Kaan
+
+scala> println(helloString)
+Hello Scala! This is Doguhan Kaan
+
+scala> val helloWords: Array[String] = Array("Hello", "Hola", "Guten tag")
+val helloWords: Array[String] = Array(Hello, Hola, Guten tag)
+
+scala> for (helloWord <- helloWords) println(s"$helloWord Scala! This is $name")
+Hello Scala! This is Doguhan Kaan
+Hola Scala! This is Doguhan Kaan
+Guten tag Scala! This is Doguhan Kaan
+
+scala> for (helloWord <- helloWords) println(s"$helloWord Scala! This is ${name.reverse}")
+Hello Scala! This is naaK nahugoD
+Hola Scala! This is naaK nahugoD
+Guten tag Scala! This is naaK nahugoD
+
+scala> 
