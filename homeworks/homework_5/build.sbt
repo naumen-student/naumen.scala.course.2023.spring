@@ -1,9 +1,12 @@
-name := "homework_5"
+ThisBuild / version := "0.1.0-SNAPSHOT"
 
-version := "0.1"
+ThisBuild / scalaVersion := "2.13.10"
 
-scalaVersion := "2.12.10"
+lazy val root = (project in file("."))
+  .settings(
+    name := "homework_5"
+  )
 
-libraryDependencies += "com.lihaoyi" %% "utest" % "0.5.3" % "test"
+libraryDependencies += "com.lihaoyi" %% "utest" % "0.8.1" % "test"
 
 testFrameworks += new TestFramework("utest.runner.Framework")

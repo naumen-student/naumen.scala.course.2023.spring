@@ -1,0 +1,150 @@
+{
+    "version": "1.4.0",
+    "project": {
+        "name": "homework_2",
+        "directory": "C:\\Users\\tyrbi\\naumen.scala.course.2023.spring\\homeworks\\homework_2",
+        "workspaceDir": "C:\\Users\\tyrbi\\naumen.scala.course.2023.spring\\homeworks\\homework_2",
+        "sources": [
+            "C:\\Users\\tyrbi\\naumen.scala.course.2023.spring\\homeworks\\homework_2\\src\\main\\scala-2.12",
+            "C:\\Users\\tyrbi\\naumen.scala.course.2023.spring\\homeworks\\homework_2\\src\\main\\scala",
+            "C:\\Users\\tyrbi\\naumen.scala.course.2023.spring\\homeworks\\homework_2\\src\\main\\java",
+            "C:\\Users\\tyrbi\\naumen.scala.course.2023.spring\\homeworks\\homework_2\\target\\scala-2.12\\src_managed\\main"
+        ],
+        "dependencies": [
+            
+        ],
+        "classpath": [
+            "C:\\Users\\tyrbi\\.sbt\\boot\\scala-2.12.10\\lib\\scala-library.jar"
+        ],
+        "out": "C:\\Users\\tyrbi\\naumen.scala.course.2023.spring\\homeworks\\homework_2\\.bloop\\homework_2",
+        "classesDir": "C:\\Users\\tyrbi\\naumen.scala.course.2023.spring\\homeworks\\homework_2\\.bloop\\homework_2\\scala-2.12\\classes",
+        "resources": [
+            "C:\\Users\\tyrbi\\naumen.scala.course.2023.spring\\homeworks\\homework_2\\src\\main\\resources",
+            "C:\\Users\\tyrbi\\naumen.scala.course.2023.spring\\homeworks\\homework_2\\target\\scala-2.12\\resource_managed\\main"
+        ],
+        "scala": {
+            "organization": "org.scala-lang",
+            "name": "scala-compiler",
+            "version": "2.12.10",
+            "options": [
+                
+            ],
+            "jars": [
+                "C:\\Users\\tyrbi\\.sbt\\boot\\scala-2.12.10\\lib\\scala-compiler.jar",
+                "C:\\Users\\tyrbi\\.sbt\\boot\\scala-2.12.10\\lib\\scala-library.jar",
+                "C:\\Users\\tyrbi\\.sbt\\boot\\scala-2.12.10\\lib\\scala-reflect.jar",
+                "C:\\Users\\tyrbi\\.sbt\\boot\\scala-2.12.10\\lib\\scala-xml_2.12-1.0.6.jar"
+            ],
+            "setup": {
+                "order": "mixed",
+                "addLibraryToBootClasspath": true,
+                "addCompilerToClasspath": false,
+                "addExtraJarsToClasspath": false,
+                "manageBootClasspath": true,
+                "filterLibraryFromClasspath": true
+            }
+        },
+        "java": {
+            "options": [
+                
+            ]
+        },
+        "test": {
+            "frameworks": [
+                {
+                    "names": [
+                        "org.scalacheck.ScalaCheckFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.specs2.runner.Specs2Framework",
+                        "org.specs2.runner.SpecsFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.specs.runner.SpecsFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.scalatest.tools.Framework",
+                        "org.scalatest.tools.ScalaTestFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "com.novocode.junit.JUnitFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "utest.runner.Framework"
+                    ]
+                }
+            ],
+            "options": {
+                "excludes": [
+                    
+                ],
+                "arguments": [
+                    
+                ]
+            }
+        },
+        "platform": {
+            "name": "jvm",
+            "config": {
+                "home": "C:\\Program Files\\Eclipse Adoptium\\jdk-17.0.8.101-hotspot",
+                "options": [
+                    "-Duser.dir=C:\\Users\\tyrbi\\naumen.scala.course.2023.spring\\homeworks\\homework_2"
+                ]
+            },
+            "mainClass": [
+                
+            ]
+        },
+        "resolution": {
+            "modules": [
+                {
+                    "organization": "org.scala-lang",
+                    "name": "scala-library",
+                    "version": "2.12.10",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "scala-library",
+                            "path": "C:\\Users\\tyrbi\\.sbt\\boot\\scala-2.12.10\\lib\\scala-library.jar"
+                        },
+                        {
+                            "name": "scala-library",
+                            "classifier": "sources",
+                            "path": "C:\\Users\\tyrbi\\naumen.scala.course.2023.spring\\homeworks\\homework_2\\null\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala-library\\2.12.10\\scala-library-2.12.10-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.scala-lang",
+                    "name": "scala-library",
+                    "version": "2.12.10",
+                    "configurations": "optional",
+                    "artifacts": [
+                        {
+                            "name": "scala-library",
+                            "path": "C:\\Users\\tyrbi\\.sbt\\boot\\scala-2.12.10\\lib\\scala-library.jar"
+                        },
+                        {
+                            "name": "scala-library",
+                            "classifier": "sources",
+                            "path": "C:\\Users\\tyrbi\\naumen.scala.course.2023.spring\\homeworks\\homework_2\\null\\Coursier\\cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala-library\\2.12.10\\scala-library-2.12.10-sources.jar"
+                        }
+                    ]
+                }
+            ]
+        },
+        "tags": [
+            "library"
+        ]
+    }
+}
