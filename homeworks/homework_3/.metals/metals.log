@@ -1,0 +1,85 @@
+2023.10.08 18:22:51 INFO  Started: Metals version 1.0.1 in folders 'C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_3' for client Visual Studio Code 1.83.0.
+окт. 08, 2023 6:22:52 PM org.flywaydb.core.internal.license.VersionPrinter printVersionOnly
+INFO: Flyway Community Edition 9.21.2 by Redgate
+окт. 08, 2023 6:22:52 PM org.flywaydb.core.internal.license.VersionPrinter printVersion
+INFO: See release notes here: https://rd.gt/416ObMi
+окт. 08, 2023 6:22:52 PM org.flywaydb.core.internal.license.VersionPrinter printVersion
+INFO: 
+окт. 08, 2023 6:22:52 PM org.flywaydb.core.FlywayExecutor execute
+INFO: Database: jdbc:h2:file:C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_3\.metals\metals (H2 2.1)
+окт. 08, 2023 6:22:52 PM org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory allAppliedMigrations
+INFO: Schema history table "PUBLIC"."flyway_schema_history" does not exist yet
+окт. 08, 2023 6:22:52 PM org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.025s)
+окт. 08, 2023 6:22:52 PM org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory create
+INFO: Creating Schema History table "PUBLIC"."flyway_schema_history" ...
+окт. 08, 2023 6:22:52 PM org.flywaydb.core.internal.command.DbMigrate migrateGroup
+INFO: Current version of schema "PUBLIC": << Empty Schema >>
+окт. 08, 2023 6:22:52 PM org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "PUBLIC" to version "1 - Create tables"
+окт. 08, 2023 6:22:52 PM org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "PUBLIC" to version "2 - Server discovery"
+окт. 08, 2023 6:22:52 PM org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "PUBLIC" to version "3 - Jar symbols"
+окт. 08, 2023 6:22:52 PM org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "PUBLIC" to version "4 - Fingerprints"
+окт. 08, 2023 6:22:52 PM org.flywaydb.core.internal.command.DbMigrate logSummary
+INFO: Successfully applied 4 migrations to schema "PUBLIC", now at version v4 (execution time 00:00.023s)
+2023.10.08 18:22:53 INFO  time: initialize in 1.06s
+2023.10.08 18:22:57 WARN  Build server is not auto-connectable.
+2023.10.08 18:22:57 WARN  no build target for: C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_3\src\main\scala\homework_3\Exercises.scala
+2023.10.08 18:23:01 INFO  no build target found for C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_3\src\main\scala\homework_3\Exercises.scala. Using presentation compiler with project's scala-library version: 3.3.0
+окт. 08, 2023 6:23:02 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3
+окт. 08, 2023 6:23:02 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2
+окт. 08, 2023 6:23:02 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1
+2023.10.08 18:23:02 WARN  no build target for: C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_3\src\test\scala\homework_3\Test.scala
+2023.10.08 18:23:05 INFO  time: code lens generation in 8.18s
+2023.10.08 18:23:05 INFO  time: code lens generation in 3.45s
+2023.10.08 18:23:10 WARN  no build target for: C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_3\build.sbt
+2023.10.08 18:23:10 WARN  Could not find semantic tokens for: file:///C:/Users/tyrbi/naumen.scala.course.2023.spring/homeworks/homework_3/build.sbt
+2023.10.08 18:23:10 WARN  Could not find semantic tokens for: file:///C:/Users/tyrbi/naumen.scala.course.2023.spring/homeworks/homework_3/build.sbt
+2023.10.08 18:23:14 WARN  no build target for: C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_3\src\main\scala\homework_3\Exercises.scala
+окт. 08, 2023 6:23:59 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 58
+2023.10.08 18:24:07 WARN  no build target for: C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_3\src\test\scala\homework_3\Test.scala
+2023.10.08 18:24:13 WARN  no build target for: C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_3\src\test\scala\homework_3\Test.scala
+окт. 08, 2023 6:24:13 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: scala.meta.internal.metals.debug.BuildTargetNotFoundForPathException: No build target could be found for the path: C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_3\src\test\scala\homework_3\Test.scala
+java.util.concurrent.CompletionException: scala.meta.internal.metals.debug.BuildTargetNotFoundForPathException: No build target could be found for the path: C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_3\src\test\scala\homework_3\Test.scala
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:332)
+	at java.base/java.util.concurrent.CompletableFuture.uniAcceptNow(CompletableFuture.java:747)
+	at java.base/java.util.concurrent.CompletableFuture.uniAcceptStage(CompletableFuture.java:735)
+	at java.base/java.util.concurrent.CompletableFuture.thenAcceptAsync(CompletableFuture.java:2186)
+	at scala.concurrent.java8.FuturesConvertersImpl$CF.thenAccept(FutureConvertersImpl.scala:37)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:279)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:190)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: scala.meta.internal.metals.debug.BuildTargetNotFoundForPathException: No build target could be found for the path: C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_3\src\test\scala\homework_3\Test.scala
+	at scala.meta.internal.metals.debug.DebugProvider.debugDiscovery(DebugProvider.scala:470)
+	at scala.meta.internal.metals.MetalsLspService.debugDiscovery(MetalsLspService.scala:1803)
+	at scala.meta.internal.metals.WorkspaceLspService.executeCommand(WorkspaceLspService.scala:869)
+	at scala.meta.metals.lsp.DelegatingScalaService.executeCommand(DelegatingScalaService.scala:169)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:120)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:261)
+	... 9 more
+
+окт. 08, 2023 6:24:16 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 72
+2023.10.08 18:24:27 INFO  Shutting down server
+2023.10.08 18:24:27 INFO  shutting down Metals
+2023.10.08 18:24:27 INFO  Exiting server

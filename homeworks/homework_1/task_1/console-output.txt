@@ -1,0 +1,17 @@
+scala> var name = "Lev Putintsev"
+name: String = Lev Putintsev
+
+scala> println("Hello Scala! This is " + name)
+Hello Scala! This is Lev Putintsev
+
+scala> def printGreeting(greeting: String, name: String): Unit = println(greeting + " Scala! This is " + name)
+printGreeting: (greeting: String, name: String)Unit
+
+scala> printGreeting("Hola", name)
+Hola Scala! This is Lev Putintsev
+
+scala> printGreeting("Guten tag", name)
+Guten tag Scala! This is Lev Putintsev
+
+scala> printGreeting("Hi", name.reverse)
+Hi Scala! This is vestnituP veL

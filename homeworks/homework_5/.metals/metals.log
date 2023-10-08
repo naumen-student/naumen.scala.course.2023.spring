@@ -1,0 +1,79 @@
+2023.10.08 18:25:39 INFO  Started: Metals version 1.0.1 in folders 'C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_5' for client Visual Studio Code 1.83.0.
+окт. 08, 2023 6:25:39 PM org.flywaydb.core.internal.license.VersionPrinter printVersionOnly
+INFO: Flyway Community Edition 9.21.2 by Redgate
+окт. 08, 2023 6:25:39 PM org.flywaydb.core.internal.license.VersionPrinter printVersion
+INFO: See release notes here: https://rd.gt/416ObMi
+окт. 08, 2023 6:25:39 PM org.flywaydb.core.internal.license.VersionPrinter printVersion
+INFO: 
+окт. 08, 2023 6:25:39 PM org.flywaydb.core.FlywayExecutor execute
+INFO: Database: jdbc:h2:file:C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_5\.metals\metals (H2 2.1)
+окт. 08, 2023 6:25:39 PM org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory allAppliedMigrations
+INFO: Schema history table "PUBLIC"."flyway_schema_history" does not exist yet
+окт. 08, 2023 6:25:39 PM org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.023s)
+окт. 08, 2023 6:25:39 PM org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory create
+INFO: Creating Schema History table "PUBLIC"."flyway_schema_history" ...
+окт. 08, 2023 6:25:39 PM org.flywaydb.core.internal.command.DbMigrate migrateGroup
+INFO: Current version of schema "PUBLIC": << Empty Schema >>
+окт. 08, 2023 6:25:39 PM org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "PUBLIC" to version "1 - Create tables"
+окт. 08, 2023 6:25:39 PM org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "PUBLIC" to version "2 - Server discovery"
+окт. 08, 2023 6:25:39 PM org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "PUBLIC" to version "3 - Jar symbols"
+окт. 08, 2023 6:25:39 PM org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "PUBLIC" to version "4 - Fingerprints"
+окт. 08, 2023 6:25:40 PM org.flywaydb.core.internal.command.DbMigrate logSummary
+INFO: Successfully applied 4 migrations to schema "PUBLIC", now at version v4 (execution time 00:00.035s)
+2023.10.08 18:25:40 INFO  time: initialize in 0.94s
+2023.10.08 18:25:43 WARN  Build server is not auto-connectable.
+2023.10.08 18:25:43 WARN  no build target for: C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_5\src\main\scala\Exercises.scala
+2023.10.08 18:25:47 INFO  no build target found for C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_5\src\main\scala\Exercises.scala. Using presentation compiler with project's scala-library version: 3.3.0
+окт. 08, 2023 6:25:48 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3
+окт. 08, 2023 6:25:48 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1
+окт. 08, 2023 6:25:48 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2
+2023.10.08 18:25:48 WARN  no build target for: C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_5\src\test\scala\Test.scala
+2023.10.08 18:25:51 INFO  time: code lens generation in 2.77s
+2023.10.08 18:25:51 INFO  time: code lens generation in 7.73s
+2023.10.08 18:25:53 WARN  no build target for: C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_5\src\main\scala\Exercises.scala
+2023.10.08 18:26:42 INFO  Shutting down server
+2023.10.08 18:26:42 INFO  shutting down Metals
+2023.10.08 18:26:42 INFO  Exiting server
+2023.10.08 18:28:04 INFO  Started: Metals version 1.0.1 in folders 'C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_5' for client Visual Studio Code 1.83.0.
+окт. 08, 2023 6:28:04 PM org.flywaydb.core.internal.license.VersionPrinter printVersionOnly
+INFO: Flyway Community Edition 9.21.2 by Redgate
+окт. 08, 2023 6:28:04 PM org.flywaydb.core.internal.license.VersionPrinter printVersion
+INFO: See release notes here: https://rd.gt/416ObMi
+окт. 08, 2023 6:28:04 PM org.flywaydb.core.internal.license.VersionPrinter printVersion
+INFO: 
+окт. 08, 2023 6:28:05 PM org.flywaydb.core.FlywayExecutor execute
+INFO: Database: jdbc:h2:file:C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_5\.metals\metals (H2 2.1)
+окт. 08, 2023 6:28:05 PM org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.040s)
+окт. 08, 2023 6:28:05 PM org.flywaydb.core.internal.command.DbMigrate migrateGroup
+INFO: Current version of schema "PUBLIC": 4
+окт. 08, 2023 6:28:05 PM org.flywaydb.core.internal.command.DbMigrate logSummary
+INFO: Schema "PUBLIC" is up to date. No migration necessary.
+2023.10.08 18:28:05 INFO  time: initialize in 0.88s
+2023.10.08 18:28:09 WARN  Build server is not auto-connectable.
+2023.10.08 18:28:09 WARN  no build target for: C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_5\src\main\scala\Exercises.scala
+2023.10.08 18:28:13 INFO  no build target found for C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_5\src\main\scala\Exercises.scala. Using presentation compiler with project's scala-library version: 3.3.0
+окт. 08, 2023 6:28:14 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3
+окт. 08, 2023 6:28:14 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2
+окт. 08, 2023 6:28:14 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1
+2023.10.08 18:28:14 WARN  no build target for: C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_5\src\test\scala\Test.scala
+2023.10.08 18:28:14 WARN  no build target for: C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_5\src\main\scala\Exercises.scala
+окт. 08, 2023 6:28:14 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 11
+2023.10.08 18:28:16 INFO  time: code lens generation in 2.25s
+2023.10.08 18:28:16 INFO  time: code lens generation in 2.44s
+2023.10.08 18:28:16 INFO  time: code lens generation in 2.87s
+2023.10.08 18:31:09 INFO  Shutting down server
+2023.10.08 18:31:09 INFO  shutting down Metals
+2023.10.08 18:31:09 INFO  Exiting server
