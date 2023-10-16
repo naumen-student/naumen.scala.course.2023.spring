@@ -1,5 +1,4 @@
 object Exercises {
-
     /*ПРИМЕР*/
     /*Реализовать функцию, которая возвращает все целые числа в заданном диапазоне (от iForm до iTo), которые делятся
     на 3 или на 7.*/
@@ -9,15 +8,20 @@ object Exercises {
              if i % 3 == 0 || i % 7 == 0
         } yield i
     }
-
-
-
     /*ЗАДАНИЕ I*/
     /*Реализовать функцию, которая возвращает сумму всех целых чисел в заданном диапазоне (от iForm до iTo), которые делятся
     на 3 или на 5.*/
     /*Реализовать юнит-тесты в src/test/scala для данной функции.*/
     def sumOfDivBy3Or5(iFrom: Int, iTo: Int): Long = ???
 
+    def sumOfDivBy3Or5(iFrom: Int, iTo: Int): Long = {
+        var summa = 0
+        for {i <- iFrom to iTo
+             if i % 3 ==0 || i % 5 ==0
+             }
+            summa += i
+        summa
+    }
 
 
     /*ЗАДАНИЕ II*/
@@ -26,22 +30,41 @@ object Exercises {
     Число 98 можно разложить на множители 1 * 2 * 7 * 7, результат выполнения функции => Seq(2, 7).*/
     /*Реализовать юнит-тесты в src/test/scala для данной функции.*/
     def primeFactor(number: Int): Seq[Int] = ???
+    def primeFactor(number: Int): Seq[Int] = {
+        var n = number
+        var ss:Seq[Int] = Seq()
+        var i = 2
+        while (i * i <= n) {
+            if (n % i != 0)
+                i+=1
+            else {
+                n/=i
+                if (!ss.contains(i)) ss = ss:+i
+            }
+        }
+        if (n > 1 && i != n) ss = ss:+n
+        ss
+    }
 
 
 
-    /*ЗАДАНИЕ III*/
-    /*Дано: класс двумерного вектора, а также функции вычисления модуля вектора (abs), вычисления скалярного произведения
-    векторов (scalar) и косинуса угла между векторами (cosBetween).
-    Необходимо: реализовать функцию sumByFunc таким образом, чтобы можно было раскомментировать функции sumScalars и sumCosines.
+
+
+@@ -36,19 +58,19 @@ object Exercises {
     Функция sumScalars должна вычислять сумму скалярных произведений для пар векторов scalar(leftVec0, leftVec1) + scalar(rightVec0, rightVec1).
     Функция sumCosines должна вычислять сумму косинусов углов между парами векторов cosBetween(leftVec0, leftVec1) + cosBetween(rightVec0, rightVec1).*/
     /*Реализовать юнит-тесты в src/test/scala для функций sumScalars и sumCosines*/
+    import scala.collection.immutable.ListMap
     case class Vector2D(x: Double, y: Double)
     def abs(vec: Vector2D): Double = java.lang.Math.sqrt(vec.x * vec.x + vec.y * vec.y)
     def scalar(vec0: Vector2D, vec1: Vector2D): Double = vec0.x * vec1.x + vec0.y * vec1.y
     def cosBetween(vec0: Vector2D, vec1: Vector2D): Double = scalar(vec0, vec1) / abs(vec0) / abs(vec1)
     //def sumByFunc(leftVec0: Vector2D, leftVec1: Vector2D, ???, rightVec0: Vector2D, rightVec1: Vector2D) = ???
     /*
+    def sumByFunc(leftVec0: Vector2D, leftVec1: Vector2D, magicMethod:(Vector2D,Vector2D) =>
+      Double, rightVec0: Vector2D, rightVec1: Vector2D): Double = {
+        magicMethod(leftVec0,leftVec1) + magicMethod(rightVec0,rightVec1)
+      }
     def sumScalars(leftVec0: Vector2D, leftVec1: Vector2D, rightVec0: Vector2D, rightVec1: Vector2D): Double =
         sumByFunc(leftVec0, leftVec1, scalar, rightVec0, rightVec1)
     */
@@ -72,5 +95,18 @@ object Exercises {
         )
 
     def sortByHeavyweight(ballsArray: Map[String, (Int, Double)] = balls): Seq[String] = ???
+    def calcMass(radius: Int, density: Double): Double ={
+        val v = 4/3 * java.lang.Math.PI * radius*radius*radius
+        v*density
+    }
+
+    def sortByHeavyweight(ballsArray: Map[String, (Int, Double)] = balls): Seq[String] = {
+        val m = ballsArray.map { case (k, v) =>
+            val newValue = calcMass(v._1, v._2)
+            k -> newValue
+        }
+        val sequence = m.toSeq.sortBy(_._2)
+        for ((k, v) <- sequence) yield k
+    }
 
 }
