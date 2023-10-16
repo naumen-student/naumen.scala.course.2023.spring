@@ -13,6 +13,8 @@ object Test extends TestSuite {
 
     val s3: Shelter[Animal] = s1 ++ s2
 
+    val cats: Shelter[Cat] = s1 ++ s1
+
     val s4 = s3 + Cat("Kuzya")
 
     assert(s4.getNames.toSet == Set("Garfield", "Goofy", "Kuzya"))
