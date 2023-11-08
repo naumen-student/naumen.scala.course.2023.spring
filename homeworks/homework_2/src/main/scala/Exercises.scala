@@ -8,6 +8,7 @@ object Exercises {
         for {i <- iFrom to iTo
              if i % 3 == 0 || i % 7 == 0
         } yield i
+        
     }
 
 
