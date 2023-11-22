@@ -1,0 +1,72 @@
+PS C:\Users\Y\IdeaProjects\naumen_scala_urfu_2023\naumen.scala.course.2023.spring> scala
+Welcome to Scala 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 19.0.1).
+Type in expressions for evaluation. Or try :help.
+
+scala> println("Ni hao")
+Ni hao
+
+scala> println("Hello Scala! This is Mark")
+Hello Scala! This is Mark
+
+scala> val name = Mark Polozkov
+<console>:11: error: not found: value Mark
+       val name = Mark Polozkov
+                  ^
+<console>:11: warning: postfix operator Poloz should be enabled
+by making the implicit value scala.language.postfixOps visible.
+This can be achieved by adding the import clause 'import scala.language.postfixOps'
+or by setting the compiler option -language:postfixOps.
+See the Scaladoc for value scala.language.postfixOps for a discussion
+why the feature should be explicitly enabled.
+       val name = Mark Polozkov
+                       ^
+
+scala> val name = "Mark Polozkov"
+name: String = Mark Polozkov
+
+scala> val small_turple = ("Hello","Hola","Guten morgen")
+small_turple: (String, String, String) = (Hello,Hola,Guten morgen)
+
+scala> val phrase = " Scala! This is "
+phrase: String = " Scala! This is "
+
+scala> println(small_turple(1) + phrase + name)
+<console>:15: error: (String, String, String) does not take parameters
+       println(small_turple(1) + phrase + name)
+                           ^
+
+scala> println(small_turple)
+(Hello,Hola,Guten morgen)
+
+scala> small_turple.getClass
+res4: Class[_ <: (String, String, String)] = class scala.Tuple3
+
+scala> small_turple(0)
+<console>:13: error: (String, String, String) does not take parameters
+       small_turple(0)
+                   ^
+
+scala> small_turple.0
+<console>:1: error: ';' expected but double literal found.
+       small_turple.0
+                   ^
+
+scala> small_turple[0]
+<console>:1: error: identifier expected but integer literal found.
+       small_turple[0]
+                    ^
+
+scala> small_turple._1
+res6: String = Hello
+
+
+scala> val new_seq = Seq("Hello","Hola","Guten morgen")
+new_seq: Seq[String] = List(Hello, Hola, Guten morgen)
+
+scala> for (elem <- new_seq) println(elem + phrase + name)
+Hello Scala! This is Mark Polozkov
+Hola Scala! This is Mark Polozkov
+Guten morgen Scala! This is Mark Polozkov
+
+
+scala>
