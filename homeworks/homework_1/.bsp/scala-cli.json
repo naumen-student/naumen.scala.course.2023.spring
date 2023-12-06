@@ -1,0 +1,16 @@
+{
+  "name": "scala-cli",
+  "argv": [
+    "C:\\Users\\tyrbi\\AppData\\Local\\Coursier\\data\\bin\\.scala-cli.aux.exe",
+    "bsp",
+    "--json-options",
+    "C:\\Users\\tyrbi\\naumen.scala.course.2023.spring\\homeworks\\homework_1\\.scala-build\\ide-options-v2.json",
+    "C:\\Users\\tyrbi\\naumen.scala.course.2023.spring\\homeworks\\homework_1"
+  ],
+  "version": "1.0.4",
+  "bspVersion": "2.1.0-M5",
+  "languages": [
+    "scala",
+    "java"
+  ]
+}
