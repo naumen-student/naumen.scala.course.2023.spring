@@ -1,0 +1,322 @@
+2023.10.08 18:21:20 INFO  Started: Metals version 1.0.1 in folders 'C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_2' for client Visual Studio Code 1.83.0.
+окт. 08, 2023 6:21:20 PM org.flywaydb.core.internal.license.VersionPrinter printVersionOnly
+INFO: Flyway Community Edition 9.21.2 by Redgate
+окт. 08, 2023 6:21:20 PM org.flywaydb.core.internal.license.VersionPrinter printVersion
+INFO: See release notes here: https://rd.gt/416ObMi
+окт. 08, 2023 6:21:20 PM org.flywaydb.core.internal.license.VersionPrinter printVersion
+INFO: 
+окт. 08, 2023 6:21:21 PM org.flywaydb.core.FlywayExecutor execute
+INFO: Database: jdbc:h2:file:C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_2\.metals\metals (H2 2.1)
+окт. 08, 2023 6:21:21 PM org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory allAppliedMigrations
+INFO: Schema history table "PUBLIC"."flyway_schema_history" does not exist yet
+окт. 08, 2023 6:21:21 PM org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.024s)
+окт. 08, 2023 6:21:21 PM org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory create
+INFO: Creating Schema History table "PUBLIC"."flyway_schema_history" ...
+окт. 08, 2023 6:21:21 PM org.flywaydb.core.internal.command.DbMigrate migrateGroup
+INFO: Current version of schema "PUBLIC": << Empty Schema >>
+окт. 08, 2023 6:21:21 PM org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "PUBLIC" to version "1 - Create tables"
+окт. 08, 2023 6:21:21 PM org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "PUBLIC" to version "2 - Server discovery"
+окт. 08, 2023 6:21:21 PM org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "PUBLIC" to version "3 - Jar symbols"
+окт. 08, 2023 6:21:21 PM org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "PUBLIC" to version "4 - Fingerprints"
+окт. 08, 2023 6:21:21 PM org.flywaydb.core.internal.command.DbMigrate logSummary
+INFO: Successfully applied 4 migrations to schema "PUBLIC", now at version v4 (execution time 00:00.025s)
+2023.10.08 18:21:21 INFO  time: initialize in 1.16s
+2023.10.08 18:21:23 WARN  Build server is not auto-connectable.
+2023.10.08 18:21:23 WARN  no build target for: C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_2\src\main\scala\Exercises.scala
+2023.10.08 18:21:29 INFO  no build target found for C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_2\src\main\scala\Exercises.scala. Using presentation compiler with project's scala-library version: 3.3.0
+2023.10.08 18:21:29 WARN  no build target for: C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_2\src\main\scala\Main.scala
+2023.10.08 18:21:33 INFO  time: code lens generation in 3.56s
+2023.10.08 18:21:33 INFO  time: code lens generation in 7.88s
+2023.10.08 18:21:39 WARN  no build target for: C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_2\src\test\scala\Test.scala
+2023.10.08 18:21:47 WARN  no build target for: C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_2\build.sbt
+2023.10.08 18:21:47 WARN  Could not find semantic tokens for: file:///C:/Users/tyrbi/naumen.scala.course.2023.spring/homeworks/homework_2/build.sbt
+2023.10.08 18:21:47 WARN  Could not find semantic tokens for: file:///C:/Users/tyrbi/naumen.scala.course.2023.spring/homeworks/homework_2/build.sbt
+2023.10.08 18:22:02 WARN  no build target for: C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_2\src\main\scala\Exercises.scala
+2023.10.08 18:22:22 WARN  no build target for: C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_2\src\main\scala\Main.scala
+2023.10.08 18:22:28 WARN  no build target for: C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_2\src\test\scala\Test.scala
+2023.10.08 18:22:38 INFO  Shutting down server
+2023.10.08 18:22:38 INFO  shutting down Metals
+2023.10.08 18:22:38 INFO  Exiting server
+2023.10.08 18:31:44 INFO  Started: Metals version 1.0.1 in folders 'C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_2' for client Visual Studio Code 1.83.0.
+окт. 08, 2023 6:31:44 PM org.flywaydb.core.internal.license.VersionPrinter printVersionOnly
+INFO: Flyway Community Edition 9.21.2 by Redgate
+окт. 08, 2023 6:31:44 PM org.flywaydb.core.internal.license.VersionPrinter printVersion
+INFO: See release notes here: https://rd.gt/416ObMi
+окт. 08, 2023 6:31:44 PM org.flywaydb.core.internal.license.VersionPrinter printVersion
+INFO: 
+окт. 08, 2023 6:31:44 PM org.flywaydb.core.FlywayExecutor execute
+INFO: Database: jdbc:h2:file:C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_2\.metals\metals (H2 2.1)
+окт. 08, 2023 6:31:44 PM org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.030s)
+окт. 08, 2023 6:31:44 PM org.flywaydb.core.internal.command.DbMigrate migrateGroup
+INFO: Current version of schema "PUBLIC": 4
+окт. 08, 2023 6:31:44 PM org.flywaydb.core.internal.command.DbMigrate logSummary
+INFO: Schema "PUBLIC" is up to date. No migration necessary.
+2023.10.08 18:31:44 INFO  time: initialize in 0.93s
+2023.10.08 18:31:49 WARN  Build server is not auto-connectable.
+2023.10.08 18:31:49 WARN  no build target for: C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_2\src\main\scala\Exercises.scala
+2023.10.08 18:31:54 INFO  no build target found for C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_2\src\main\scala\Exercises.scala. Using presentation compiler with project's scala-library version: 3.3.0
+2023.10.08 18:31:55 WARN  no build target for: C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_2\src\main\scala\Main.scala
+окт. 08, 2023 6:31:55 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 7
+окт. 08, 2023 6:31:55 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 8
+2023.10.08 18:31:55 WARN  no build target for: C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_2\src\main\scala\Exercises.scala
+2023.10.08 18:31:59 INFO  time: code lens generation in 10s
+2023.10.08 18:31:59 INFO  time: code lens generation in 3.85s
+2023.10.08 18:31:59 INFO  time: code lens generation in 4.18s
+2023.10.08 18:32:08 WARN  no build target for: C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_2\src\main\scala\Exercises.scala
+окт. 08, 2023 6:32:08 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: scala.meta.internal.metals.debug.BuildTargetNotFoundForPathException: No build target could be found for the path: C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_2\src\main\scala\Exercises.scala
+java.util.concurrent.CompletionException: scala.meta.internal.metals.debug.BuildTargetNotFoundForPathException: No build target could be found for the path: C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_2\src\main\scala\Exercises.scala
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:332)
+	at java.base/java.util.concurrent.CompletableFuture.uniAcceptNow(CompletableFuture.java:747)
+	at java.base/java.util.concurrent.CompletableFuture.uniAcceptStage(CompletableFuture.java:735)
+	at java.base/java.util.concurrent.CompletableFuture.thenAcceptAsync(CompletableFuture.java:2186)
+	at scala.concurrent.java8.FuturesConvertersImpl$CF.thenAccept(FutureConvertersImpl.scala:37)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:279)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:190)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: scala.meta.internal.metals.debug.BuildTargetNotFoundForPathException: No build target could be found for the path: C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_2\src\main\scala\Exercises.scala
+	at scala.meta.internal.metals.debug.DebugProvider.debugDiscovery(DebugProvider.scala:470)
+	at scala.meta.internal.metals.MetalsLspService.debugDiscovery(MetalsLspService.scala:1803)
+	at scala.meta.internal.metals.WorkspaceLspService.executeCommand(WorkspaceLspService.scala:869)
+	at scala.meta.metals.lsp.DelegatingScalaService.executeCommand(DelegatingScalaService.scala:169)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:120)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:261)
+	... 9 more
+
+2023.10.08 18:32:48 WARN  no build target for: C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_2\src\main\scala\Main.scala
+2023.10.08 18:32:53 WARN  no build target for: C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_2\src\main\scala\Main.scala
+окт. 08, 2023 6:32:53 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: scala.meta.internal.metals.debug.BuildTargetNotFoundForPathException: No build target could be found for the path: C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_2\src\main\scala\Main.scala
+java.util.concurrent.CompletionException: scala.meta.internal.metals.debug.BuildTargetNotFoundForPathException: No build target could be found for the path: C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_2\src\main\scala\Main.scala
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:332)
+	at java.base/java.util.concurrent.CompletableFuture.uniAcceptNow(CompletableFuture.java:747)
+	at java.base/java.util.concurrent.CompletableFuture.uniAcceptStage(CompletableFuture.java:735)
+	at java.base/java.util.concurrent.CompletableFuture.thenAcceptAsync(CompletableFuture.java:2186)
+	at scala.concurrent.java8.FuturesConvertersImpl$CF.thenAccept(FutureConvertersImpl.scala:37)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:279)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:190)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: scala.meta.internal.metals.debug.BuildTargetNotFoundForPathException: No build target could be found for the path: C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_2\src\main\scala\Main.scala
+	at scala.meta.internal.metals.debug.DebugProvider.debugDiscovery(DebugProvider.scala:470)
+	at scala.meta.internal.metals.MetalsLspService.debugDiscovery(MetalsLspService.scala:1803)
+	at scala.meta.internal.metals.WorkspaceLspService.executeCommand(WorkspaceLspService.scala:869)
+	at scala.meta.metals.lsp.DelegatingScalaService.executeCommand(DelegatingScalaService.scala:169)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:120)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:261)
+	... 9 more
+
+2023.10.08 18:34:00 WARN  no build target for: C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_2\src\main\scala\Main.scala
+окт. 08, 2023 6:34:00 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: scala.meta.internal.metals.debug.BuildTargetNotFoundForPathException: No build target could be found for the path: C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_2\src\main\scala\Main.scala
+java.util.concurrent.CompletionException: scala.meta.internal.metals.debug.BuildTargetNotFoundForPathException: No build target could be found for the path: C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_2\src\main\scala\Main.scala
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:332)
+	at java.base/java.util.concurrent.CompletableFuture.uniAcceptNow(CompletableFuture.java:747)
+	at java.base/java.util.concurrent.CompletableFuture.uniAcceptStage(CompletableFuture.java:735)
+	at java.base/java.util.concurrent.CompletableFuture.thenAcceptAsync(CompletableFuture.java:2186)
+	at scala.concurrent.java8.FuturesConvertersImpl$CF.thenAccept(FutureConvertersImpl.scala:37)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:279)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:190)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: scala.meta.internal.metals.debug.BuildTargetNotFoundForPathException: No build target could be found for the path: C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_2\src\main\scala\Main.scala
+	at scala.meta.internal.metals.debug.DebugProvider.debugDiscovery(DebugProvider.scala:470)
+	at scala.meta.internal.metals.MetalsLspService.debugDiscovery(MetalsLspService.scala:1803)
+	at scala.meta.internal.metals.WorkspaceLspService.executeCommand(WorkspaceLspService.scala:869)
+	at scala.meta.metals.lsp.DelegatingScalaService.executeCommand(DelegatingScalaService.scala:169)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:120)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:261)
+	... 9 more
+
+окт. 08, 2023 6:34:15 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+2023.10.08 18:35:08 WARN  no build target for: C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_2\src\main\scala\Main.scala
+окт. 08, 2023 6:35:08 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: scala.meta.internal.metals.debug.BuildTargetNotFoundForPathException: No build target could be found for the path: C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_2\src\main\scala\Main.scala
+java.util.concurrent.CompletionException: scala.meta.internal.metals.debug.BuildTargetNotFoundForPathException: No build target could be found for the path: C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_2\src\main\scala\Main.scala
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:332)
+	at java.base/java.util.concurrent.CompletableFuture.uniAcceptNow(CompletableFuture.java:747)
+	at java.base/java.util.concurrent.CompletableFuture.uniAcceptStage(CompletableFuture.java:735)
+	at java.base/java.util.concurrent.CompletableFuture.thenAcceptAsync(CompletableFuture.java:2186)
+	at scala.concurrent.java8.FuturesConvertersImpl$CF.thenAccept(FutureConvertersImpl.scala:37)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:279)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:190)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: scala.meta.internal.metals.debug.BuildTargetNotFoundForPathException: No build target could be found for the path: C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_2\src\main\scala\Main.scala
+	at scala.meta.internal.metals.debug.DebugProvider.debugDiscovery(DebugProvider.scala:470)
+	at scala.meta.internal.metals.MetalsLspService.debugDiscovery(MetalsLspService.scala:1803)
+	at scala.meta.internal.metals.WorkspaceLspService.executeCommand(WorkspaceLspService.scala:869)
+	at scala.meta.metals.lsp.DelegatingScalaService.executeCommand(DelegatingScalaService.scala:169)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:120)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:261)
+	... 9 more
+
+2023.10.08 18:36:47 WARN  no build target for: C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_2\src\test\scala\Test.scala
+2023.10.08 18:37:26 WARN  no build target for: C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_2\src\main\scala\Main.scala
+окт. 08, 2023 6:37:29 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: scala.meta.internal.metals.debug.BuildTargetNotFoundForPathException: No build target could be found for the path: C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_2\src\main\scala\Main.scala
+java.util.concurrent.CompletionException: scala.meta.internal.metals.debug.BuildTargetNotFoundForPathException: No build target could be found for the path: C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_2\src\main\scala\Main.scala
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:332)
+	at java.base/java.util.concurrent.CompletableFuture.uniAcceptNow(CompletableFuture.java:747)
+	at java.base/java.util.concurrent.CompletableFuture.uniAcceptStage(CompletableFuture.java:735)
+	at java.base/java.util.concurrent.CompletableFuture.thenAcceptAsync(CompletableFuture.java:2186)
+	at scala.concurrent.java8.FuturesConvertersImpl$CF.thenAccept(FutureConvertersImpl.scala:37)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:279)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:190)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: scala.meta.internal.metals.debug.BuildTargetNotFoundForPathException: No build target could be found for the path: C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_2\src\main\scala\Main.scala
+	at scala.meta.internal.metals.debug.DebugProvider.debugDiscovery(DebugProvider.scala:470)
+	at scala.meta.internal.metals.debug.DebugProvider.runCommandDiscovery(DebugProvider.scala:420)
+	at scala.meta.internal.metals.MetalsLspService.discoverMainClasses(MetalsLspService.scala:1676)
+	at scala.meta.internal.metals.WorkspaceLspService.executeCommand(WorkspaceLspService.scala:686)
+	at scala.meta.metals.lsp.DelegatingScalaService.executeCommand(DelegatingScalaService.scala:169)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:120)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:261)
+	... 9 more
+
+2023.10.08 18:40:16 INFO  running 'C:\Program Files\Eclipse Adoptium\jdk-17.0.8.101-hotspot\bin\java.exe -Djline.terminal=jline.UnsupportedTerminal -Dsbt.log.noformat=true -Dfile.encoding=UTF-8 -jar C:\Users\tyrbi\AppData\Local\Temp\metals14760582892644801072\sbt-launch.jar -Dbloop.export-jar-classifiers=sources bloopInstall'
+2023.10.08 18:40:17 ERROR [info] [launcher] getting org.scala-sbt sbt 1.3.3  (this may take some time)...
+2023.10.08 18:40:35 WARN  no build target for: C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_2\src\main\scala\Main.scala
+2023.10.08 18:40:38 WARN  no build target for: C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_2\src\main\scala\Main.scala
+2023.10.08 18:40:38 WARN  no build target for: C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_2\src\main\scala\Main.scala
+2023.10.08 18:45:48 ERROR [info] [launcher] getting Scala 2.12.10 (for sbt)...
+2023.10.08 18:46:08 ERROR WARNING: A terminally deprecated method in java.lang.System has been called
+2023.10.08 18:46:08 ERROR WARNING: System::setSecurityManager has been called by sbt.TrapExit$ (file:/C:/Users/tyrbi/.sbt/boot/scala-2.12.10/org.scala-sbt/sbt/1.3.3/run_2.12-1.3.3.jar)
+2023.10.08 18:46:08 ERROR WARNING: Please consider reporting this to the maintainers of sbt.TrapExit$
+2023.10.08 18:46:08 ERROR WARNING: System::setSecurityManager will be removed in a future release
+2023.10.08 18:46:17 INFO  [info] Loading settings for project homework_2-build-build from metals.sbt ...
+2023.10.08 18:46:19 INFO  [info] Loading project definition from C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_2\project\project
+2023.10.08 18:46:30 INFO  [info] Loading settings for project homework_2-build from metals.sbt ...
+2023.10.08 18:46:30 INFO  [info] Loading project definition from C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_2\project
+2023.10.08 18:46:37 INFO  [success] Generated .bloop\homework_2-build.json
+2023.10.08 18:46:37 INFO  [success] Total time: 6 s, completed 8 РѕРєС‚. 2023 Рі., 18:46:37
+2023.10.08 18:46:40 INFO  [info] Loading settings for project homework_2 from build.sbt ...
+2023.10.08 18:46:40 INFO  [info] Set current project to Lecture2 (in build file:/C:/Users/tyrbi/naumen.scala.course.2023.spring/homeworks/homework_2/)
+2023.10.08 18:46:43 INFO  [success] Generated .bloop\homework_2.json
+2023.10.08 18:46:43 INFO  [success] Generated .bloop\homework_2-test.json
+2023.10.08 18:46:43 INFO  [success] Total time: 1 s, completed 8 РѕРєС‚. 2023 Рі., 18:46:43
+2023.10.08 18:46:43 INFO  time: ran 'sbt bloopInstall' in 6m26s
+2023.10.08 18:46:43 INFO  Attempting to connect to the build server...
+2023.10.08 18:46:43 INFO  Bloop uses C:\Program Files\Eclipse Adoptium\jdk-17.0.8.101-hotspot defined at C:\Users\tyrbi\.bloop\bloop.json
+2023.10.08 18:46:48 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_2\.metals\bsp.trace.json or C:\Users\tyrbi\AppData\Local\scalameta\metals\cache\bsp.trace.json
+2023.10.08 18:47:08 ERROR Timeout waiting for 'build/initialize' response
+2023.10.08 18:47:08 WARN  Retrying connection to the build server Bloop
+2023.10.08 18:47:08 INFO  Bloop uses C:\Program Files\Eclipse Adoptium\jdk-17.0.8.101-hotspot defined at C:\Users\tyrbi\.bloop\bloop.json
+2023.10.08 18:47:08 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_2\.metals\bsp.trace.json or C:\Users\tyrbi\AppData\Local\scalameta\metals\cache\bsp.trace.json
+2023.10.08 18:47:08 INFO  Attempting to connect to the build server...
+2023.10.08 18:47:08 INFO  Bloop uses C:\Program Files\Eclipse Adoptium\jdk-17.0.8.101-hotspot defined at C:\Users\tyrbi\.bloop\bloop.json
+2023.10.08 18:47:08 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_2\project\.metals\bsp.trace.json or C:\Users\tyrbi\AppData\Local\scalameta\metals\cache\bsp.trace.json
+2023.10.08 18:47:28 ERROR Timeout waiting for 'build/initialize' response
+2023.10.08 18:47:28 WARN  Retrying connection to the build server Bloop
+2023.10.08 18:47:28 INFO  Bloop uses C:\Program Files\Eclipse Adoptium\jdk-17.0.8.101-hotspot defined at C:\Users\tyrbi\.bloop\bloop.json
+2023.10.08 18:47:28 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_2\project\.metals\bsp.trace.json or C:\Users\tyrbi\AppData\Local\scalameta\metals\cache\bsp.trace.json
+2023.10.08 18:47:48 ERROR Timeout waiting for 'build/initialize' response
+2023.10.08 18:47:48 WARN  Retrying connection to the build server Bloop
+2023.10.08 18:47:48 INFO  Bloop uses C:\Program Files\Eclipse Adoptium\jdk-17.0.8.101-hotspot defined at C:\Users\tyrbi\.bloop\bloop.json
+2023.10.08 18:47:48 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_2\project\.metals\bsp.trace.json or C:\Users\tyrbi\AppData\Local\scalameta\metals\cache\bsp.trace.json
+2023.10.08 18:48:08 ERROR Timeout waiting for 'build/initialize' response
+2023.10.08 18:48:08 WARN  Retrying connection to the build server Bloop
+2023.10.08 18:48:08 INFO  Bloop uses C:\Program Files\Eclipse Adoptium\jdk-17.0.8.101-hotspot defined at C:\Users\tyrbi\.bloop\bloop.json
+2023.10.08 18:48:08 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_2\project\.metals\bsp.trace.json or C:\Users\tyrbi\AppData\Local\scalameta\metals\cache\bsp.trace.json
+2023.10.08 18:48:28 ERROR Timeout waiting for 'build/initialize' response
+2023.10.08 18:48:28 WARN  Retrying connection to the build server Bloop
+2023.10.08 18:48:28 INFO  Bloop uses C:\Program Files\Eclipse Adoptium\jdk-17.0.8.101-hotspot defined at C:\Users\tyrbi\.bloop\bloop.json
+2023.10.08 18:48:28 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_2\project\.metals\bsp.trace.json or C:\Users\tyrbi\AppData\Local\scalameta\metals\cache\bsp.trace.json
+2023.10.08 18:48:48 ERROR Timeout waiting for 'build/initialize' response
+2023.10.08 18:48:48 WARN  Retrying connection to the build server Bloop
+2023.10.08 18:48:48 INFO  Bloop uses C:\Program Files\Eclipse Adoptium\jdk-17.0.8.101-hotspot defined at C:\Users\tyrbi\.bloop\bloop.json
+2023.10.08 18:48:48 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at C:\Users\tyrbi\naumen.scala.course.2023.spring\homeworks\homework_2\project\.metals\bsp.trace.json or C:\Users\tyrbi\AppData\Local\scalameta\metals\cache\bsp.trace.json
+2023.10.08 18:49:08 ERROR Timeout waiting for 'build/initialize' response
+2023.10.08 18:49:08 ERROR Failed to connect with build server, no functionality will work.
+java.util.concurrent.TimeoutException
+	at java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
+	at java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
+	at scala.meta.internal.metals.BuildServerConnection$.initialize(BuildServerConnection.scala:546)
+	at scala.meta.internal.metals.BuildServerConnection$.$anonfun$fromSockets$1(BuildServerConnection.scala:447)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2023.10.08 18:58:07 INFO  Shutting down server
+2023.10.08 18:58:07 INFO  shutting down Metals
+2023.10.08 18:58:07 INFO  Exiting server
+2023.10.08 18:58:07 ERROR Unexpected error initializing server: 
+org.eclipse.lsp4j.jsonrpc.ResponseErrorException: Request window/showMessageRequest failed with message: Canceled
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponse(RemoteEndpoint.java:209)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:193)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
